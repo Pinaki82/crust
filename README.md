@@ -22,7 +22,7 @@ To keep things simple and make the journey a hands-on experience, do not use the
 
 # Build & Run
 
-Download the entire repository in a Zip archive. Extract the zipped file somewhere on your hard drive. Remember that the location must not contain any space of special character other than underscores (i.e., `_`). Examples: `G:\test_n_practice\crust`, `/home/YOUR_USERNAME/crust/`.
+Download the entire repository in a Zip archive. Extract the zipped file somewhere on your hard drive. Remember that the location (path to the directory where you want to extract the archive) must not contain any space or special character other than underscores (i.e., `_`). Examples: `G:\test_n_practice\crust`, `/home/YOUR_USERNAME/crust/`.
 
 # Our Strategy
 
