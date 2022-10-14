@@ -45,6 +45,7 @@ Find a file `exercises.txt`. After learning a particular topic, write the code a
 - [Comments](#comments)
 - [Receiving Inputs](#receiving-inputs)
 - [The Character Set](#the-character-set)
+- [Reserved Keywords](#reserved-keywords)
 - [Constants, Variables, and Keywords](#constants-variables-and-keywords)
   - [Constants](#constants)
   - [Rules and Conventions for Declaring Constants](#rules-and-conventions-for-declaring-constants)
