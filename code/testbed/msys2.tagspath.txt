@@ -1,0 +1,7 @@
+set tags+=C:\msys64\mingw64\include\tags;\
+set tags+=C:\msys64\mingw64\include\c++\12.2.0\tags;\
+set tags+=./tags;/
+
+set path+=C:\msys64\mingw64\include\;\
+set path+=C:\msys64\mingw64\include\c++\12.2.0\;\
+set path+=./;/

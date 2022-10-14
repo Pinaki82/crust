@@ -1,0 +1,6 @@
+.ccls
+.lvimrc
+compile_flags.txt
+.ccls-cache/
+tags
+Cargo.lock

@@ -1,0 +1,13 @@
+/code/testbed/target
+.ccls
+.ccls.ubuntu
+.ccls.msys2
+.lvimrc
+compile_flags.txt
+compile_flags.txt.ubuntu
+compile_flags.txt.msys2
+.ccls-cache
+tags
+Cargo.lock
+README.md.backup
+personal.txt

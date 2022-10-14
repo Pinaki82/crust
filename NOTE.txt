@@ -1,0 +1,8 @@
+Include path:
+clang -v -fsyntax-only -x c++ /dev/null
+g++ -v -fsyntax-only -x c++ /dev/null
+
+https://stackoverflow.com/questions/9794931/keep-file-in-a-git-repo-but-dont-track-changes
+git update-index --skip-worktree code/testbed/src/main.c
+git update-index --skip-worktree code/testbed/src/main.rs
+--no-skip-worktree
