@@ -102,6 +102,8 @@ Find a file `exercises.txt`. After learning a particular topic, write the code a
 
 # Hello, World! The Skeleton and its Anatomy
 
+C:
+
 ```c
 #include <stdio.h> // Inclusion of header files.
 #include <stdlib.h>
@@ -124,6 +126,8 @@ int main(int argc, char *argv[]) { // The compulsory main() function.
   a function that outputs formatted strings to the console. */
 } // End of the code block (here, the block is the function main()).
 ```
+
+Rust:
 
 ```rust
 // Notice that you don't need to include a header file.
