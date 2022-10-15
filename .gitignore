@@ -11,3 +11,5 @@ tags
 Cargo.lock
 README.md.backup
 personal.txt
+test.c
+test.rs

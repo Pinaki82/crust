@@ -44,7 +44,13 @@ Find a file `exercises.txt`. After learning a particular topic, write the code a
 ## Table of Contents
 
 - [Hello, World! The Skeleton and its Anatomy](#hello-world-the-skeleton-and-its-anatomy)
-- [Comments](#comments)
+  - [Comments](#comments)
+  - [Code Blocks](#code-blocks)
+  - [The main() Function](#the-main-(-)-function)
+  - [Include Directives](#include-directives)
+  - [Functions](#functions)
+  - [Macros](#macros)
+  - [Statements and the Statement Terminator](#statements-and-the-statement-terminator)
 - [Receiving Inputs](#receiving-inputs)
 - [The Character Set](#the-character-set)
 - [Reserved Keywords](#reserved-keywords)
@@ -143,7 +149,198 @@ fn main() { // main() is a compulsory function even in Rust.
 } // End of the code block (here, the block is the function main()).
 ```
 
-# Comments
+## Comments
+
+Comments are areas of code ignored by the compiler.
+
+One who writes the code keeps pieces of information under comments as hints for what the code does in a specific section so that the logic of the code becomes easier to understand and stays maintainable in the future.
+
+Comments in both C and Rust are enclosed within `/* */`. Another style of writing a single-line comment is to write `//` before writing the comment. `// Single-line Comment`. Anything after the `//` part is ignored by the compiler. Usually, `// comments` are used as End Of The Line Comments or simply 'Line Comments'. We use `//` where we don't need to write any code after the comment part. Whereas, `/* */` can be used as inline comments, e.g.,
+
+```rust
+fn /* comment */ main() {
+
+}
+```
+
+```rust
+// Line comments which go to the end of the line.
+```
+
+```rust
+/* Single-line/Multi-line/Inline comment */
+```
+
+```rust
+fn main() { //main() is a compulsory function even in Rust (a comment indeed).
+
+
+    // ...
+    // ...
+}
+```
+
+Multi-line Comments or Single-line/Multi-line/Inline/Universal Comments:
+
+Comments enclosed within `/* */` can be split across lines.
+
+```rust
+/*
+   This is
+   a
+   multi-line
+   comment
+*/
+```
+
+Doc comments in Rust:
+Doc comments are parsed into HTML library documentation:
+
+```rust
+    /// Generate library docs for the following section.
+    //! Generate library docs for the enclosing section.
+```
+
+We will restrict ourselves to 1) End Of The Line Comments, `//` and 2) Multi-line/Universal Comments, `/* */`.
+
+## Code Blocks:
+
+A block of code or Code Block is a lexical structure of instructions grouped together comprising declarations, operators, and statements. Foxed?
+
+Don't be! For now, remember that a code block is something grouped within brackets, e.g., `{}`.
+
+```rust
+{ // an example of the start of a block of code
+
+} // an example of the end of a block of code
+```
+
+Simply,
+
+```rust
+{
+}
+```
+
+In our Rust Hello World example,
+
+```rust
+fn main () {
+ // ...
+ // ...
+}
+```
+
+Here, the function `main()` keeps its set of instructions within a block of second brackets `{}`.
+
+## The main() Function:
+
+In C & Rust, `main()` is the driving force of all programs. Every program that executes must have a `main()` function that initialises the program execution.
+
+All major programs you run on your machine are compiled from several source files. Each source file may contain thousands of lines of code. However, the function `main()` initialises the program execution. `main()` serves as an Entry Point to the program's startup.
+
+The `main()` appears only once, no matter how large the project is. In case you are isolating parts of the program into multiple shared libraries (*.dll or *.so), each shared library can be driven by its individual driving function `DllMain()`. On the other hand, it is not mandatory to create a DLL Entry Point for creating a shared library. We will cover the creation and use of Shared Libraries and Static Libraries in C later.
+
+```c
+#include <windows.h>
+
+BOOL WINAPI DllMain(
+    HINSTANCE hinstDLL,  // handle to DLL module
+    DWORD fdwReason,     // reason for calling function
+    LPVOID lpvReserved )  // reserved
+{
+  // Example code for a DLL Entry Point function.
+  // Look here for more info:
+  // https://learn.microsoft.com/en-us/windows/win32/dlls/dllmain
+}
+```
+
+For now, remember that every program you write needs a `main()` function.
+
+## Include Directives:
+
+`#include <stdio.h>` includes a text file `stdio.h` containing some routines, such as text input/output to the console. It (`stdio.h`) is basically a plaintext source file. `#include <>` is used to attach source codes. It is called the Include Directive in C. The Include Directive is also a **macro**. We will visit the section of macros later. We will have to revisit it quite a few times.
+
+What does the file `stdio.h` do here, should be our question at the moment. It contains routines for text input/output to the console and some other routines. Compiler writers supply pre-defined routines prescribed by the ISO C standardisation committee for common tasks. Libraries outside the Standard C Library are also used for special purposes, such as Graphics, image/video processing, Graphical User Interface, dealing with intricate mathematical problems, scientific/business application programming etc. In our Hello World example in C, we used the pre-defined function `printf()` for text output to the console.
+
+## Functions:
+
+Functions are called the building blocks of programs. A function contains a set of routines to accomplish a particular task. Think of a car assembly line where every section plays different roles, and those who work in each department in the assembly line take their own part, making each department a complete set but also an independent part of the entire workforce. Think of functions as departments in that assembly line. Functions can also be compared to Bricks that are used in construction works. Your room contains hundreds of bricks.
+
+The function `pow(x,y)` returns `x` raised to the power of `y` i.e. `x^y` (`x` to the power `y`). `pow()` is declared and defined in the C standard library `math.h`.
+
+We included `stdio.h` to call the function `printf()`. It is used here for sending text output to the console.
+
+## Macros:
+
+**MACRO**: The Search-n-Replace utility in the compilers.
+
+To be precise, 'Macros' are a group of characters to be replaced by the compiler at the stage known as 'Preprocessor'. Macros and Preprocessors will be discussed later.
+
+```c
+#define ADD_TWO_NUM (a, b) (a) + (b)
+```
+
+```c
+#defile MAX_VALUE 1000
+```
+
+Macros in C always start with the symbol `#`.
+
+```c
+ADD_TWO_NUM(a, b) (a) + (b)
+```
+
+```c
+ADD_TWO_NUM(8, 3)
+```
+
+```c
+#include <stdio.h>
+
+#define ADD_TWO_NUM(a, b) (a) + (b)
+
+int main() {
+  int u = 2;
+  int v = 3;
+  printf("%d\n", ADD_TWO_NUM(u, v));
+  return 0;
+}
+```
+
+```
+gcc test.c -o test.exe
+```
+
+```
+test.exe
+```
+
+```
+5
+```
+
+Here, in our Rust Hello World example, `println!()` is a macro. Unlike `printf()` in C, it is not a function.
+
+Notice the NOT/ Exclamation mark (`!`) after `println`. In Rust, macros are denoted by an `!` mark at the end of the macro before using it. We don't have to look under the bonnet to discover how Rust expands `println` at the moment. What is crucial for us to know right now is the use of the `println!()` macro for text output in the console in Rust. One important note, text input/output is called **formatted string input/output** in C and Rust.
+
+More about macros later.
+
+## Statements and the Statement Terminator
+
+```c
+printf("%d\n", ADD_TWO_NUM(u, v));
+```
+
+```rust
+println!("Hello, world!");
+```
+
+```
+;
+```
+
+Every instruction/command in C/Rust is a Statement. The end of the statements must be denoted by a semicolon, `;`. A C/Rust function, a macro in Rust in a block of code, are examples of individual statements. Notice the use of semicolons in the upcoming chapters.
 
 # Receiving Inputs
 
