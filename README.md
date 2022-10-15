@@ -46,7 +46,7 @@ Find a file `exercises.txt`. After learning a particular topic, write the code a
 - [Hello, World! The Skeleton and its Anatomy](#hello-world-the-skeleton-and-its-anatomy)
   - [Comments](#comments)
   - [Code Blocks](#code-blocks)
-  - [The main() Function](#the-main-(-)-function)
+  - [The main() Function](#the-main-function)
   - [Include Directives](#include-directives)
   - [Functions](#functions)
   - [Macros](#macros)
