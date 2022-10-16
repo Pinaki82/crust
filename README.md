@@ -346,6 +346,65 @@ Every instruction/command in C/Rust is a Statement. The end of the statements mu
 
 # Receiving Inputs
 
+Let's Break Another Skeleton:
+
+It will be easier to start with C.
+
+Area of a Circle.
+
+```c
+/*
+  A C program to calculate the area of a circle.
+*/
+
+// https://byjus.com/maths/area-of-circle/
+
+#include <stdio.h>
+#include <math.h>
+
+#define PI 3.14 // 22/7 = 3.14 (approx.)
+
+int main(void) {
+  float radius = 0;
+  float area = 0;
+  printf("Type the value for the radius of the circle and hit Enter:\n");
+  scanf("%f", &radius);
+  printf("Radius = %f\n", (double)radius);
+  area = (float)(PI * (pow((double)radius, 2))); // The formula: area = pi * r^2
+  printf("Area = %f\n", (double)area);
+  return 0;
+}
+```
+
+The Rust version.
+
+```rust
+/*
+  A Rust program to calculate the area of a circle.
+*/
+
+use std::io;
+
+fn main() {
+  println!("Type the value for the radius of the circle and hit Enter:");
+  let mut user_submitted_radius = String::new();
+  let mut radius: f32 = 0.0;
+  let mut squired: f32 = 0.0;
+  let mut area: f32 = 0.0;
+
+  io::stdin().read_line(&mut user_submitted_radius)
+             .ok()
+             .expect("Couldn't read user input!");
+
+  radius = user_submitted_radius.trim().parse().expect("Invalid user input!n");
+
+  squired =  radius * radius;
+  area = 3.14 * squired; // The formula: area = pi * r^2
+
+  println!("Area = {}", area);
+}
+```
+
 # The Character Set
 
 # Reserved Keywords
