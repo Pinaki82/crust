@@ -12,4 +12,5 @@ Cargo.lock
 README.md.backup
 personal.txt
 test.c
-test.rs
+testrst.rs
+*.orig
