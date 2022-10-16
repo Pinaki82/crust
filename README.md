@@ -277,7 +277,7 @@ We included `stdio.h` to call the function `printf()`. It is used here for sendi
 
 **MACRO**: The Search-n-Replace utility in the compilers.
 
-To be precise, 'Macros' are a group of characters to be replaced by the compiler at the stage known as 'Preprocessor'. Macros and Preprocessors will be discussed later.
+To be precise, 'Macros' are a group of characters to be replaced by the compiler with another predefined set of characters at the stage known as 'Preprocessor'. Macros and Preprocessors will be discussed later.
 
 ```c
 #define ADD_TWO_NUM (a, b) (a) + (b)
