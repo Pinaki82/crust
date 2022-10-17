@@ -322,6 +322,115 @@ test.exe
 5
 ```
 
+**How macros get expanded:**
+
+```
+gcc -save-temps -c test.c
+```
+
+```
+gcc -E test.c > test.i
+```
+
+`test.i`
+
+```c
+# 5 "test.c"
+int main() {
+  int u = 2;
+  int v = 3;
+  printf("%d\n", (u) + (v));
+  return 0;
+}
+```
+
+Look how the macro `ADD_TWO_NUM(a, b)` got expanded to `(u) + (v)`. Somewhat similar to a search-n-replace utility!
+
+---
+
+### The way the compiler works:
+
+**The Four Stages of Compilation in C:**
+
+Compilation:
+Compile is a process of transforming source codes into machine language that computers speak. The process of compilation passes through four stages.
+
+1) Preprocessor (Compiler-generated Intermediate C/C++ File, `test.c`->`test.i`.)
+
+2) Compiler (Assembly Language Code, `test.i`->`test.s`.)
+
+3) Assembler (Assembly Language Code to Relocatable Object Code, `test.s`->`test.o`.)
+
+4) Linker (All Relocatable Object Code Files to Machine-Readable Native Executable Code, `test.o`->`test.exe`.)
+
+**Compilers' primary job:** A Compiler is a program/piece of software/utility/application that turns source codes into machine-native binary executable files.
+
+Extra Features: Beside performing designated task of translating source codes into machine native executable files, compilers may provide other facilities such as error checking, detection of runtime error, memory leak detection, Language Server Protocol for autocompletion etc.
+
+**Stage 1 (Preprocessor):**
+
+```
+gcc -E code.c > code.i
+```
+
+In this stage, the compiler toolchain performs the following tasks:
+
+1. Comment stripping: The compiler toolchain strips all comments and replaces them with single spaces.
+
+2. Header inclusion and producing text blobs: The compiler toolchain attaches (includes (`#include< >`)) the instructions written in the header files (`*.h`) and creates a single blob of text.
+
+3. Macro expansion: The compiler toolchain expands predefined macros.
+
+Here, in this stage, the compiler takes all source files and generates individual intermediate text blobs (`*.i`). Those blobs contain routines declared in header files attached to your source codes using the include directive `#include < >`.
+
+**Stage 2 (Compiler):**
+
+```
+gcc -S code.c > code.s
+```
+
+In this stage, the compiler toolchain transforms the preprocessed text blobs (`*.i`) into Assembly Language codes (`*.s`).
+
+**Stage 3 (Assembler) :**
+
+```
+gcc -S code.c > code.o
+```
+
+Now the toolchain translates the assembly language codes into relocatable object codes (`test.o`) that are still needed to be resolved by the linker. Relocatable Object Code files are not human-readable.
+
+**Stage 4 (Linker):**
+
+```
+gcc code.c
+```
+
+In this stage, a separate program (in GCC/MSVC) in the toolchain called "Linker" takes all the Relocatable Object Code (`*.o`) files and semi-compiled routines (functions etc.) from externally linked static/dynamic libraries (GUI, Graphic, Image Processing, Compression, Cryptography etc.). The linker must be told to search for those semi-compiled external files from specific locations along with the names of the libraries to be linked. We will come to Static and Dynamic Libraries later.
+
+**A brief overview:**
+
+**Preprocessor Stage:** For example, if your project contains three source files `one.c`, `two.c`, `three.c`, the compiler will first generate `one.i`, `two.i`, `three.i`. **Assembler Stage:** The compilation process will now pass through the Assembler which will translate the raw C codes (intermediate files, `*.i`) into Assembly Language code files. Namely, `*.s`. **Compiler Stage:** Then, those intermediate files will be converted to relocatable object code files `one.o`, `two.o`, `three.o`. **Linker Stage:** In the next stage, the compiler will search for object code files (semi-compiled) libraries you used in your project. By combining all relocatable object code files the compiler will produce a final executable file.
+
+If you've set up your project to split the program into separate Shared Library files and executable files, then the final rendition will contain Shared Libraries and executable files.
+
+Rust however works in a slightly different manner.
+
+## [What does the Rust compiler do to your code](https://rustc-dev-guide.rust-lang.org/overview.html#what-the-compiler-does-to-your-code):
+
+1) Invocation:
+
+2) Lexing and Parsing:
+
+3) High-Level Intermediate Representation (HIR) Lowering:
+
+4) Mid-level Intermediate Representation (MIR) Lowering:
+
+5) Code Generation:
+
+---
+
+Enough about macros and the working principles of compilers, let's come back to macros in Rust.
+
 Here, in our Rust Hello World example, `println!()` is a macro. Unlike `printf()` in C, it is not a function.
 
 Notice the NOT/ Exclamation mark (`!`) after `println`. In Rust, macros are denoted by an `!` mark at the end of the macro before using it. We don't have to look under the bonnet to discover how Rust expands `println` at the moment. What is crucial for us to know right now is the use of the `println!()` macro for text output in the console in Rust. One important note, text input/output is called **formatted string input/output** in C and Rust.
