@@ -50,6 +50,7 @@ Find a file `exercises.txt`. After learning a particular topic, write the code a
   - [Include Directives](#include-directives)
   - [Functions](#functions)
   - [Macros](#macros)
+    - [The way the compiler works:](#the-way-the-compiler-works)
   - [Statements and the Statement Terminator](#statements-and-the-statement-terminator)
 - [Receiving Inputs](#receiving-inputs)
 - [The Character Set](#the-character-set)
