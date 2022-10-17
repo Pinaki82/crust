@@ -464,6 +464,10 @@ It will be easier to start with C.
 
 Area of a Circle.
 
+$$
+Area=\pi.r^{2}
+$$
+
 ```c
 /*
   A C program to calculate the area of a circle.
