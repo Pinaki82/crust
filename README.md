@@ -364,6 +364,8 @@ Compile is a process of transforming source codes into machine language that com
 
 4) Linker (All Relocatable Object Code Files to Machine-Readable Native Executable Code, `test.o`->`test.exe`.)
 
+![compiler-stages](assets/compiler-stages.svg)
+
 **Compilers' primary job:** A Compiler is a program/piece of software/utility/application that turns source codes into machine-native binary executable files.
 
 Extra Features: Beside performing designated task of translating source codes into machine native executable files, compilers may provide other facilities such as error checking, detection of runtime error, memory leak detection, Language Server Protocol for autocompletion etc.

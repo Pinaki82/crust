@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210.01071mm"
+   height="273.72861mm"
+   viewBox="0 0 210.01071 273.72861"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   sodipodi:docname="compiler-stages.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.51615906"
+     inkscape:cx="396.1957"
+     inkscape:cy="517.28241"
+     inkscape:window-width="1366"
+     inkscape:window-height="715"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0.78655696,-6.6741571)">
+    <rect
+       style="fill:#000045;fill-opacity:1;stroke-width:1.21539;stroke-dasharray:none"
+       id="rect3749"
+       width="210.01071"
+       height="273.72861"
+       x="-0.78655696"
+       y="6.6741571" />
+    <g
+       id="g350"
+       transform="translate(-42.306321,-14.460674)">
+      <rect
+         style="fill:#0078bf;stroke-width:1.78519"
+         id="rect281"
+         width="77.315979"
+         height="23.994616"
+         x="55.454216"
+         y="41.59066" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="59.407574"
+         y="57.177689"
+         id="text113"><tspan
+           sodipodi:role="line"
+           id="tspan111"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#ffffff;stroke-width:0.264583"
+           x="59.407574"
+           y="57.177689">Preprocessor</tspan></text>
+    </g>
+    <g
+       id="g414"
+       transform="translate(-42.8625)">
+      <rect
+         style="fill:#0078bf;stroke-width:1.78519"
+         id="rect281-1"
+         width="77.315979"
+         height="23.994616"
+         x="55.224716"
+         y="88.519371" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="68.415527"
+         y="103.72936"
+         id="text113-8"><tspan
+           sodipodi:role="line"
+           id="tspan111-0"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#ffffff;stroke-width:0.264583"
+           x="68.415527"
+           y="103.72936">Compiler</tspan></text>
+    </g>
+    <g
+       id="g442"
+       transform="translate(-42.8625)">
+      <rect
+         style="fill:#0078bf;stroke-width:1.78519"
+         id="rect428"
+         width="77.315979"
+         height="23.994616"
+         x="55.224716"
+         y="136.14438" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="66.298859"
+         y="151.35437"
+         id="text432"><tspan
+           sodipodi:role="line"
+           id="tspan430"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#ffffff;stroke-width:0.264583"
+           x="66.298859"
+           y="151.35437">Assembler</tspan></text>
+    </g>
+    <g
+       id="g466"
+       transform="translate(-43.14059,57.922287)">
+      <rect
+         style="fill:#0078bf;stroke-width:1.78519"
+         id="rect460"
+         width="77.315979"
+         height="23.994616"
+         x="55.224716"
+         y="136.14438" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="76.882187"
+         y="151.35437"
+         id="text464"><tspan
+           sodipodi:role="line"
+           id="tspan462"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#ffffff;stroke-width:0.264583"
+           x="76.882187"
+           y="151.35437">Linker</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="94.55056"
+       y="34.564178"
+       id="text510"><tspan
+         sodipodi:role="line"
+         id="tspan508"
+         style="font-size:7.05556px;fill:#ffffff;stroke-width:0.264583"
+         x="94.55056"
+         y="34.564178">code.c -&gt; code.i</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="93.994377"
+       y="43.714123"
+       id="text514"><tspan
+         sodipodi:role="line"
+         id="tspan512"
+         style="font-size:7.05556px;fill:#ffffff;stroke-width:0.264583"
+         x="93.994377"
+         y="43.714123">Source Code -&gt;</tspan><tspan
+         sodipodi:role="line"
+         style="font-size:7.05556px;fill:#ffffff;stroke-width:0.264583"
+         x="93.994377"
+         y="52.533573"
+         id="tspan1664">Compiler-generated</tspan><tspan
+         sodipodi:role="line"
+         style="font-size:7.05556px;fill:#ffffff;stroke-width:0.264583"
+         x="93.994377"
+         y="61.353024"
+         id="tspan570">  Intermediate C/C++ File</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="20.02247"
+       y="15.573034"
+       id="text542"><tspan
+         sodipodi:role="line"
+         id="tspan540"
+         style="font-size:7.05556px;fill:#ffffff;stroke-width:0.264583"
+         x="20.02247"
+         y="15.573034">Source Code </tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="93.716286"
+       y="103.72752"
+       id="text655"><tspan
+         sodipodi:role="line"
+         style="font-size:7.05556px;fill:#ffffff;stroke-width:0.264583"
+         x="93.716286"
+         y="103.72752"
+         id="tspan657">Compiler-generated</tspan><tspan
+         sodipodi:role="line"
+         style="font-size:7.05556px;fill:#ffffff;stroke-width:0.264583"
+         x="93.716286"
+         y="112.54697"
+         id="tspan661">Intermediate C/C++ File -&gt;</tspan><tspan
+         sodipodi:role="line"
+         style="font-size:7.05556px;fill:#ffffff;stroke-width:0.264583"
+         x="93.716286"
+         y="121.36642"
+         id="tspan663">Assembly Language Code</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="93.994377"
+       y="94.089874"
+       id="text667"><tspan
+         sodipodi:role="line"
+         id="tspan665"
+         style="font-size:7.05556px;fill:#ffffff;stroke-width:0.264583"
+         x="93.994377"
+         y="94.089874">code.i -&gt; code.s</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="93.43821"
+       y="151.83707"
+       id="text704"><tspan
+         sodipodi:role="line"
+         id="tspan702"
+         style="font-size:7.05556px;fill:#ffffff;stroke-width:0.264583"
+         x="93.43821"
+         y="151.83707">Assembly Language Code</tspan><tspan
+         sodipodi:role="line"
+         style="font-size:7.05556px;fill:#ffffff;stroke-width:0.264583"
+         x="93.43821"
+         y="160.65651"
+         id="tspan706">-&gt; Relocatable Object Code</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="92.325844"
+       y="141.44475"
+       id="text782"><tspan
+         sodipodi:role="line"
+         id="tspan780"
+         style="font-size:7.05556px;fill:#ffffff;stroke-width:0.264583"
+         x="92.325844"
+         y="141.44475">code.s -&gt; code.o</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="92.882019"
+       y="206.3427"
+       id="text824"><tspan
+         sodipodi:role="line"
+         id="tspan822"
+         style="font-size:7.05556px;fill:#ffffff;stroke-width:0.264583"
+         x="92.882019"
+         y="206.3427">Relocatable Object Code Files -&gt;</tspan><tspan
+         sodipodi:role="line"
+         style="font-size:7.05556px;fill:#ffffff;stroke-width:0.264583"
+         x="92.882019"
+         y="215.16214"
+         id="tspan826">Machine-Readable</tspan><tspan
+         sodipodi:role="line"
+         style="font-size:7.05556px;fill:#ffffff;stroke-width:0.264583"
+         x="92.882019"
+         y="223.9816"
+         id="tspan1898">Native Executable Code</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="93.716293"
+       y="196.58618"
+       id="text830"><tspan
+         sodipodi:role="line"
+         id="tspan828"
+         style="font-size:7.05556px;fill:#ffffff;stroke-width:0.264583"
+         x="93.716293"
+         y="196.58618">code.o -&gt; code.exe/dll/so</tspan></text>
+    <path
+       id="path940"
+       style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1.365;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="m 45.606742,23.91573 1.668539,1.251405 1.807583,-1.39045 m -1.668539,-5.839888 v 7.369382" />
+    <path
+       id="path1850"
+       style="fill:none;stroke:#ffffff;stroke-width:2.36784;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="m 45.885641,77.276687 1.401305,4.483728 1.518081,-4.98192 M 47.403721,55.854438 v 26.404165" />
+    <path
+       id="path1994"
+       style="fill:none;stroke:#ffffff;stroke-width:1.99296;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="m 45.609341,127.70115 1.666327,2.67119 1.805188,-2.96799 m -1.666328,-12.46556 v 15.73035" />
+    <path
+       id="path1996"
+       style="fill:none;stroke:#ffffff;stroke-width:2.44567;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="m 45.794452,184.22402 1.488922,4.50186 1.613,-5.00206 m -1.488923,-21.00868 v 26.51095" />
+    <path
+       id="path2047"
+       style="fill:none;stroke:#ffffff;stroke-width:2.29618;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="m 45.614027,237.5491 1.662056,3.55496 1.800561,-3.94996 m -1.662056,-16.58984 v 20.9348" />
+    <g
+       id="g3639">
+      <rect
+         style="fill:#0078bf;stroke-width:1.78519"
+         id="rect2775"
+         width="77.315979"
+         height="23.994616"
+         x="11.249856"
+         y="245.23521" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="16.503145"
+         y="256.74097"
+         id="text2779"><tspan
+           sodipodi:role="line"
+           id="tspan2777"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#ffffff;stroke-width:0.264583"
+           x="16.503145"
+           y="256.74097">Final Output</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="20.524628"
+         y="264.09634"
+         id="text3573"><tspan
+           sodipodi:role="line"
+           id="tspan3571"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05556px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#ffffff;stroke-width:0.264583"
+           x="20.524628"
+           y="264.09634">code.exe/dll/so</tspan></text>
+    </g>
+  </g>
+</svg>
