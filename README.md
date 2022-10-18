@@ -430,6 +430,27 @@ Rust however works in a slightly different manner.
 
 5) Code Generation:
 
+[Citation needed.]
+
+**Invocation:** First, the Rust compiler (`rustc`) is invoked by Cargo or directly by the user. The toolchain processes command-line options for optimisations and other tasks, such as installing the program after completing the build process. In this stage, `rustc` performs `check`-only builds (rather than producing executable machine code) with the help of `rustc_driver`.
+
+**Lexing and parsing:** The raw Rust source text is analysed by a low-level **lexer**. The **lexer** turns the source code into a stream of atomic code units which are called **tokens**. `rustc_parse` takes the charge of passing the stream of **tokens** through a higher-level lexer. Macros get expanded. A set of validations is checked by the **StringReader Struct** and turn strings into **interned symbols** (Not our business. It is a way of storing only one immutable copy of each distinct string value). The parser translates the stream of tokens from the lexer output into an **Abstract Syntax Tree** (AST). Some intermediate files are generated that can be found in the `rustc_parse` directory. For example,
+
+```
+expr.rs
+pat.rs
+ty.rs
+stmt.rs
+```
+
+**High-Level Intermediate Representation (HIR) Lowering:** The Rust compiler collects the AST. The AST is converted to a more compiler-friendly representation called High-Level Intermediate Representation (HIR). The process of translating AST to HIR is called "lowering". We will learn the types of variables in C and Rust. In short, a variable type is like a unknown quantity in regular mathematics, x,y,z,u,v,r etc., except, the variable type must be declared to inform the compiler beforehand. A variable can be of an integer type (1, 5, 99, 1567, etc.), floating value (2.05, 7.01, 39459.04567 etc.), or a string of characters (Abracadabra, Smiley emoji, Your Name, a, b, c, d etc.). Other variable types also exists. Now, the compiler uses the HIR to do type inference. Type interface is the process of automatic detection of the type of an expression. A few more tasks are performed, like trait solving, and type checking.
+
+**Mid-level Intermediate Representation (MIR) Lowering:** The compiler now translates the HIR to Mid-level Intermediate Representation (MIR), used for borrow checking. Rust also constructs the THIR, which is used for pattern and exhaustiveness checking. Some optimisations are performed. In my limited understanding of  the internal working principles of the Rust compiler, it is a one-step extra refinement of the HIR.
+
+**Code generation:** A process known as **codegen** begins at this stage. It is the stage when higher-level representations of the source performed in the earlier stages are turned into a machine-native executable. `rustc` converts the MIR to LLVM Intermediate Representation (LLVM IR). It is done by [LLVM](https://llvm.org/) software. LLVM stands for Low Level Virtual Machine.
+
+We don't have to understand most of the Rust compiler stages to understand Rust programming. It is how Rust works in the background. As long as we are able to build our project using Cargo, we won't pull open the bonnet.
+
 ---
 
 Enough about macros and the working principles of compilers, let's come back to macros in Rust.
