@@ -542,6 +542,8 @@ fn main() {
 }
 ```
 
+**Code Formatter in Rust ([rustfmt](https://github.com/rust-lang/rustfmt)):**
+
 How will you format the code for better readability?
 
 ```
@@ -550,7 +552,7 @@ rustfmt code.rs
 
 Let's break down the third skeleton before we move on to the actual chapters.
 
-```ruag-0-1gfr22n3pag-1-1gfr22n3pst
+```rust
 /*
   A simple Rust program to demonstrate
   file input/output & user input/output.
