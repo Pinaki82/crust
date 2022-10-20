@@ -590,7 +590,7 @@ fn main() {
 
     print!("\n");
 
-    let path =ag-0-1gfr22n3pag-1-1gfr22n3p env::current_dir().unwrap();
+    let path = env::current_dir().unwrap();
     println!("$PWD: {}", path.display());
 }
 ```
