@@ -542,6 +542,12 @@ fn main() {
 }
 ```
 
+How will you format the code for better readability?
+
+```
+rustfmt code.rs
+```
+
 # The Character Set
 
 # Reserved Keywords

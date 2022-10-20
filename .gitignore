@@ -14,3 +14,4 @@ personal.txt
 test.c
 testrst.rs
 *.orig
+*.exe
