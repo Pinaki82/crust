@@ -519,7 +519,7 @@ We've already discussed the include directive. You can attach any source code in
 
 ```c
 int main(void) {
-   // code
+   area = (float)(PI * (pow((double)radius, 2))); // The formula: area = pi * r^2
 }
 ```
 
