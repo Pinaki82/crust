@@ -1,12 +1,9 @@
-// Last Change: 2022-10-21  Friday: 05:07:42 PM
+// Last Change: 2022-10-21  Friday: 05:18:59 PM
 /*
   A simple Rust program to demonstrate
   file input/output & user input/output.
 */
 
-#include <errno.h>
-#include <stdint.h>
-#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
