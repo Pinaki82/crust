@@ -513,6 +513,63 @@ int main(void) {
 }
 ```
 
+We've already discussed the include directive. You can attach any source code in text format with an extension that the compiler recognises, e.g., `#include <math.h>`. The files you attach contain some pre-defined routines that save you time. You can call a function without having to write it from scratch. We've also discussed that the Include Directive is a macro.
+
+`#define PI 3.14` is a Preprocessor Directive (macro) that replaces `PI` with `3.14` wherever it finds `PI` inside the code section.
+
+```c
+int main(void) {
+   // code
+}
+```
+
+As we saw earlier, every program must have a `main()` function that initiates the program. A function contains a series of instructions inside that function block. Besides that, a function can **return** a **value** or return nothing (`void`). `int main()` means that the `main()` function returns an _integer_ value upon completion, after going through all instructions. `int main()`, In this case, the value has to be either ZERO (`0`) or ONE (`1`). If the `main()` function returns Zero, that means the function has completed successfully, and encountered Zero errors. When a function is intended to return nothing, it is written as `void function_name()`, or `void *function_name()`, or `void **function_name()` etc. However, ISO C Standard Committee specifies that the `main()` function is not allowed to return a `void` value. `void`: It denotes a non-existing value.
+
+**Function parameters:** A function can take values for performing a task. For example, `double sqrt(double x)` is a standard C library function found in `math.h`. What does this mean? A **double** is a data type used for storing high-precision floating-point numbers in memory registers. Everything we do on our computers involves memory operations. We will come to **float** and **double** later. The function `sqrt()` returns a _fractional number_ in the range of `1.7E-308` to `1.7E+308`, which is **8 bytes.** **E** is a scientific notation that stands for **Exponent of 10** (the **power of 10**). `2.54E16` means $2.54\times10^{16}$. By looking inside the first brackets of the function `sqrt()` we see that it takes a value of the size of double. x is a variable that is used for holding the value in memory before passing it to the internal instructions of the function `sqrt()`, that is, `sqrt(double x)`. So, the function takes a fractional number (float/double) through sqrt(double x) and returns the result which is also a fractional number (float/double), `double sqrt()`. How to use that function?
+
+```c
+double hypotenuse = 0.0;
+double side1 = 16.238;
+double side2 = 20.552;
+hypotenuse = sqrt((side1 * side1) + (side2 * side2));
+printf("Hypotenuse: %lf\n", hypotenuse);
+```
+
+Pythagorean Theorem: $c=\sqrt[2]{(a^2+b^2)}$ , where 'c' denotes the Hypotenuse.
+
+Another way to use the function `sqrt()`:
+
+```c
+double result = 0.0; // initialising the variable
+double fixed_fractional_value = 100.00;
+result = sqrt(fixed_fractional_value);
+printf("Result: %lf\n", result);
+```
+
+Now it is clear that a function can take some value as arguments and return a value. An important note: A function is allowed to return only one value. Thus, a function can receive no value (`void`) and return a value upon completion. A function (other than the `main()`) can take arguments as pointers (we will visit a dedicated chapter on pointers), performs a task, and return the result alternatively via the received pointers without returning anything through a regular return parameter, `void function_x(int *integer_value, char *a_string, float fractional_no)`.
+
+So, the structure is:
+
+```c
+return_parameter function(argument_one, argument_two, argument_three, argument_four, arg_so_on) 
+```
+
+Or, in better words,
+
+```c
+data_type function(data_type variable1, datatype variable2, data_type pointer, data_type_so_on_so_forth)
+```
+
+Or, in better words,
+
+```c
+int/char/float/double fn(int var1, float *var2, double *var3, char **string)
+```
+
+Etc.
+
+Our main function is allowed to either receive two parameters `main(int argc, char *argv[])` or receive nothing `main(void)`. It is allowed to leave the argument section blank, `main()`. In case it is left blank, `main()` will not receive any value. Now ask me what is the purpose of receiving arguments through the `main()` function. What did you type in the console to obtain the assembly language output of your first code? `gcc -S code.c > code.s`, right? `gcc`, the compiler, is a program. `-S` and `code.c` are arguments. The console you are using is a program,`>` is the argument that tells it to redirect the output to a file `code.s` (that too is an argument). In the first chapters, we will restrict ourselves to `int main(void)`, so no worry!
+
 The Rust version.
 
 ```rust
