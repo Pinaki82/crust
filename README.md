@@ -598,12 +598,13 @@ fn main() {
 The C version.
 
 ```c
-// Last Change: 2022-10-21  Friday: 05:18:59 PM
+// Last Change: 2022-10-21  Friday: 09:13:57 PM
 /*
-  A simple Rust program to demonstrate
+  A simple C program to demonstrate
   file input/output & user input/output.
 */
 
+#include <errno.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -611,7 +612,6 @@ The C version.
 // https://iq.opengenus.org/detect-operating-system-in-c/
 #ifdef  __linux__
   #include <unistd.h>
-  char *present_dir = (char *) malloc(1024);
 #endif
 
 int main(int argc, char *argv[]) {
@@ -685,11 +685,20 @@ int main(int argc, char *argv[]) {
 #endif
   // Linux
 #ifdef  __linux__
+  char *present_dir;
+  present_dir = (char *)malloc((size_t)(1024) * sizeof(char));
+
+  if(present_dir == NULL) {
+    fprintf(stderr, "\ndynamic memory allocation failed\n");
+    exit(EXIT_FAILURE);
+  }
 
   if(getcwd(present_dir, 1024) != NULL) {
     fprintf(stdout, "Present Working Directory: %s\n", present_dir);
   }
 
+  free(present_dir);
+  present_dir = NULL;
 #endif
 }
 ```
