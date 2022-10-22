@@ -616,18 +616,18 @@ printf("Type the value for the radius of the circle and hit Enter:\n");
 
 **A bit more on format specifiers:**
 
-| Format Specifier | Description                                                                                              | Data Type (unless Not Applicable) | Examples |
-| ---------------- | -------------------------------------------------------------------------------------------------------- | --------------------------------- | -------- |
-| `%%`             | Prints the `%` sign itself.                                                                              | N/A                               |          |
-| `%d` or `%i`     | Prints a **signed** integer. `10`, `-3` etc.                                                             | `int`                             |          |
-| `%ld`            | Prints a long signed integer.                                                                            | `long int`                        |          |
-| `%lld`           | Prints a long long **signed** integer.                                                                   | `long long int`                   |          |
-| `%u`             | Prints an **unsigned** (non-negative) number.                                                            | `unsigned int`                    |          |
-| `%lu`            | Prints an unsigned (non-negative) long integer number.                                                   | `long unsigned int`               |          |
-| `%f`             | Prints a mid-range floating-point (fractional) number.                                                   | `float`                           |          |
-| `%lf`            | Prints a `double` which can hold bigger values than `float` (also a floating-point [fractional] number). | `double`                          |          |
-| `%c`             | Prints a single character (an alphabet). 'A', 'm', 'W' etc.                                              | `char`                            |          |
-| `%s`             | Prints a string of characters. "A Sentence."                                                             | `char`                            |          |
+| Format Specifier | Description                                                                                                                             | Data Type (unless Not Applicable) | Examples |
+| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------- | -------- |
+| `%%`             | Prints the `%` sign itself.                                                                                                             | N/A                               |          |
+| `%d` or `%i`     | Prints a **signed** integer. `10`, `-3` etc.                                                                                            | `int`                             |          |
+| `%ld`            | Prints a long signed integer.                                                                                                           | `long int`                        |          |
+| `%lld`           | Prints a long long **signed** integer.                                                                                                  | `long long int`                   |          |
+| `%u`             | Prints an **unsigned** (non-negative) number.                                                                                           | `unsigned int`                    |          |
+| `%lu`            | Prints an unsigned (non-negative) long integer number.                                                                                  | `long unsigned int`               |          |
+| `%f`             | Prints a mid-range floating-point (fractional) number.                                                                                  | `float`                           |          |
+| `%lf`            | Prints a `double` which can hold bigger values than `float` (also a floating-point [fractional] number). [`double` means `long float`.] | `double`                          |          |
+| `%c`             | Prints a single character (an alphabet). 'A', 'm', 'W' etc.                                                                             | `char`                            |          |
+| `%s`             | Prints a string of characters. "A Sentence."                                                                                            | `char`                            |          |
 
 The Rust version.
 
