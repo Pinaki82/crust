@@ -629,6 +629,22 @@ printf("Type the value for the radius of the circle and hit Enter:\n");
 | `%c`             | Prints a single character (an alphabet). 'A', 'm', 'W' etc.                                                                             | `char`                            |          |
 | `%s`             | Prints a string of characters. "A Sentence."                                                                                            | `char`                            |          |
 
+How will you print `"` using `printf()`? Simple!
+
+`\"`
+
+```c
+#include <stdio.h>
+
+int main(void) {
+  printf("Regardless of how intimidating\n");
+  printf("it seems to be in the beginning,\n");
+  printf("programming in \"C & Rust\" is\n"); // Notice the use of \" to print "
+  printf("a piece of cake in the end.\n");
+  return 0;
+}
+```
+
 The Rust version.
 
 ```rust
