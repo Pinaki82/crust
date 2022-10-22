@@ -630,6 +630,42 @@ printf("Type the value for the radius of the circle and hit Enter:\n");
 | `%s`             | Prints a string of characters. "A Sentence."                                                                                            | `char`                            |          |
 | `%e`             | Prints an Exponential notation ( small 'e', `2.9738e+00`)                                                                               | `float` or `double`               |          |
 | `%E`             | Prints an Exponential notation ( Capital 'E', `2.9738E+00`)                                                                             | `float` or `double`               |          |
+| `%g`             | A more compact version of `%e` or `%f`. Insignificant zeros are omitted.                                                                | `float` or `double`               |          |
+| `%G`             | Same as `%g`, with a Capital `E`.                                                                                                       | `float` or `double`               |          |
+
+**Conversion Flags**:
+
+How many digits do you want to print, and how many decimal places do you want in the fractional values?
+
+| Flag                | Instruction                                                                            | Example  | Description                                                                                                                                                                                                         | Character                     |
+| ------------------- | -------------------------------------------------------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------- |
+| `+` (Plus sign)     | Must print a sign character (`+` or `-`).                                              | `%+3.4d` | 1) The minimum number of digits to be printed (`%3d`). 2) The number of digits to be printed after the decimal point (usually a Full Stop ASCII character). `%3.4f` will print fractions up to four decimal places. | 1) Field width. 2) Precision. |
+| `-` (Minus sign)    | Same as above, but Output the converted argument as **Left-justified**.                | `%-3.4d` | Do                                                                                                                                                                                                                  | Do                            |
+| `0` (ZERO)          | Fill (called 'pad') with Zeros instead of spaces.                                      | `%03.4d` | Do                                                                                                                                                                                                                  | Do                            |
+| `#` (SHARP or HASH) | Print an alternate form of the output. (Not our concern at the moment for learning C.) |          |                                                                                                                                                                                                                     |                               |
+
+**[Escape sequences](https://stackoverflow.com/questions/9253250/need-help-understanding-how-n-b-and-r-will-render-printf-output)**
+
+| Escape sequence | Activity                                           |
+| --------------- | -------------------------------------------------- |
+| `\n`            | Prints a **New Line** character.                   |
+| `\t`            | Prints a **TAB** character.                        |
+| `\b`            | **Backspace** (non-erase)                          |
+| `\\`            | Prints a **Backslash**.                            |
+| `\"`            | Prints a **Double-Quote**, `"`.                    |
+| `\'`            | Prints a **Single-Quote**, `'`.                    |
+| `\f`            | **Form Feed**/Clear The Screen.                    |
+| `\a`            | **Bell Sound** (plays a speaker beep).             |
+| `\r`            | **Carriage Return**. (Enter).                      |
+| `\v`            | **Vertical tab**.                                  |
+| `\?`            | **Question mark**.                                 |
+| `\xnn`          | Hexadecimal character code `nn` (Not our concern). |
+| `\onn`          | Octal character code `nn` (Not our concern).       |
+| `\nn`           | Octal character code `nn` (Not our concern).       |
+
+**The Return Value of printf()**:
+
+Upon successful completion, `printf()` returns the number of bytes (`int`) it printed.
 
 How will you print `"` using `printf()`? Simple!
 
@@ -655,6 +691,20 @@ a piece of cake in the end.
 ```
 
 You printed `"C & Rust"` using `printf()`.
+
+We've learned something about the `printf()` function. Time to break down our code.
+
+```c
+printf("Type the value for the radius of the circle and hit Enter:\n");
+```
+
+`printf("")` is the minimum form of the `printf()` function. You can write `printf("");` in a line as a complete statement. Even then, the compiler will show you some warning messages like `warning: zero-length gnu_printf format string [-Wformat-zero-length]`. That means anything you want to print to the console must be enclosed within a pair of double quotes, `""`. In C, a character/string is always surrounded by a pair of quotes, `'` `'`/`"` `"`.
+
+The string `Type the value for the radius of the circle and hit Enter:` is a string which must be enclosed within a pair of double quotes, like: `"Type the value for the radius of the circle and hit Enter:"`. After printing the string, we want the cursor to be moved to the next line. `\n` is a format specifier that moves the cursor to the next line as we've seen in the table. Thus, the `printf()` function prints the string and then places the cursor on the next line. Semicolon terminates the statement (a function. Here, `printf()`).
+
+```c
+scanf("%f", &radius);
+```
 
 The Rust version.
 
