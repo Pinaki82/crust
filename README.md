@@ -596,6 +596,10 @@ Legal:
 
 **Variable Initialisation:** The compiler must have some idea of the value a variable is holding at any moment in the process of execution. If the compiler doesn't find a value, it will create one. The automatic variable initialisation creates a randomly generated value which is known as **Garbage Value**. A garbage value will produce unintended result. If the compiler doesn't create a value for an uninitialised variable, the code will try to access a memory location that doesn't exist. The program will crash, leading to unprecedented consequences. It is also a strict rule to initialise the variable immediately after declaring it, or initialise the variable before accessing it. By writing `float radius = 0`, we initialise the variable immediately after the variable declaration.
 
+Have some Fun: **Semicolon:** `;`
+
+Don't forget the use of semicolon (`;`). In a lot of situations I tried to figure out what went wrong with the code and found that a missing semicolon was preventing the compiler from compiling the code. Finding such pesky ommissions is finding a needle in a haystack. Nip those small silly oversights in the bud.
+
 **Assignment Operators:** `=` is an Assignment Operator that binds a value to a variable.
 
 **NOTE:** It has very little to do with the $=$ sign in mathematics, where we use the equal sign to both bind a value and compare something. In programming, `=` means giving a variable a value; simply pouring a glass of water into another glass. The sign `=` is not used for comparison in C. We will discuss Operators in the relevant chapter.
