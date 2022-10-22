@@ -451,6 +451,8 @@ stmt.rs
 
 We don't have to understand most of the Rust compiler stages to understand Rust programming. It is how Rust works in the background. As long as we are able to build our project using Cargo, we won't pull open the bonnet.
 
+**Programming Languages and Compilers:** Remember that Programming Languages are _sets of rules_ defined by a committee, and Compilers are programs that follow their guidelines. Different compiler vendors can make different compilers as long as they follow the same guidelines. Much like the Shops and Establishments Act that empowers you to open a shop but you'll have to follow the law. You cannot do whatever you want in your shop because you run the shop. Every financial institution have to abide by the rules mentioned in the Companies Act. Similarly, you can drive a car as long as you follow the traffic rules. One compiler may give you some advantages over others. However, the rules formed by the organisation that standardises the guidelines, a.k.a., the standardisation committee, must be followed by the compiler vendor.
+
 ---
 
 Enough about macros and the working principles of compilers, let's come back to macros in Rust.
@@ -571,6 +573,32 @@ int/char/float/double fn(int var1, float *var2, double *var3, char **string)
 Etc.
 
 Our main function is allowed to either receive two parameters `main(int argc, char *argv[])` or receive nothing `main(void)`. It is allowed to leave the argument section blank, `main()`. In case it is left blank, `main()` will not receive any value. Now ask me what is the purpose of receiving arguments through the `main()` function. What did you type in the console to obtain the assembly language output of your first code? `gcc -S code.c > code.s`, right? `gcc`, the compiler, is a program. `-S` and `code.c` are arguments. The console you are using is a program,`>` is the argument that tells it to redirect the output to a file `code.s` (that too is an argument). In the first chapters, we will restrict ourselves to `int main(void)`, so no worry!
+
+```
+float radius = 0;
+```
+
+**float:** Float is a **datatype** for storing fractional numbers. In C, a fractinal number is either a **float** or a variant of it, such as **double**. **double** means **long float** which can store bigger numbers than `float`. These are called _floating point numbers_. **float** usually has a storage size of **4 bytes**. It is a `32-bit IEEE 754` _single precision_ value in the range of `1.2E-38` to `3.4E+38` with precision up to **6 decimal places**. You may ask me about the purpose of so many data types. Nothing is unlimited. Our computers have a finite amount of memory, no matter how big it is. Then, there must be a way for the Assembler to determine the size and type of a variable to make the code able to work step by step internally, which is unrelated to the size of your computer memory.
+
+Storage Class and Data Types will be discussed later. We'll deal with primarily with five data types, `int`, variations of `int`, `float`, `double`, `char`, although all Data Types will be covered.
+
+Here, we will be using the **variable** `radius` (a fractional number) to store the result of the calculation in our code to get an output. `float radius` is the part that deals with **variable declaration**. First, we write the **datatype** (here, `float`), then we give our variable a name, `radius`.
+
+There are rules for declaring variables which we will see in a dedicated chapter on variables. For now, remember that a **variable** name **must not** start with a **Capital Letter**, **Number**, or a **Special Character** other than an _underscore_. Only **small letters** and **underscore** are allowed to be placed in the beginning of a variable name. **Special Characters** and **Blank Space** cannot be used anywhere in any naming (variable, structure, function etc.) convention. **Numbers** and **Capital Letters** can be used after writing the variables' initial characters legitimately. We will come to it later.
+
+Legal:
+
+`int variable`, `int _variable`, `float variable01`, `float variable_01`, `char stringVariableTwo`
+
+**Illegal:**
+
+`int Variable`, `float 01variable`, `int v@r!able`, `float variable 01`
+
+**Variable Initialisation:** The compiler must have some idea of the value a variable is holding at any moment in the process of execution. If the compiler doesn't find a value, it will create one. The automatic variable initialisation creates a randomly generated value which is known as **Garbage Value**. A garbage value will produce unintended result. If the compiler doesn't create a value for an uninitialised variable, the code will try to access a memory location that doesn't exist. The program will crash, leading to unprecedented consequences. It is also a strict rule to initialise the variable immediately after declaring it, or initialise the variable before accessing it. By writing `float radius = 0`, we initialise the variable immediately after the variable declaration.
+
+**Assignment Operators:** `=` is an Assignment Operator that binds a value to a variable.
+
+**NOTE:** It has very little to do with the $=$ sign in mathematics, where we use the equal sign to both bind a value and compare something. In programming, `=` means giving a variable a value; simply pouring a glass of water into another glass. The sign `=` is not used for comparison in C. We will discuss Operators in the relevant chapter.
 
 The Rust version.
 
