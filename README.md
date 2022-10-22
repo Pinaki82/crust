@@ -604,7 +604,7 @@ Don't forget the use of semicolon (`;`). In a lot of situations I tried to figur
 
 **Assignment Operators:** `=` is an Assignment Operator that binds a value to a variable.
 
-**NOTE:** It has very little to do with the $=$ sign in mathematics, where we use the equal sign to both bind a value and compare something. In programming, `=` means giving a variable a value; simply pouring a glass of water into another glass. The sign `=` is not used for comparison in C. We will discuss Operators in the relevant chapter.
+**NOTE:** It has very little to do with the $=$ sign in mathematics, where we use the equal sign to both bind a value and compare something. In programming, `=` means giving a variable a value; simply pouring some water into a glass. The sign `=` is not used for comparison in C. We will discuss Operators in the relevant chapter.
 
 The Rust version.
 
