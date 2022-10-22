@@ -594,7 +594,7 @@ Legal:
 
 `int Variable`, `float 01variable`, `int v@r!able`, `float variable 01`
 
-**Variable Initialisation:** The compiler must have some idea of the value a variable is holding at any moment in the process of execution. If the compiler doesn't find a value, it will create one. The automatic variable initialisation creates a randomly generated value which is known as **Garbage Value**. A garbage value will produce unintended result. If the compiler doesn't create a value for an uninitialised variable, the code will try to access a memory location that doesn't exist. The program will crash, leading to unprecedented consequences. It is also a strict rule to initialise the variable immediately after declaring it, or initialise the variable before accessing it. By writing `float radius = 0`, we initialise the variable immediately after the variable declaration.
+**Variable Initialisation:** The compiler must have some idea of the value a variable is holding at any moment in the process of execution. If the compiler doesn't find a value, it will create one. The automatic variable initialisation creates a randomly generated value which is known as **Garbage Value**. A garbage value will produce unintended result. If the compiler doesn't create a value for an uninitialised variable, the code will try to access a memory location that doesn't exist. The program will crash, leading to unprecedented consequences. It is also a strict rule to initialise the variable immediately after declaring it (C & Rust), or initialise the variable before accessing it (C). By writing `float radius = 0`, we initialise the variable immediately after the variable declaration.
 
 Have some Fun: **Semicolon:** `;`
 
