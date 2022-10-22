@@ -700,7 +700,7 @@ printf("Type the value for the radius of the circle and hit Enter:\n");
 
 `printf("")` is the minimum form of the `printf()` function. You can write `printf("");` in a line as a complete statement. Even then, the compiler will show you some warning messages like `warning: zero-length gnu_printf format string [-Wformat-zero-length]`. That means anything you want to print to the console must be enclosed within a pair of double quotes, `""`. In C, a character/string is always surrounded by a pair of quotes, `'` `'`/`"` `"`.
 
-The string `Type the value for the radius of the circle and hit Enter:` is a string which must be enclosed within a pair of double quotes, like: `"Type the value for the radius of the circle and hit Enter:"`. After printing the string, we want the cursor to be moved to the next line. `\n` is a format specifier that moves the cursor to the next line as we've seen in the table. Thus, the `printf()` function prints the string and then places the cursor on the next line. Semicolon terminates the statement (a function. Here, `printf()`).
+The string `Type the value for the radius of the circle and hit Enter:` is a string which must be enclosed within a pair of double quotes, like: `"Type the value for the radius of the circle and hit Enter:"`. After printing the string, we want the cursor to be moved to the next line. `\n` is an escape sequence that moves the cursor to the next line as we've seen in the table. Thus, the `printf()` function prints the string and then places the cursor on the next line. Semicolon terminates the statement (a function. Here, `printf()`).
 
 ```c
 scanf("%f", &radius);
