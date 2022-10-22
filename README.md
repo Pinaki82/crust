@@ -628,6 +628,8 @@ printf("Type the value for the radius of the circle and hit Enter:\n");
 | `%lf`            | Prints a `double` which can hold bigger values than `float` (also a floating-point [fractional] number). [`double` means `long float`.] | `double`                          |          |
 | `%c`             | Prints a single character (an alphabet). 'A', 'm', 'W' etc.                                                                             | `char`                            |          |
 | `%s`             | Prints a string of characters. "A Sentence."                                                                                            | `char`                            |          |
+| `%e`             | Prints an Exponential notation ( small 'e', `2.9738e+00`)                                                                               | `float` or `double`               |          |
+| `%E`             | Prints an Exponential notation ( Capital 'E', `2.9738E+00`)                                                                             | `float` or `double`               |          |
 
 How will you print `"` using `printf()`? Simple!
 
@@ -638,12 +640,21 @@ How will you print `"` using `printf()`? Simple!
 
 int main(void) {
   printf("Regardless of how intimidating\n");
-  printf("it seems to be in the beginning,\n");
+  printf("it seems in the beginning,\n");
   printf("programming in \"C & Rust\" is\n"); // Notice the use of \" to print "
   printf("a piece of cake in the end.\n");
   return 0;
 }
 ```
+
+```
+Regardless of how intimidating
+it seems in the beginning,
+programming in "C & Rust" is
+a piece of cake in the end.
+```
+
+You printed `"C & Rust"` using `printf()`.
 
 The Rust version.
 
