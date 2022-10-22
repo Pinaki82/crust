@@ -606,6 +606,34 @@ Don't forget the use of semicolon (`;`). In a lot of situations I tried to figur
 
 **NOTE:** It has very little to do with the $=$ sign in mathematics, where we use the equal sign to both bind a value and compare something. In programming, `=` means giving a variable a value; simply pouring some water into a glass. The sign `=` is not used for comparison in C. We will discuss Operators in the relevant chapter.
 
+```c
+printf("Type the value for the radius of the circle and hit Enter:\n");
+```
+
+`printf()` is a standard library function (`int printf(const char *format-string, argument-list)`) declared in the header file `stdio.h` that takes two arguments in the format `(const char *format-string, argument-list)` and returns an `integer` value after completion.
+
+`const char *format-string` means the the first argument (before the comma that separates it from the second argument) takes a formatted string specified by the string conversion specifications in the C programming language.
+
+**A bit more on format specifiers:**
+
+| Format Specifier | Description                                  | Data Type (unless Not Applicable) |
+| ---------------- | -------------------------------------------- | --------------------------------- |
+| `%%`             | Prints the `%` sign itself.                  | N/A                               |
+| `%d` or `%i`     | Prints a **signed integer**. `10`, `-3` etc. |                                   |
+|                  |                                              |                                   |
+|                  |                                              |                                   |
+|                  |                                              |                                   |
+|                  |                                              |                                   |
+|                  |                                              |                                   |
+|                  |                                              |                                   |
+|                  |                                              |                                   |
+|                  |                                              |                                   |
+|                  |                                              |                                   |
+|                  |                                              |                                   |
+|                  |                                              |                                   |
+|                  |                                              |                                   |
+|                  |                                              |                                   |
+
 The Rust version.
 
 ```rust
