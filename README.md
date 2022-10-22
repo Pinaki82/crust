@@ -580,7 +580,7 @@ float radius = 0;
 
 **float:** Float is a **datatype** for storing fractional numbers. In C, a fractinal number is either a **float** or a variant of it, such as **double**. **double** means **long float** which can store bigger numbers than `float`. These are called _floating point numbers_. **float** usually has a storage size of **4 bytes**. It is a `32-bit IEEE 754` _single precision_ value in the range of `1.2E-38` to `3.4E+38` with precision up to **6 decimal places**. You may ask me about the purpose of so many data types. Nothing is unlimited. Our computers have a finite amount of memory, no matter how big it is. Then, there must be a way for the Assembler to determine the size and type of a variable to make the code able to work step by step internally, which is unrelated to the size of your computer memory.
 
-Storage Class and Data Types will be discussed later. We'll deal with primarily with five data types, `int`, variations of `int`, `float`, `double`, `char`, although all Data Types will be covered.
+Storage Class and Data Types will be discussed later. We'll deal with five data types, `int`, variations of `int`, `float`, `double`, `char` primarily, although all Data Types will be covered.
 
 Here, we will be using the **variable** `radius` (a fractional number) to store the result of the calculation in our code to get an output. `float radius` is the part that deals with **variable declaration**. First, we write the **datatype** (here, `float`), then we give our variable a name, `radius`.
 
