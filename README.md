@@ -616,23 +616,32 @@ printf("Type the value for the radius of the circle and hit Enter:\n");
 
 **A bit more on format specifiers:**
 
-| Format Specifier | Description                                  | Data Type (unless Not Applicable) |
-| ---------------- | -------------------------------------------- | --------------------------------- |
-| `%%`             | Prints the `%` sign itself.                  | N/A                               |
-| `%d` or `%i`     | Prints a **signed integer**. `10`, `-3` etc. |                                   |
-|                  |                                              |                                   |
-|                  |                                              |                                   |
-|                  |                                              |                                   |
-|                  |                                              |                                   |
-|                  |                                              |                                   |
-|                  |                                              |                                   |
-|                  |                                              |                                   |
-|                  |                                              |                                   |
-|                  |                                              |                                   |
-|                  |                                              |                                   |
-|                  |                                              |                                   |
-|                  |                                              |                                   |
-|                  |                                              |                                   |
+| Format Specifier | Description                                  | Data Type (unless Not Applicable) | Examples |
+| ---------------- | -------------------------------------------- | --------------------------------- | -------- |
+| `%%`             | Prints the `%` sign itself.                  | N/A                               |          |
+| `%d` or `%i`     | Prints a **signed integer**. `10`, `-3` etc. |                                   |          |
+|                  |                                              |                                   |          |
+|                  |                                              |                                   |          |
+|                  |                                              |                                   |          |
+|                  |                                              |                                   |          |
+|                  |                                              |                                   |          |
+|                  |                                              |                                   |          |
+|                  |                                              |                                   |          |
+|                  |                                              |                                   |          |
+|                  |                                              |                                   |          |
+|                  |                                              |                                   |          |
+|                  |                                              |                                   |          |
+|                  |                                              |                                   |          |
+|                  |                                              |                                   |          |
+|                  |                                              |                                   |          |
+|                  |                                              |                                   |          |
+|                  |                                              |                                   |          |
+|                  |                                              |                                   |          |
+|                  |                                              |                                   |          |
+|                  |                                              |                                   |          |
+|                  |                                              |                                   |          |
+|                  |                                              |                                   |          |
+|                  |                                              |                                   |          |
 
 The Rust version.
 
