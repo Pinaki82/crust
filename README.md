@@ -598,6 +598,8 @@ Legal:
 
 Have some Fun: **Semicolon:** `;`
 
+![semicolon-joker-compiler-bats-an-eye](assets/semicolon-joker-compiler-bats-an-eye.jpg)
+
 Don't forget the use of semicolon (`;`). In a lot of situations I tried to figure out what went wrong with the code and found that a missing semicolon was preventing the compiler from compiling the code. Finding such pesky ommissions is finding a needle in a haystack. Nip those small silly oversights in the bud.
 
 **Assignment Operators:** `=` is an Assignment Operator that binds a value to a variable.
