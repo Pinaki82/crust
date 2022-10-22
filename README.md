@@ -623,7 +623,7 @@ printf("Type the value for the radius of the circle and hit Enter:\n");
 | `%ld`            | Prints a long signed integer.                                                                            | `long int`                        |          |
 | `%lld`           | Prints a long long **signed** integer.                                                                   | `long long int`                   |          |
 | `%u`             | Prints an **unsigned** (non-negative) number.                                                            | `unsigned int`                    |          |
-| `%lu`            | Prints an unsigned (non-negative) long integer number.                                                   | `unsigned long int`               |          |
+| `%lu`            | Prints an unsigned (non-negative) long integer number.                                                   | `long unsigned int`               |          |
 | `%f`             | Prints a mid-range floating-point (fractional) number.                                                   | `float`                           |          |
 | `%lf`            | Prints a `double` which can hold bigger values than `float` (also a floating-point [fractional] number). | `double`                          |          |
 | `%c`             | Prints a single character (an alphabet). 'A', 'm', 'W' etc.                                              | `char`                            |          |
