@@ -618,7 +618,7 @@ printf("Type the value for the radius of the circle and hit Enter:\n");
 
 Before we dive into examples, let us declare variables:
 
-Know the number of bytes a datatype can store. Example:
+Know the number of bytes a datatype can store. Examples:
 
 `printf("Size of int is: %llu\n", sizeof(int));`
 
@@ -634,9 +634,9 @@ A **bit** can store `2` values (`0` and `1`).
 
 An `int` can store `4` bytes, or simply, $4\times8$ (no. of bytes multiplied by no. of bits per byte) $=$ $32$ **bit**.
 
-That means, 2 values multiplied by 32 (per byte) $= (2)^{32}$.
+That means, 2 values (`0` & `1`) multiplied by 32 (per byte) $= (2)^{32}$.
 
-When a variable is signed, the most significant bit is reserved for the sign itself reducing it to the total capacity minus one. `0` denotes a positive number and `1` denotes a negative number. Thus, making the room available for a `signed int` in the range of `-2^31` to `2^31-1` and for the unsigned ones `0` to `2^32-1`. Do you have the Microsoft Calculator installed on your computer. Go to the Scientific Calculator Mode and find the value of `2^31`. It is `2147483648`. The range of a `signed int` (or `int`) is `-2147483648` to `2147483647`. The range of an `unsigned int` is `0` to `4294967295`. I use the MATE Calculator on my Ubuntu XFCE machine. On Ubuntu GNOME, you'll find the GNOME Calculator. Most modern calculators have a scientific mode.
+When a variable is signed, the most significant bit is reserved for the sign itself reducing it to the total capacity minus one. `0` denotes a positive number, and `1` denotes a negative number, thus, making the room available for a `signed int` in the range of `-2^31` to `2^31-1`, and for the unsigned ones `0` to `2^32-1`. Do you have the Microsoft Calculator installed on your computer. Go to the Scientific Calculator Mode and find the value of `2^31`. It is `2147483648`. The range of a `signed int` (or `int`) is `-2147483648` to `2147483647`. The range of an `unsigned int` is `0` to `4294967295`. I use the MATE Calculator on my Ubuntu XFCE machine. On Ubuntu GNOME, you'll find the GNOME Calculator. Most modern calculators have a scientific mode.
 
 `int an_integer = 10;`
 
