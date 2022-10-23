@@ -616,22 +616,65 @@ printf("Type the value for the radius of the circle and hit Enter:\n");
 
 **A bit more on format specifiers:**
 
-| Format Specifier | Description                                                                                                                             | Data Type (unless Not Applicable) | Examples |
-| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------- | -------- |
-| `%%`             | Prints the `%` sign itself.                                                                                                             | N/A                               |          |
-| `%d` or `%i`     | Prints a **signed** integer. `10`, `-3` etc.                                                                                            | `int`                             |          |
-| `%ld`            | Prints a long signed integer.                                                                                                           | `long int`                        |          |
-| `%lld`           | Prints a long long **signed** integer.                                                                                                  | `long long int`                   |          |
-| `%u`             | Prints an **unsigned** (non-negative) number.                                                                                           | `unsigned int`                    |          |
-| `%lu`            | Prints an unsigned (non-negative) long integer number.                                                                                  | `long unsigned int`               |          |
-| `%f`             | Prints a mid-range floating-point (fractional) number.                                                                                  | `float`                           |          |
-| `%lf`            | Prints a `double` which can hold bigger values than `float` (also a floating-point [fractional] number). [`double` means `long float`.] | `double`                          |          |
-| `%c`             | Prints a single character (an alphabet). 'A', 'm', 'W' etc.                                                                             | `char`                            |          |
-| `%s`             | Prints a string of characters. "A Sentence."                                                                                            | `char`                            |          |
-| `%e`             | Prints an Exponential notation ( small 'e', `2.9738e+00`)                                                                               | `float` or `double`               |          |
-| `%E`             | Prints an Exponential notation ( Capital 'E', `2.9738E+00`)                                                                             | `float` or `double`               |          |
-| `%g`             | A more compact version of `%e` or `%f`. Insignificant zeros are omitted.                                                                | `float` or `double`               |          |
-| `%G`             | Same as `%g`, with a Capital `E`.                                                                                                       | `float` or `double`               |          |
+Before we dive into examples, let us declare variables:
+
+Know the number of bytes a datatype can store. Example:
+
+`printf("Size of int is: %llu\n", sizeof(int));`
+
+`printf("Size of unsigned int is: %llu\n", sizeof(unsigned int));`
+
+`printf("Size of short is: %llu\n", sizeof(short));`
+
+`printf("Size of char is: %llu\n", sizeof(char));`
+
+A **bit** can store `2` values (`0` and `1`).
+
+`8` **bit** $=$ `1` **byte**. Conversely, `1` **byte** $=$ `8` **bit**.
+
+An `int` can store `4` bytes, or simply, $4\times8$ (no. of bytes multiplied by no. of bits per byte) $=$ $32$ **bit**.
+
+That means, 2 values multiplied by 32 (per byte) $= (2)^{32}$.
+
+When a variable is signed, the most significant bit is reserved for the sign itself reducing it to the total capacity minus one. `0` denotes a positive number and `1` denotes a negative number. Thus, making the room available for a `signed int` in the range of `-2^31` to `2^31-1` and for the unsigned ones `0` to `2^32-1`. Do you have the Microsoft Calculator installed on your computer. Go to the Scientific Calculator Mode and find the value of `2^31`. It is `2147483648`. The range of a `signed int` (or `int`) is `-2147483648` to `2147483647`. The range of an `unsigned int` is `0` to `4294967295`. I use the MATE Calculator on my Ubuntu XFCE machine. On Ubuntu GNOME, you'll find the GNOME Calculator. Most modern calculators have a scientific mode.
+
+`int an_integer = 10;`
+
+`float a_fractional_no = 11.3268;`
+
+`float a_bigger_fractional_no = 11238879.2675468746768768713;`
+
+`long int a_big_integer = 123669788445664446;`
+
+`long int a_big_integer = 12366976;` or, simply `long a_big_integer = 12366976;`
+
+`long long int a_very_big_integer = 123669765464787971;`
+
+`unsigned int a_non_neg_no = 42949672;`
+
+`long unsigned int a_non_neg_big_no = 1844674405;`
+
+`char a_sentence[26] = "Abracadabra in a sentence!";` or, `char a_sentence[] = "Abracadabra in a sentence!";`
+
+`double _expo = 5.2376e+02;`
+
+| Format Specifier | Description                                                                                                                             | Data Type (unless Not Applicable) | Examples                                                           | Size (in Bytes)      | Range (on a 64-bit compiler)                     | Precision                  |
+| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------- | ------------------------------------------------------------------ |:--------------------:| ------------------------------------------------ | -------------------------- |
+| `%%`             | Prints the `%` sign itself.                                                                                                             | N/A                               | `printf("%%");` Output: `%`                                        |                      |                                                  |                            |
+| `%d` or `%i`     | Prints a **signed** integer. `10`, `-3` etc.                                                                                            | `int`                             | `printf("%d", an_integer);` Output: `10`                           | 4                    | `-2147483648` to `2147483647`                    |                            |
+| `%ld`            | Prints a long signed integer.                                                                                                           | `long int`                        | `printf("%ld", a_big_integer);` Output: `12366976`                 | 8                    | `-9223372036854775808` to `9223372036854775807`  |                            |
+| `%lld`           | Prints a long long **signed** integer.                                                                                                  | `long long int`                   | `printf("%lld", a_very_big_integer);` Output: `123669765464787971` | 8                    | `-9223372036854775808` to `9223372036854775807`  |                            |
+| `%u`             | Prints an **unsigned** (non-negative) number.                                                                                           | `unsigned int`                    | `printf("%u", a_non_neg_no);` Output: `42949672`                   | 4                    | `0` to `4294967295`                              | a                          |
+| `%lu`            | Prints an unsigned (non-negative) long integer number.                                                                                  | `long unsigned int`               | `printf("%lu", a_non_neg_big_no);` Output: `1844674405`            | 8                    | `0` to `18446744073709551615`                    |                            |
+| `%f`             | Prints a mid-range floating-point (fractional) number.                                                                                  | `float`                           | `printf("%f", a_fractional_no);` Output: `11.326800`               | 4                    | `1.2E-38` to `3.4E+38`                           | Up to `6` decimal places.  |
+| `%lf`            | Prints a `double` which can hold bigger values than `float` (also a floating-point [fractional] number). [`double` means `long float`.] | `double`                          | `printf("%lf", a_bigger_fractional_no);` Output: `11238879.000000` | 8                    | `2.3E-308` to `1.7E+308`                         | Up to `15` decimal places. |
+| `%Lf`            |                                                                                                                                         | `long double`                     |                                                                    | 16                   | `3.4E-4932` to `1.1E+4932`                       | Up to `19` decimal places. |
+| `%c`             | Prints a single character (an alphabet). 'A', 'm', 'W' etc.                                                                             | `char`                            | `printf("%c", _one_alphabet);` Output: `W`.                        | 1                    | Signed: `-128` to `127`. Unsigned: `0` to `255`. |                            |
+| `%s`             | Prints a string of characters. "A Sentence."                                                                                            | `char`                            | `printf("%s", a_sentence);` Output: `Abracadabra in a sentence!`   | 1 byte per character | Depends on the size of the string length.        |                            |
+| `%e`             | Prints an Exponential notation ( small 'e', `2.9738e+00`)                                                                               | `float` or `double`               | `printf("%e", _expo);` Output: `5.237600e+02`                      |                      |                                                  |                            |
+| `%E`             | Prints an Exponential notation ( Capital 'E', `2.9738E+00`)                                                                             | `float` or `double`               |                                                                    |                      |                                                  |                            |
+| `%g`             | A more compact version of `%e` or `%f`. Insignificant zeros are omitted.                                                                | `float` or `double`               |                                                                    |                      |                                                  |                            |
+| `%G`             | Same as `%g`, with a Capital `E`.                                                                                                       | `float` or `double`               |                                                                    |                      |                                                  |                            |
 
 **Conversion Flags**:
 
