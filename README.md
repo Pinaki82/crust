@@ -1009,7 +1009,7 @@ We've already talked about [The main() Function](#the-main-function). Move on to
 
 The `let` [keyword](https://doc.rust-lang.org/book/appendix-01-keywords.html) in Rust is used to **create**/declare **variables**.
 
-**Keywords** in C and Rust are **reserved words**. They cannot be used for naming variables/constants/function/structures. Each keyword has its unique purpose, and its name is reserved for that specific purpose.
+**Keywords** in C and Rust are **reserved words**. They cannot be used for naming variables/constants/functions/structures. Each keyword has its unique purpose, and its name is reserved for that specific purpose.
 
 An example of `let`:
 
