@@ -835,7 +835,7 @@ The sign `&` is called the **Ampersand** _operator_. It is known as the "Address
 
 [Image from Wikipedia.]
 
-`scanf()` reads user input from the `stdin`. `scanf()` needs to store the input somewhere in the memory. As a coder, it is your duty to instruct `scanf()` to bind that  input value to a variable. It's not magic. Computers don't understand variable names. Every variable has a definite memory address (memory registers) where the program stores the value related to that variable. Variables are names. They need a room to live in. The picture above shows an image of a Pigeonhole where every pigeon lives in a designated room (hole). Imagine a name for each pigeon. Imagine an address number for each hole, too. A variable is like a pigeon that lives in a box/hole that has an address. Each memory cell/register in your PC's memory can house only one pigeon (variable).
+`scanf()` reads user input from the `stdin`. `scanf()` needs to store the input somewhere in the memory. As a coder, it is your duty to instruct `scanf()` to bind that  input value to a variable. It's not magic. Computers don't understand variable names. Every variable has a definite memory address (memory registers) where the program stores the value related to that variable. Variables are names. They need a room to live in. The picture above shows an image of a Pigeonhole where every pigeon lives in a designated room (hole). Imagine a name for each pigeon. Imagine an address number for each hole, too. A variable is like a pigeon that lives in a box/hole that has an address. Each memory cell/register in your PC's memory can house only one pigeon (variable) at a time.
 
 The fun part is that every pigeon (variable) in your computer can behave like a [Matryoshka doll](https://en.wikipedia.org/wiki/Matryoshka_doll).
 
@@ -843,7 +843,9 @@ The fun part is that every pigeon (variable) in your computer can behave like a 
 
 With exceptions that their physical size never shrinks. One Pigeon-Shaped Matryoshka Doll can house another Pigeon-Shaped Matryoshka Doll without changing their size, thus, essentially behaving like both a pigeon and a pigeonhole simultaneously.
 
-Assume there are three variables, `a`, `b`, and `c`. Of them, `c` holds a user-supplied integer value, `b` holds the address of `c`, and finally, `a` holds the address of `b`. `a` points to `b`, `b` points to `c`.
+Assume there are three variables, `a`, `b`, and `c`. Of them, `c` holds a user-supplied integer value, `b` holds the address of `c`, and finally, `a` holds the address of `b`.
+
+`a` points to `b`, `b` points to `c`.
 
 a -> b -> c.
 
@@ -851,7 +853,7 @@ a -> b -> c.
 
 We will see it when we will discuss **Pointers**. For now, Pigeons, Pigeonholes, and Pigeons as Matryoshka Dolls are the easiest explanation of all I could explain at best.
 
-Coming back to the **Ampersand** operator, we use this to point to the variables' address (memory locations/registers) where the program can store the value it received from the `stdin`, using this `&` _operator_ as the value collector. The values of the variables get stored in their respective memory location.
+Coming back to the **Ampersand** operator, we use this to point to the variables' addresses (memory locations/registers) where the program can store the value it received from the `stdin`, using this `&` _operator_ as the value collector. The values of the variables get stored in their respective memory locations.
 
 ```c
 int var = 0;
