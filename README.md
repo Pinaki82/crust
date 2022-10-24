@@ -989,6 +989,51 @@ How will you format the code for better readability?
 rustfmt code.rs
 ```
 
+Now we will see what the code does, line by line.
+
+Notice that we didn't include a header file like `stdio.h`. That doesn't mean Rust doesn't have a Standard Library concept like in C. We will call the Rust's Standard Library differently.
+
+We will have to take user input and perform calculations before printing the result as output. To do that, we need to bring the `io` input/output **library** into _scope_. The `io` library is contained in the **Standard Library**, known as `std:`.
+
+The `use` keyword -> Bring symbols into **scope**:
+
+```rust
+use std::io;
+```
+
+In C, we don't use a statement terminator `;` after a macro, `#include <stdio.h>`. In Rust, we are calling a set of sub-routines `io` into the **scope** from `std`. It is a statement, so we are using the statement terminator. C and Rust are not exactly the same. So there will be some differences.
+
+We've already talked about [The main() Function](#the-main-function). Move on to the next line.
+
+`println!()` is a macro, which is used to send formatted strings to the console as we've discussed before. To send an unchangeable string to the console using `println!()`, the string must be enclosed within double-quotes, `"A String"`. `println!("A String")` is the simplest example of its use.
+
+The `let` [keyword](https://doc.rust-lang.org/book/appendix-01-keywords.html) in Rust is used to **create**/declare **variables**.
+
+**Keywords** in C and Rust are **reserved words**. They cannot be used for naming variables/constants/function/structures. Each keyword has its unique purpose, and its name is reserved for that specific purpose.
+
+An example of `let`:
+
+```rust
+let price = 2;
+```
+
+We declared a new **variable** named `price` and initialised a value for it, `2`.
+
+**Mutable and Immutable Variables**:
+
+In Rust, variables are immutable by default. That means once we assign a value to the variable, the value won't change.
+
+This is not very practical since the value may be changed during the program's run, or we may have to store the output in a variable to see the result of a calculation. After all, programming is more or less performing calculations faster.
+
+To make a variable mutable, we add the `mut` keyword before the variable's name:
+
+```rust
+let price = 2; // immutable
+let mut dishes = 3; // mutable
+```
+
+The equal sign (`=`) tells the compiler to assign a value to a variable. It is called the **Assignment Operator**. We will come to the **Operators** later.
+
 Let's break down the third skeleton before we move on to the actual chapters.
 
 ```rust
