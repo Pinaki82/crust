@@ -898,6 +898,54 @@ The address of the var (decimal):
 128070974652
 ```
 
+We haven't left our Area of a Circle program yet.
+
+Typecasting: It is a technique of converting one data type to another, e.g, `float` to `double` etc.
+
+There are two kinds of typecasting: 1) Implicit and 2) Explicit.
+
+When the compiler converts the datatype for calculating mixed types of variables, it is called **Implicit Typecasting**. Loss of precision may take place in the process since the compiler does so by following some pre-defined methods.
+
+When the coder converts the type in the code, it is called **Explicit Typecasting**. Precision loss may occur if not done properly.
+
+We declared our variable `radius` as a `float`, `float radius = 0;`. To print it as a `float`, we must convert its datatype.
+
+The syntax for explicit type casting is,
+
+```
+(datatype) expression
+```
+
+Thus,
+
+```c
+printf("Radius = %f\n", (double)radius);
+```
+
+**`pow()` or `double pow(double x, double y)`:**
+
+```c
+area = (float)(PI * (pow((double)radius, 2))); // The formula: area = pi * r^2
+```
+
+As we've discussed before, the function `pow(x,y)` returns `x` raised to the power of `y` i.e. `x^y` (`x` to the power `y`). `pow()` is declared and defined in the C standard library `math.h`.
+
+`pow()` expects `double`s, not `float`s. All our variables are `float` variables. So, here we need typecasting to interfere. First we converted the `radius`, then the outcome of the calculation `(PI * (pow((double)radius, 2)))`.
+
+Now, We will be sending (printing) the total output to the console.
+
+```c
+printf("Area = %f\n", (double)area);
+```
+
+Next:
+
+```c
+return 0;
+```
+
+Upon succesful completion, our C program will `return` an integer value `0` to the operating system that indicates everything went as expected, no errors (`0` errors) occurred.
+The C version of the program to calculate the area of a circle is complete.
 The Rust version.
 
 ```rust
