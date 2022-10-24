@@ -658,6 +658,28 @@ When a variable is signed, the most significant bit is reserved for the sign its
 
 `double _expo = 5.2376e+02;`
 
+Try it yourself.
+
+Template:
+
+```c
+#include <stdio.h>
+
+int main(void) {
+  long long int a_very_big_integer = 123669765464787971;
+  printf("Size of long long int is: %llu\n", sizeof(long long int));
+  printf("%lld", a_very_big_integer);
+  return 0;
+}
+```
+
+Output:
+
+```
+Size of long long int is: 8
+123669765464787971
+```
+
 | Format Specifier | Description                                                                                                                             | Data Type (unless Not Applicable) | Examples                                                           | Size (in Bytes)      | Range (on a 64-bit compiler)                     | Precision                  |
 | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------- | ------------------------------------------------------------------ |:--------------------:| ------------------------------------------------ | -------------------------- |
 | `%%`             | Prints the `%` sign itself.                                                                                                             | N/A                               | `printf("%%");` Output: `%`                                        |                      |                                                  |                            |
