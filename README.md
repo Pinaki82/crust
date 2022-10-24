@@ -910,7 +910,7 @@ When the coder converts the type in the code, it is called **Explicit Typecastin
 
 We declared our variable `radius` as a `float`, `float radius = 0;`. To print it as a `float`, we must convert its datatype.
 
-The syntax for explicit type casting is,
+The syntax for explicit typecasting is,
 
 ```
 (datatype) expression
@@ -945,7 +945,9 @@ return 0;
 ```
 
 Upon succesful completion, our C program will `return` an integer value `0` to the operating system that indicates everything went as expected, no errors (`0` errors) occurred.
+
 The C version of the program to calculate the area of a circle is complete.
+
 The Rust version.
 
 ```rust
