@@ -771,6 +771,129 @@ The string `Type the value for the radius of the circle and hit Enter:` is a str
 scanf("%f", &radius);
 ```
 
+**The `scanf()` function:**
+
+Purpose: The function `scanf()`reads formatted (user) input from `stdin`.
+
+```c
+int scanf(const char *format, ...)
+```
+
+Here, the `format` is a string that contains one or more type specifier(s) such as `%d`, `%f`, `%c`, `%Lf` etc.
+
+`...` means that the string may consist of a series of specifiers (more than one fixed string).
+
+Some common usage of the function `scanf()`:
+
+```c
+int/float/char/... variable = initialised_value;
+scanf("%d/%f/%c/%...", &variable);
+```
+
+One user-input:
+
+```c
+int mangos = 0;
+scanf("%d", &mangos); // scanf() to read the user input
+printf("No. of mangos = %d\n", mangos);
+```
+
+Multiple input:
+
+```c
+  int mangos = 0;
+  char _one_ASCII_character = 'a';
+  float a_fractional_no = 0.0;
+  int rtrnd_from_scanf_ = 0;
+  printf("Type the no. of mangos <space> a single ASCII char <space> a fractional no. <Enter>\n");
+  rtrnd_from_scanf_ = scanf("%d %c %f", &mangos, &_one_ASCII_character, &a_fractional_no);
+    // scanf() to read multiple input
+  printf("no. of mangos: %d, ASCII char: %c, fractional no: %f\n", mangos, _one_ASCII_character, a_fractional_no);
+  printf("No. of items read: %d\n", rtrnd_from_scanf_);
+```
+
+Output (2nd. Multiple input):
+
+```
+Type the no. of mangos <space> a single ASCII char <space> a fractional no. <Enter>
+7 Y 2.5
+no. of mangos: 7, ASCII char: Y, fractional no: 2.500000
+No. of items read: 3
+```
+
+Return value: On success, `scanf()` returns the number of items (specified by the format specifier, `%d`, `%f`, etc.) it read. `int` is the return type. In case of a read error, `scanf()` returns a number $<0$.
+
+By the way, how will you force-kill a C program? **CTRL**+**c**.
+
+What is `&`?
+
+The sign `&` is called the **Ampersand** _operator_. It is known as the "Address Of The Variable Operator". For more info, look [here](https://dev.to/sandordargo/how-to-use-ampersands-in-c-3kga). We will learn other applications of the **Ampersand** operator later.
+
+![pigeonhole](https://upload.wikimedia.org/wikipedia/commons/5/5c/TooManyPigeons.jpg)
+
+[Image from Wikipedia.]
+
+`scanf()` reads user input from the `stdin`. `scanf()` needs to store the input somewhere in the memory. As a coder, it is your duty to instruct `scanf()` to bind that  input value to a variable. It's not magic. Computers don't understand variable names. Every variable has a definite memory address (memory registers) where the program stores the value related to that variable. Variables are names. They need a room to live in. The picture above shows an image of a Pigeonhole where every pigeon lives in a designated room (hole). Imagine a name for each pigeon. Imagine an address number for each hole, too. A variable is like a pigeon that lives in a box/hole that has an address. Each memory cell/register in your PC's memory can house only one pigeon (variable).
+
+The fun part is that every pigeon (variable) in your computer can behave like a [Matryoshka doll](https://en.wikipedia.org/wiki/Matryoshka_doll).
+
+![matryoshka-doll](assets/matryoshka-doll.jpg)
+
+With exceptions that their physical size never shrinks. One Pigeon-Shaped Matryoshka Doll can house another Pigeon-Shaped Matryoshka Doll without changing their size, thus, essentially behaving like both a pigeon and a pigeonhole simultaneously.
+
+Assume there are three variables, `a`, `b`, and `c`. Of them, `c` holds a user-supplied integer value, `b` holds the address of `c`, and finally, `a` holds the address of `b`. `a` points to `b`, `b` points to `c`.
+
+a -> b -> c.
+
+`c` has the actual value in store for them, all others are holding addresses.
+
+We will see it when we will discuss **Pointers**. For now, Pigeons, Pigeonholes, and Pigeons as Matryoshka Dolls are the easiest explanation of all I could explain at best.
+
+Coming back to the **Ampersand** operator, we use this to point to the variables' address (memory locations/registers) where the program can store the value it received from the `stdin`, using this `&` _operator_ as the value collector. The values of the variables get stored in their respective memory location.
+
+```c
+int var = 0;
+scanf("%d", &var);
+```
+
+You can print the said address of the variable at any given moment of execution.
+
+```c
+printf("%llu", &var);
+```
+
+Here's a complete overview:
+
+```c
+#include <stdio.h>
+
+int main(void) {
+  int var = 0;
+  printf("Type a number & hit Enter:\n");
+  scanf("%d", &var);
+  printf("The value of the var is %d\n", var);
+  printf("The address of the var (HEX):\n");
+  printf("%p", &var);
+  printf("\n");
+  printf("The address of the var (decimal):\n");
+  printf("%llu", &var);
+  printf("\n");
+  return 0;
+}
+```
+
+Output:
+
+```
+Type a number & hit Enter:
+7
+The value of the var is 7
+The address of the var (HEX):
+0000001dd19ffcbc
+The address of the var (decimal):
+128070974652
+```
+
 The Rust version.
 
 ```rust
