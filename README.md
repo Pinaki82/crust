@@ -932,6 +932,10 @@ As we've discussed before, the function `pow(x,y)` returns `x` raised to the pow
 
 `pow()` expects `double`s, not `float`s. All our variables are `float` variables. So, here we need typecasting to interfere. First we converted the `radius`, then the outcome of the calculation `(PI * (pow((double)radius, 2)))`.
 
+**Multiplication operator**: It is a part of the **Arithmetic Operators** group, denoted by `*`. The sign `*` has other applications, such as indicating a variable as a pointer. For now, we will be using it as a **Multiplication Operator**, one of its many applications.
+
+`PI * (pow(...));` means multiply `PI` by `(pow(...))`.
+
 Now, We will be sending (printing) the total output to the console.
 
 ```c
