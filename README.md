@@ -668,7 +668,7 @@ Template:
 int main(void) {
   long long int a_very_big_integer = 123669765464787971;
   printf("Size of long long int is: %llu\n", sizeof(long long int));
-  printf("%lld", a_very_big_integer);
+  printf("%lld", a_very_big_integer); /* Prints the initialised value */
   return 0;
 }
 ```
