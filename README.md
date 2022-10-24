@@ -773,7 +773,7 @@ scanf("%f", &radius);
 
 **The `scanf()` function:**
 
-Purpose: The function `scanf()`reads formatted (user) input from `stdin`.
+Purpose: The function `scanf()` reads formatted (user) input from `stdin`.
 
 ```c
 int scanf(const char *format, ...)
@@ -781,7 +781,9 @@ int scanf(const char *format, ...)
 
 Here, the `format` is a string that contains one or more type specifier(s) such as `%d`, `%f`, `%c`, `%Lf` etc.
 
-`...` means that the string may consist of a series of specifiers (more than one fixed string).
+`...` means that the string may consist of a series of specifiers (more than one fixed-length string).
+
+By now, you already know almost everything about format/type specifiers, `%d`, `%f`, `%c`, `%...` etc.
 
 Some common usage of the function `scanf()`:
 
