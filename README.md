@@ -825,7 +825,7 @@ No. of items read: 3
 
 Return value: On success, `scanf()` returns the number of items (specified by the format specifier, `%d`, `%f`, etc.) it read. `int` is the return type. In case of a read error, `scanf()` returns a number $<0$.
 
-By the way, how will you force-kill a C program? **CTRL**+**c**.
+By the way, how will you **force-kill a C program**? **CTRL**+**c**.
 
 What is `&`?
 
