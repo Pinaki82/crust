@@ -934,7 +934,7 @@ As we've discussed before, the function `pow(x,y)` returns `x` raised to the pow
 
 **Multiplication operator**: It is a part of the **Arithmetic Operators** group, denoted by `*`. The sign `*` has other applications, such as indicating a variable as a pointer. For now, we will be using it as a **Multiplication Operator**, one of its many applications.
 
-`PI * (pow(...));` means multiply `PI` by `(pow(...))`.
+`PI * (pow(...));` means multiply `PI` by `(pow(...))`. ${a}\times{b}$ in the **C Programming Language** is `a * b`.
 
 Now, We will be sending (printing) the total output to the console.
 
@@ -948,7 +948,7 @@ Next:
 return 0;
 ```
 
-Upon succesful completion, our C program will `return` an integer value `0` to the operating system that indicates everything went as expected, no errors (`0` errors) occurred.
+Upon successful completion, our C program will `return` an integer value `0` to the operating system that indicates everything went as expected, no errors (`0` errors) occurred.
 
 The C version of the program to calculate the area of a circle is complete.
 
