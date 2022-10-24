@@ -853,7 +853,7 @@ a -> b -> c.
 
 We will see it when we will discuss **Pointers**. For now, Pigeons, Pigeonholes, and Pigeons as Matryoshka Dolls are the easiest explanation of all I could explain at best.
 
-Coming back to the **Ampersand** operator, we use this to point to the variables' addresses (memory locations/registers) where the program can store the value it received from the `stdin`, using this `&` _operator_ as the value collector. The values of the variables get stored in their respective memory locations.
+Coming back to the **Ampersand** operator, we use this to point to the variables' addresses (memory locations/registers) where the program can store the values it received from the `stdin`, using this `&` _operator_ as the value collector. The values of the variables get stored in their respective memory locations.
 
 ```c
 int var = 0;
