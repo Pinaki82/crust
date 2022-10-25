@@ -851,6 +851,8 @@ a -> b -> c.
 
 `c` has the actual value in store for them, all others are holding addresses.
 
+Here's a rough 3D sketch (designed hurriedly) that demonstrates the fundamental principle of pointers and addresses.
+
 ![ptrbx](assets/ptrbx.gif)
 
 Demo:
