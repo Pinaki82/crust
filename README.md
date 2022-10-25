@@ -932,6 +932,8 @@ addr. of b 910962981264
 val.  at a 910962981264
 ```
 
+Read from bottom to top, outer box to inner box.
+
 ![ptrbxsingle](assets/ptrbxsingle.jpg)
 
 We will see it when we will discuss **Pointers**. For now, Pigeons, Pigeonholes, and Pigeons as Matryoshka Dolls are the easiest explanation of all I could explain at best.
