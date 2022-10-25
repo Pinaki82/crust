@@ -918,6 +918,20 @@ int main(void) {
 */
 ```
 
+```c
+printf("addr of c %llu\n", &c);
+printf("val  of b %llu\n", b);
+printf("addr of b %llu\n", &b);
+printf("val  of a %llu\n", a);
+```
+
+```
+addr. of c 910962981260
+val.  at b 910962981260
+addr. of b 910962981264
+val.  at a 910962981264
+```
+
 ![ptrbxsingle](assets/ptrbxsingle.jpg)
 
 We will see it when we will discuss **Pointers**. For now, Pigeons, Pigeonholes, and Pigeons as Matryoshka Dolls are the easiest explanation of all I could explain at best.
