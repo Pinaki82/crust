@@ -851,6 +851,65 @@ a -> b -> c.
 
 `c` has the actual value in store for them, all others are holding addresses.
 
+Demo:
+
+```c
+#include <stdio.h>
+
+/*
+  Install cdecl in MSYS2:
+  pacman -S cdecl
+  Add MSYS2 bin folders to PATH
+  Ubuntu:
+  sudo apt install cdecl
+  Use:
+  cdecl.exe or cdecl
+  Website: https://cdecl.org/
+  Help:
+  cdecl
+  ?
+*/
+
+int main(void) {
+  int **a;
+  /*
+    explain int **a;
+    declare a as pointer to pointer to int
+    Here, 'a' points to an address which will hold the address of 'b'
+  */
+  int *b;
+  /*
+    explain int *b;
+    declare b as pointer to int
+    'b' points to an address which will hold the address of 'c'
+  */
+  int c = 3;
+  /*
+    explain int c;
+    declare c as int
+    'c' holds an int value
+    Specifically,
+    the variable 'c'-s address stores the actual integer data
+  */
+  b = &c; // pour the address of c into b
+  a = &b; // pour the address of b into a
+  printf("%d\n", **a);
+  /*
+    print the value stored
+    at the final location
+    (c's address)
+    pointed to by 'a'
+  */
+  return 0;
+}
+
+/*
+  Output:
+  3
+
+*/
+```
+
 We will see it when we will discuss **Pointers**. For now, Pigeons, Pigeonholes, and Pigeons as Matryoshka Dolls are the easiest explanation of all I could explain at best.
 
 Coming back to the **Ampersand** operator, we use this to point to the variables' addresses (memory locations/registers) where the program can store the values it received from the `stdin`, using this `&` _operator_ as the value collector. The values of the variables get stored in their respective memory locations.
