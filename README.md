@@ -920,9 +920,9 @@ int main(void) {
 
 ```c
 printf("addr of c %llu\n", &c);
-printf("val  of b %llu\n", b);
+printf("val  at b %llu\n", b);
 printf("addr of b %llu\n", &b);
-printf("val  of a %llu\n", a);
+printf("val  at a %llu\n", a);
 ```
 
 ```
