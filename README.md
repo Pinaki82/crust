@@ -855,7 +855,11 @@ a -> b -> c.
 
 Demo:
 
-Think of real-world values of variables as water and memory addresses as glasses. Pour `c`'s water into `b` (glass), then stack `b` into another glass `a`. If you wish, you can also compare memory addresses as boxes. One exception, unlike real-life objects the size parameter doesn't change, and any of the boxes can hold other boxes. Find the **glTF** 3D file in `3d-models` directory.
+Think of variables as water and memory addresses as glasses. Pour `c`'s water into `b` (glass), then `b`'s water into another glass `a`.
+
+Or imagine putting `c` (glass) on top of `b` (another glass), and `b` on top of `a`, stacking one on top of other glasses.
+
+If you wish, you can also compare memory addresses as boxes. One exception, unlike real-life objects the size parameter doesn't change, and any of the boxes can hold other boxes. Find the **glTF** 3D file in `3d-models` directory.
 
 ```c
 #include <stdio.h>
