@@ -859,7 +859,7 @@ Think of variables as water and memory addresses as glasses. Pour `c`'s water in
 
 Or imagine putting `c` (glass) on top of `b` (another glass), and `b` on top of `a`, stacking one on top of other glasses.
 
-If you wish, you can also compare memory addresses as boxes. One exception, unlike real-life objects the size parameter doesn't change, and any of the boxes can hold other boxes. Find the **glTF** 3D file in `3d-models` directory.
+If you wish, you can also compare memory addresses as boxes. One exception, unlike real-life objects the size parameter doesn't change, and any of the boxes can hold other boxes. Find the **glTF** 3D file in `3d-models`.
 
 ```c
 #include <stdio.h>
