@@ -1,0 +1,6 @@
+Created with Autodesk 3DS MAX 2018 x64 (Windows 10 x64).
+Converted to OBJ with 3DS MAX 2018 x64 (Windows 10 x64).
+Converted to GLB using MS Windows 3D Viewer.
+
+Viewers (FOSS):
+https://gltf-viewer.donmccurdy.com/

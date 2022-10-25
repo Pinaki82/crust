@@ -851,7 +851,11 @@ a -> b -> c.
 
 `c` has the actual value in store for them, all others are holding addresses.
 
+![ptrbx](assets/ptrbx.gif)
+
 Demo:
+
+Think of real-world values of variables as water and memory addresses as glasses. Pour `c`'s water into `b` (glass), then stack `b` into another glass `a`. If you wish, you can also compare memory addresses as boxes. One exception, unlike real-life objects the size parameter doesn't change, and any of the boxes can hold other boxes. Find the **glTF** 3D file in `3d-models` directory.
 
 ```c
 #include <stdio.h>
@@ -909,6 +913,8 @@ int main(void) {
 
 */
 ```
+
+![ptrbxsingle](assets/ptrbxsingle.jpg)
 
 We will see it when we will discuss **Pointers**. For now, Pigeons, Pigeonholes, and Pigeons as Matryoshka Dolls are the easiest explanation of all I could explain at best.
 
