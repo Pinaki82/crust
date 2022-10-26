@@ -1127,6 +1127,24 @@ let mut user_submitted_radius = String::new();
 
 `String` is a **Datatype** in Rust which can be classified into two categories: 1) String Object (String) and 2) String Literal (&str).
 
+**String Literal**: By default, String Literals are static texts which always point to a fixed and valid UTF-8 sequence. The compiler knows the string at the compile time since it will not change during the program's run.
+
+Some usages:
+
+```rust
+fn main() {
+   let ur_name:&str="Pinaki S. Gupta"; // Declaring a fixed string literal
+   let ur_d_o_b:&str = "1982/JUNE(06)/10"; // Declaring another fixed string literal
+   println!("Your Name: {}", ur_name); // Printing the fixed string
+   println!("Your Date of Birth: {}", ur_d_o_b);
+}
+```
+
+```
+Your Name: Pinaki S. Gupta
+Your Date of Birth: 1982/JUNE(06)/10
+```
+
 Let's break down the third skeleton before we move on to the actual chapters.
 
 ```rust
