@@ -16,3 +16,4 @@ testrst.rs
 *.orig
 *.exe
 ptrbx
+desktop.ini

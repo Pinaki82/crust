@@ -1090,7 +1090,7 @@ use std::io;
 
 In C, we don't use a statement terminator `;` after a macro, `#include <stdio.h>`. In Rust, we are calling a set of sub-routines `io` into the **scope** from `std`. It is a statement, so we are using the statement terminator. C and Rust are not exactly the same. So there will be some differences.
 
-We've already talked about [The main() Function](#the-main-function). Move on to the next line.
+We've already talked about [The main() Function](#the-main-function). `fn` is a Rust keyword prefixed before declaring a function. Move on to the next line.
 
 `println!()` is a macro, which is used to send formatted strings to the console as we've discussed before. To send an unchangeable string to the console using `println!()`, the string must be enclosed within double-quotes, `"A String"`. `println!("A String")` is the simplest example of its use.
 
@@ -1120,6 +1120,12 @@ let mut dishes = 3; // mutable
 ```
 
 The equal sign (`=`) tells the compiler to assign a value to a variable. It is called the **Assignment Operator**. We will come to the **Operators** later.
+
+```rust
+let mut user_submitted_radius = String::new();
+```
+
+`String` is a **Datatype** in Rust which can be classified into two categories: 1) String Object (String) and 2) String Literal (&str).
 
 Let's break down the third skeleton before we move on to the actual chapters.
 
