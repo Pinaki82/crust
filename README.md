@@ -1145,6 +1145,20 @@ Your Name: Pinaki S. Gupta
 Your Date of Birth: 1982/JUNE(06)/10
 ```
 
+**String Object**: Sting Objects are intended to be changed during the program's run. The Rust Standard Library provides the string input/output feature, defined in the standard library as a public structure, **pub struct String**. It (the `String` _object_) is "growable", mutable, UTF-8 encoded, heap-allocated, and not null-terminated. It is used when the string value can be changed at the run time.
+
+BTW, how to create a **String Object**?
+
+```rust
+String::new()
+```
+
+The following syntax creates an empty string.
+
+```rust
+String::from()
+```
+
 Let's break down the third skeleton before we move on to the actual chapters.
 
 ```rust
