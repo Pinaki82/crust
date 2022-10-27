@@ -1090,6 +1090,26 @@ use std::io;
 
 In C, we don't use a statement terminator `;` after a macro, `#include <stdio.h>`. In Rust, we are calling a set of sub-routines `io` into the **scope** from `std`. It is a statement, so we are using the statement terminator. C and Rust are not exactly the same. So there will be some differences.
 
+**The double colon `::`**
+
+Ref:
+
+https://stackoverflow.com/questions/69756732/what-does-double-colon-mean-in-rust
+
+[Paths for Referring to an Item in the Module Tree - The Rust Programming Language](https://doc.rust-lang.org/stable/book/ch07-03-paths-for-referring-to-an-item-in-the-module-tree.html?highlight=colon#paths-for-referring-to-an-item-in-the-module-tree)
+
+In the Stack Overflow thread as explained by the user "Netwave",
+
+> `::` behaves like a namespace accessor. You can navigate through modules or specify locations like `std::io::stdin()` or call methods for objects like in `String::new()`.
+>  It can even be mixed, since an object may be in a module itself, so for
+>  example, the full path to the String new method would be `std::string::String::new`.
+> 
+> Refer [here](https://doc.rust-lang.org/stable/book/ch07-03-paths-for-referring-to-an-item-in-the-module-tree.html?highlight=colon#paths-for-referring-to-an-item-in-the-module-tree) for more information.
+
+In my limited understanding of Rust, it is used for accessing elements that are grouped together. Think of the serial assembly of individual links in a chain; to drag one individual link, you will have to tow preceding links.
+
+![plastic-chain](https://openclipart.org/image/800px/2010)
+
 We've already talked about [The main() Function](#the-main-function). `fn` is a Rust keyword prefixed before declaring a function. Move on to the next line.
 
 `println!()` is a macro, which is used to send formatted strings to the console as we've discussed before. To send an unchangeable string to the console using `println!()`, the string must be enclosed within double-quotes, `"A String"`. `println!("A String")` is the simplest example of its use.
@@ -1127,7 +1147,7 @@ let mut user_submitted_radius = String::new();
 
 `String` is a **Datatype** in Rust which can be classified into two categories: 1) String Object (String) and 2) String Literal (&str).
 
-**String Literal**: By default, String Literals are static texts which always point to a fixed and valid UTF-8 sequence. The compiler knows the string at the compile time since it will not change during the program's run.
+**String Literal**: By default, String Literals are static texts which always point to a fixed and valid UTF-8 sequence. The compiler knows the string at the compile time since it will not change during the program's run. The more technical terminology of String Literal (`&str`) is "_String Slices_".
 
 Some usages:
 
@@ -1157,6 +1177,53 @@ The following syntax creates an empty string.
 
 ```rust
 String::from()
+```
+
+```rust
+fn main() {
+    let blankstr = String::new();
+    println!("The empty str is: {}", blankstr);
+
+    let str01 = String::from("Rust is good!");
+    println!("str01 is: {}", str01);
+}
+```
+
+```
+The empty str is:
+str01 is: Rust is good!
+```
+
+String Object calling Methods ([More details](https://doc.rust-lang.org/stable/std/string/struct.String.html#)).
+
+| Method/`fn`           | Signature                                                                                                                                       | Description                                                                                             |
+| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| `new()`               | `pub const fn new()` -> `String`                                                                                                                | Creates a new empty String.                                                                             |
+| `to_string()`         | `fn to_string(&self)` -> `String`                                                                                                               | Converts the given value to a String.                                                                   |
+| `replace()`           | `pub fn replace<'a, P>(&'a self, from: P, to: &str)` -> `String`                                                                                | Replaces all matches of a pattern with another string.                                                  |
+| `as_str()`            | `pub fn as_str(&self)` -> `&str`                                                                                                                | Extracts a string slice containing the entire string.                                                   |
+| `push()`              | `pub fn push(&mut self, ch: char)`                                                                                                              | Appends the given char to the end of a given String.                                                    |
+| `push_str()`          | `pub fn push_str(&mut self, string: &str)`                                                                                                      | Appends a given string slice onto the end of a given String.                                            |
+| `len()`               | `pub fn len(&self)` -> `usize`                                                                                                                  | Returns the length of a given String, in bytes.                                                         |
+| `trim()`              | `pub fn trim(&self)` -> `&str`                                                                                                                  | Returns a string slice with leading and trailing whitespace removed.                                    |
+| `split_whitespa ce()` | `pub fn split_whitespace(&self)` -> `SplitWhitespace`                                                                                           | Splits a string slice by whitespace and returns an iterator.                                            |
+| `split()`             | `pub fn split<'a, P>(&'a self, pat: P)` -> `Split<'a, P>` , where `P` is pattern can be `&str`, `char`, or a closure that determines the split. | Returns an iterator over substrings of this string slice, separated by characters matched by a pattern. |
+| `chars()`             | `pub fn chars(&self)` -> `Chars`                                                                                                                | Returns an iterator over the chars of a string slice.                                                   |
+
+Examples of the Methods mentioned above:
+
+`new()`:
+
+```rust
+fn main() {
+    let mut variab = String::new();
+    variab.push_str("Hi, Rust!");
+    println!("{}", variab);
+}
+```
+
+```
+Hi, Rust!
 ```
 
 Let's break down the third skeleton before we move on to the actual chapters.
