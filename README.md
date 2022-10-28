@@ -1226,6 +1226,134 @@ fn main() {
 Hi, Rust!
 ```
 
+`to_string()`:
+
+```rust
+fn main() {
+    let a_string = "This is an example of to_string()".to_string();
+    println!("{}", a_string);
+}
+```
+
+```
+This is an example of to_string()
+```
+
+`replace()`:
+
+```rust
+fn main() {
+    let some_str = "Rust isn't rusty!";
+    let another_str = some_str.replace("Rust", "Crust");
+    println!("{}", another_str);
+}
+```
+
+```
+Crust isn't rusty!
+```
+
+`as_str()`:
+
+```rust
+fn main() {
+    let a_word_str = String::from("C");
+    let a_word_str_as_string = a_word_str.as_str();
+    println!("Example of as_str()  {}", a_word_str_as_string);
+}
+```
+
+```
+Example of as_str()  C
+```
+
+`push()`:
+
+```rust
+fn main() {
+    let mut fruit = "Apple".to_string();
+    fruit.push('s');
+    println!("{}", fruit);
+}
+```
+
+```
+Apples
+```
+
+`push_str()`:
+
+```rust
+fn main() {
+    let mut paper = String::from("Crust ");
+    paper.push_str("is my self-help guide, not a tutorial.");
+    println!("{}", paper);
+}
+```
+
+```
+Crust is my self-help guide, not a tutorial.
+```
+
+`len()`:
+
+```rust
+fn main() {
+    let str01 = "C & Rust both are easy."; // 23 char -> C & Rust both are easy.
+    println!("Length: {}", str01.len());
+}
+```
+
+```
+Length: 23
+```
+
+`trim()`:
+
+```rust
+fn main() {
+    let mut a_str_with_blank_spaces =
+        "      Every programmer is an author. - Sercan Leylek      \n";
+    println!("{}", a_str_with_blank_spaces);
+    println!("Length Before trim(): {}", a_str_with_blank_spaces.len());
+    println!(
+        "Length After trim(): {}",
+        a_str_with_blank_spaces.trim().len()
+    );
+    a_str_with_blank_spaces = a_str_with_blank_spaces.trim();
+    println!("{}", a_str_with_blank_spaces);
+}
+```
+
+```
+      Every programmer is an author. - Sercan Leylek
+
+Length Before trim(): 59
+Length After trim(): 46
+Every programmer is an author. - Sercan Leylek
+```
+
+`split_whitespace()`:
+
+```rust
+fn main() {
+    let a_phrase = "Cato Dogo love Omelette Fish".to_string();
+    let mut i = 1;
+    for token in a_phrase.split_whitespace() {
+        println!("Word {}: {}", i, token);
+        i += 1;
+    }
+}
+```
+
+```
+Word 1: Cato
+Word 2: Dogo
+Word 3: love
+Word 4: Omelette
+Word 5: Fish
+```
+
 Let's break down the third skeleton before we move on to the actual chapters.
 
 ```rust
