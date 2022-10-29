@@ -1333,7 +1333,7 @@ Length After trim(): 46
 Every programmer is an author. - Sercan Leylek
 ```
 
-`split_whitespace()`: The function `split_whitespace()` splits the whole input string into different words whenever a whitespace character is detected. The function also returns an iterator. We used the variable `tokens` as the iterator to count the number of times the function detected a whitespace char.
+`split_whitespace()`: The function `split_whitespace()` splits the whole input string into different words whenever a whitespace character is detected. The function also returns an iterator. We used the variable `token` as the iterator to count the number of times the function detected a whitespace char.
 
 Don't look at the **for loop**. We will learn **Loops** at the right moment.
 
