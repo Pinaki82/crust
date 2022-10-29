@@ -1466,10 +1466,11 @@ fn main() {
     let n = 714285;
     let n_2_str = n.to_string();
     let str_2_num = n_2_str.parse::<i32>().unwrap();
-    // The parse method can be used for converting strings to integers
-    // Method:
+    // The parse() method can be used for converting strings to integers
+    // Procedure:
     // let a_string = "25".to_string();  // `parse()` works with `&str` and `String`
     // let an_int_val = a_string.parse::<i32>().unwrap();
+
     // Num to str conversion
     println!("Num to string: {}", n_2_str);
     println!("Success: {}", n_2_str == "714285");
