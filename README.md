@@ -1450,13 +1450,13 @@ fn main() {
 
     // Num to str conversion
     println!("The str is: {}", n_2_str);
-    println!("{}", n_2_str == "714285");
+    println!("Operation successful: {}", n_2_str == "714285");
 }
 ```
 
 ```
 The str is: 714285
-true
+Operation successful: true
 ```
 
 Integer to String and String to Integer (combined):
