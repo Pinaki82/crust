@@ -1464,8 +1464,8 @@ Integer to String and String to Integer (combined):
 ```rust
 fn main() {
     let n = 714285;
-    let n_2_str = n.to_string();
-    let str_2_num = n_2_str.parse::<i32>().unwrap();
+    let n_2_str = n.to_string(); // Num to str conversion
+    let str_2_num = n_2_str.parse::<i32>().unwrap(); 
     // The parse() method can be used for converting strings to integers
     // Procedure:
     // let a_string = "25".to_string();  // `parse()` works with `&str` and `String`
