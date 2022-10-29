@@ -1212,7 +1212,7 @@ String Object calling Methods ([More details](https://doc.rust-lang.org/stable/s
 
 Examples of the Methods mentioned above:
 
-`new()`:
+`new()`: `new()` is used to create an empty string. Here, we create an empty string using `new()` and appending the string `Hi, Rust!` at the end of the empty string, thus, essentially initialising the variable.
 
 ```rust
 fn main() {
@@ -1226,7 +1226,7 @@ fn main() {
 Hi, Rust!
 ```
 
-`to_string()`:
+`to_string()`: We convert a given variable value to a string using `to_string()`. The text surrounded with double-quote `""` will be converted to a string object.
 
 ```rust
 fn main() {
@@ -1239,7 +1239,7 @@ fn main() {
 This is an example of to_string()
 ```
 
-`replace()`:
+`replace()`: Finds a pattern and replaces all matches with a supplied value. It is a function that takes two parameters, 1) A string pattern to search for, and 2) The new value which will replace all matches found. In our example, the pattern `Rust` will be searched for and replaced with `Crust` wherever found.
 
 ```rust
 fn main() {
@@ -1253,7 +1253,7 @@ fn main() {
 Crust isn't rusty!
 ```
 
-`as_str()`:
+`as_str()`: `as_str()` extracts a string slice containing the entire string. We are finding and extracting the string slice `C` which is contained in the variable `a_word_str`.
 
 ```rust
 fn main() {
@@ -1267,7 +1267,7 @@ fn main() {
 Example of as_str()  C
 ```
 
-`push()`:
+`push()`: The `push()` function appends a supplied char (here, `s`) to the end of a String specified (`Apple`).
 
 ```rust
 fn main() {
@@ -1281,7 +1281,7 @@ fn main() {
 Apples
 ```
 
-`push_str()`:
+`push_str()`: The `push_str()` function/method appends a given string slice (here, `is my self-help guide, not a tutorial.`) onto the end of a given String (here, `Crust `). Here, the string to push is `is my self-help guide, not a tutorial.`.
 
 ```rust
 fn main() {
@@ -1295,7 +1295,7 @@ fn main() {
 Crust is my self-help guide, not a tutorial.
 ```
 
-`len()`:
+`len()`: Returns the total number of characters in a String (the length) in bytes (including spaces). We know that each character takes one byte in computer memory. So, the number of bytes returned is the number of characters found in a String.
 
 ```rust
 fn main() {
@@ -1308,7 +1308,7 @@ fn main() {
 Length: 23
 ```
 
-`trim()`:
+`trim()`: The function `trim()` removes leading and trailing whitespace characters. NOTE: This function will not remove the inline spaces (whitespace characters found inside the string text). Only the whitespace chars found in the beginning and end will be trimmed.
 
 ```rust
 fn main() {
@@ -1333,7 +1333,9 @@ Length After trim(): 46
 Every programmer is an author. - Sercan Leylek
 ```
 
-`split_whitespace()`:
+`split_whitespace()`: The function `split_whitespace()` splits the whole input string into different words whenever a whitespace character is detected. The function also returns an iterator. We used the variable `tokens` as the iterator to count the number of times the function detected a whitespace char.
+
+Don't look at the **for loop**. We will learn **Loops** at the right moment.
 
 ```rust
 fn main() {
@@ -1354,7 +1356,7 @@ Word 4: Omelette
 Word 5: Fish
 ```
 
-`split()`:
+`split()`: `split()` finds a user-supplied pattern (here, `,`), then splits the String every time it detects a match. It also returns an iterator for counting. Note that the result cannot be stored for later use. There are workarounds such as `collect()`, but it is beyond the scope of our skeleton anatomy. The workaround `collect()` will be covered later.
 
 ```rust
 fn main() {
@@ -1373,7 +1375,7 @@ Item: Guava
 Item: Pineapple
 ```
 
-`chars()`:
+`chars()`: Returns an iterator over the chars of a string slice. That means each time the function `char()` detects a character, it returns an iterator. So, we can count the number of chars in a Sting Slice and access individual characters. Although, we are not counting chars here.
 
 ```rust
 fn main() {
@@ -1394,6 +1396,17 @@ t
 ```
 
 **String Concatenation using the `+` Operator and references (`&`)**:
+
+Appending a string to another string is termed **String Concatenation** or **Interpolation**. The result of this operation is a new string object. The `+` **operator** internally calls the function `add()`. The `add()` function takes two parameters, 1) `self` – The string object itself, and 2) The second parameter is a reference to the second string object (similar to **the address of** method in C).
+
+```rust
+// the add() function
+add(self,&str) -> String { 
+   // Returns a String object
+}
+```
+
+We will be using syntax like `let s4 = s1 + &s2 + &s3;` without looking at the internal mechanism.
 
 ```rust
 fn main() {
@@ -1426,7 +1439,7 @@ fn main() {
 C and Rust.
 ```
 
-**Type Casting**:
+**Type Casting**: Converting a number to a string and vice versa.
 
 Integer to String:
 
@@ -1436,13 +1449,13 @@ fn main() {
     let n_2_str = n.to_string();
 
     // Num to str conversion
-    println!("{}", n_2_str);
+    println!("The str is: {}", n_2_str);
     println!("{}", n_2_str == "714285");
 }
 ```
 
 ```
-714285
+The str is: 714285
 true
 ```
 
