@@ -1485,6 +1485,18 @@ String to num: 714285
 Success: true
 ```
 
+By now, we know the purpose of the following line in our Area of a Circle program.
+
+```rust
+let mut user_submitted_radius = String::new();
+```
+
+Let's look at the next line:
+
+```rust
+let mut radius: f32 = 0.0;
+```
+
 Let's break down the third skeleton before we move on to the actual chapters.
 
 ```rust
