@@ -1423,7 +1423,7 @@ fn main() {
 C and Rust.
 ```
 
-The `format!()` Macro:
+The `format!()` Macro: It can also be used to concatenate strings.
 
 ```rust
 fn main() {
