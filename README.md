@@ -1354,6 +1354,124 @@ Word 4: Omelette
 Word 5: Fish
 ```
 
+`split()`:
+
+```rust
+fn main() {
+    let items = "Mango,Banana,Guava,Pineapple";
+
+    for token in items.split(",") {
+        println!("Item: {}", token);
+    }
+}
+```
+
+```
+Item: Mango
+Item: Banana
+Item: Guava
+Item: Pineapple
+```
+
+`chars()`:
+
+```rust
+fn main() {
+    let string01 = "Crust".to_string();
+
+    for i in string01.chars() {
+        println!("{}", i);
+    }
+}
+```
+
+```
+C
+r
+u
+s
+t
+```
+
+**String Concatenation using the `+` Operator and references (`&`)**:
+
+```rust
+fn main() {
+    let s1 = "C ".to_string();
+    let s2 = "and ".to_string();
+    let s3 = "Rust.".to_string();
+
+    let s4 = s1 + &s2 + &s3; // s2, s3 references are passed
+    println!("{}", s4);
+}
+```
+
+```
+C and Rust.
+```
+
+The `format!()` Macro:
+
+```rust
+fn main() {
+    let s1 = "C".to_string();
+    let s2 = "and".to_string();
+    let s3 = "Rust.".to_string();
+    let s4 = format!("{} {} {}", s1, s2, s3);
+    println!("{}", s4);
+}
+```
+
+```
+C and Rust.
+```
+
+**Type Casting**:
+
+Integer to String:
+
+```rust
+fn main() {
+    let n = 714285;
+    let n_2_str = n.to_string();
+
+    // Num to str conversion
+    println!("{}", n_2_str);
+    println!("{}", n_2_str == "714285");
+}
+```
+
+```
+714285
+true
+```
+
+Integer to String and String to Integer (combined):
+
+```rust
+fn main() {
+    let n = 714285;
+    let n_2_str = n.to_string();
+    let str_2_num = n_2_str.parse::<i32>().unwrap();
+    // The parse method can be used for converting strings to integers
+    // Method:
+    // let a_string = "25".to_string();  // `parse()` works with `&str` and `String`
+    // let an_int_val = a_string.parse::<i32>().unwrap();
+    // Num to str conversion
+    println!("Num to string: {}", n_2_str);
+    println!("Success: {}", n_2_str == "714285");
+    println!("String to num: {}", str_2_num);
+    println!("Success: {}", str_2_num == 714285);
+}
+```
+
+```
+Num to string: 714285
+Success: true
+String to num: 714285
+Success: true
+```
+
 Let's break down the third skeleton before we move on to the actual chapters.
 
 ```rust
