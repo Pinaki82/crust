@@ -1474,6 +1474,7 @@ fn main() {
     // Num to str conversion
     println!("Num to string: {}", n_2_str);
     println!("Success: {}", n_2_str == "714285");
+    // Str to num conversion
     println!("String to num: {}", str_2_num);
     println!("Success: {}", str_2_num == 714285);
 }
