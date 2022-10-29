@@ -1400,7 +1400,7 @@ t
 Appending a string to another string is termed **String Concatenation** or **Interpolation**. The result of this operation is a new string object. The `+` **operator** internally calls the function `add()`. The `add()` function takes two parameters, 1) `self` – The string object itself, and 2) The second parameter is a reference to the second string object (similar to **the address of** method in C).
 
 ```rust
-// the add() function
+// The add() function
 add(self,&str) -> String { 
    // Returns a String object
 }
