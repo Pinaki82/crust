@@ -1194,7 +1194,7 @@ The empty str is:
 str01 is: Rust is good!
 ```
 
-String Object calling Methods ([More details](https://doc.rust-lang.org/stable/std/string/struct.String.html#)).
+String Object calling Methods/Functions ([More details](https://doc.rust-lang.org/stable/std/string/struct.String.html#)).
 
 | Method/`fn`           | Signature                                                                                                                                       | Description                                                                                             |
 | --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
