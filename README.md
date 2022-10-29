@@ -1492,7 +1492,7 @@ By now, we know the purpose of the following line in our Area of a Circle progra
 let mut user_submitted_radius = String::new();
 ```
 
-Let's look at the next line:
+Now we will decipher the next line:
 
 ```rust
 let mut radius: f32 = 0.0;
