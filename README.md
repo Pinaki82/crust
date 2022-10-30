@@ -1505,6 +1505,31 @@ We've also talked about mutable and immutable variables. By default, Rust variab
 
 We will discuss **Variables** and **Data Types** before trying to understand the purpose of the line `let mut radius: f32 = 0.0;`.
 
+**Variables**:
+
+A variable is a named storage class which is used in C and Rust programming for storing numeric values or texts in the computer memory. Depending on the type of value a variable stores, a variable is closely associated with a particular **Data Type**. We've covered data types in C before. The data type determines two factors primarily: 1) The type of value (data) a variable stores (integer, character, fractional numbers etc.), and 2) The size (in bit) it will occupy in the computer memory.
+
+Variable Naming Convention: Variable naming in Rust is quite similar to that of in C. We've covered variable naming in C. I'll repeat what we discussed, keeping things short.
+
+Start with a small letter or an underscore (`_`). After writing the first character of the variable, you can use numbers. There's an exception, unlike in C, you cannot use Capital Letters anywhere in Rust variable naming. So, don't use Capital Letters anywhere while giving a variable a name. Never use special characters or whitespace characters.
+
+Legal:
+
+`variable`, `_variable`, `variable01`, `variable_01`, `variable_one`, `string_variable_two`
+
+**Illegal:**
+
+`Variable`, `01variable`, `v@r!able`, `variable 01`, `variableOne`, `stringVariableTwo`
+
+The syntax for creating (declaring) a variable:
+
+```rust
+let variable_name = value;            // DataType not specified
+let variable_name:data_type = value;   // DataType specified
+```
+
+Rust doesn't strictly enforce type declaration while creating a variable. The compiler infers the data type from the value assigned to the variable. However, you should specify the type for accessing the variables later with relative ease. Also, some errors can be avoided, and the compiler will produce better optimised compiled code if you specify the type beforehand.
+
 Let's break down the third skeleton before we move on to the actual chapters.
 
 ```rust
