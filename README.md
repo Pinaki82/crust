@@ -1106,7 +1106,7 @@ In the Stack Overflow thread as explained by the user "Netwave",
 > 
 > Refer [here](https://doc.rust-lang.org/stable/book/ch07-03-paths-for-referring-to-an-item-in-the-module-tree.html?highlight=colon#paths-for-referring-to-an-item-in-the-module-tree) for more information.
 
-In my limited understanding of Rust, it is used for accessing elements that are grouped together. Think of the serial assembly of individual links in a chain; to drag one individual link, you will have to tow preceding links.
+In my limited understanding of Rust, it is used for accessing elements (specifically, functionalities and sub/routines) that are grouped together. Think of the serial assembly of individual links in a chain; to drag one individual link, you will have to tow preceding links.
 
 ![plastic-chain](https://openclipart.org/image/800px/2010)
 
