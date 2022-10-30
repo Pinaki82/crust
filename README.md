@@ -1499,6 +1499,12 @@ Now we will decipher the next line:
 let mut radius: f32 = 0.0;
 ```
 
+`let` is a keyword used to declare variables. The list of **keywords** in Rust can be found [here](https://doc.rust-lang.org/book/appendix-01-keywords.html), as we've discussed before.
+
+We've also talked about mutable and immutable variables. By default, Rust variables are immutable, which means once you've assigned a value to a variable, it cannot be changed. To overcome this limitation, you'll have to declare/create variables as mutable variables. To make a variable Mutable, the `mut` keyword is used. Values of mutable variables can be altered during the execution of the program.
+
+We will discuss **Variables** and **Data Types** before trying to understand the purpose of the line `let mut radius: f32 = 0.0;`.
+
 Let's break down the third skeleton before we move on to the actual chapters.
 
 ```rust
