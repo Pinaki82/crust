@@ -1528,7 +1528,35 @@ let variable_name = value;            // DataType not specified
 let variable_name:data_type = value;   // DataType specified
 ```
 
-Rust doesn't strictly enforce type declaration while creating a variable. The compiler infers the data type from the value assigned to the variable. However, you should specify the type for accessing the variables later with relative ease. Also, some errors can be avoided, and the compiler will produce better optimised compiled code if you specify the type beforehand.
+Rust doesn't strictly enforce type declaration while creating a variable. The compiler infers the data type from the value assigned to the variable. However, you should specify the type for accessing the variables later with relative ease. Also, some errors can be avoided, and the compiler will produce better optimised compiled code if you specify the type beforehand. The following are some examples of declaring fractional (`float`) numbers.
+
+```rust
+let temperature: f64 = 27.092;
+```
+
+```rust
+let mut radius: f32 = 0.0;
+```
+
+Integer Types in Rust:
+
+| Length                              | Signed (+/-) | Unsigned (+) |
+| ----------------------------------- | ------------ | ------------ |
+| `8`-bit                             | `i8`         | `u8`         |
+| `16`-bit                            | `i16`        | `u16`        |
+| `32`-bit                            | `i32`        | `u32`        |
+| `64`-bit                            | `i64`        | `u64`        |
+| `128`-bit                           | `i128`       | `u128`       |
+| arch (architecture, 64/32/16/8-bit) | `isize`      | `usize`      |
+
+Floating-Point Types in Rust:
+
+Floating-point numbers are represented according to the IEEE-754 standard. The `f32` type is a single-precision float, and `f64` has double precision. The default type is `f64`.
+
+| Length   | Always Signed (+/-) |
+| -------- | ------------------- |
+| `32`-bit | `f32`               |
+| `64`-bit | `f64`               |
 
 Let's break down the third skeleton before we move on to the actual chapters.
 
