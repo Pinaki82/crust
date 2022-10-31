@@ -1588,7 +1588,7 @@ fn main() {
 
     /*
        Unsuffixed literals, their types are determined by
-       the Rust compiler and depending on how they are used
+       the Rust compiler depending on how they are used
     */
     // let i = 13;
     // let f = 1.6;
