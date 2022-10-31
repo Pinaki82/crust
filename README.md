@@ -1577,7 +1577,7 @@ What about the range? According to Rust's official documentation,
 
 Data Types and Ranges in Rust calculated using the same techniques we discovered when we calculated the range of each data types in C.
 
-Number Separator: In Rust, you are allowed use an underscore as a separator in numeric values for better readability, such as `98_222`, which means `98222`. `5_000` equals `5000` in Rust.
+Number Separator: In Rust, you are allowed use an underscore as a separator while assigning numeric values for better readability, such as `98_222`, which means `98222`. `5_000` equals `5000` in Rust.
 
 Literals:
 
