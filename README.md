@@ -1570,7 +1570,7 @@ Integer Types in Rust:
 
 What about the range? According to Rust's official documentation,
 
-> Each signed variant can store numbers from $-\left( 2^{\left (n-1\right)} \right)$ to $+\left( \left( 2^{\left (n-1\right)} \right) -1 \right)$ inclusive, where $n$ is the number of bits that variant uses. So an `i8` can store numbers from $-2^{8-1} = -2^{7} = 128$ to $-2^{8-1} - 1 = -2^{7} - 1 = 128 - 1 = 127$, which equals
+> Each signed variant can store numbers from $-\left( 2^{\left (n-1\right)} \right)$ to $+\left( \left( 2^{\left (n-1\right)} \right) -1 \right)$ inclusive, where $n$ is the number of bits that variant uses. So an `i8` can store numbers from $-2^{8-1} = -2^{7} = -128$ to $-2^{8-1} - 1 = -2^{7} - 1 = 128 - 1 = 127$, which equals
 > `-128` to `127`. Unsigned variants can store numbers from $0$ to $\left( 2^{n} - 1 \right)$
 > so a `u8` can store numbers from $0$ to $\left( 2^{8} - 1 \right)$, which equals $0$ to $\left( 2^{8} - 1 \right) = 256 - 1 = 255$.
 
