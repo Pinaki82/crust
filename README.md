@@ -1570,12 +1570,11 @@ Integer Types in Rust:
 
 What about the range? According to Rust's official documentation,
 
-> Each signed variant can store numbers from `-(2n - 1)` to `2n -
-> 1 - 1` inclusive, where `n` is the number of bits that variant uses. So an `i8` can store numbers from `-(27)` to `27 - 1`, which equals
-> `-128` to `127`. Unsigned variants can store numbers from `0` to `2n - 1`,
-> so a `u8` can store numbers from `0` to `28 - 1`, which equals `0` to `255`.
+> Each signed variant can store numbers from $-\left( 2^{\left (n-1\right)} \right)$ to $+\left( \left( 2^{\left (n-1\right)} \right) -1 \right)$ inclusive, where $n$ is the number of bits that variant uses. So an `i8` can store numbers from $-2^{8-1} = -2^{7} = 128$ to $-2^{8-1} - 1 = -2^{7} - 1 = 128 - 1 = 127$, which equals
+> `-128` to `127`. Unsigned variants can store numbers from $0$ to $\left( 2^{n} - 1 \right)$
+> so a `u8` can store numbers from $0$ to $\left( 2^{8} - 1 \right)$, which equals $0$ to $\left( 2^{8} - 1 \right) = 256 - 1 = 255$.
 
-Data Types and Ranges in Rust calculated using the same techniques we discovered when we calculated the range of each data types in C.
+Data Types and Ranges in Rust calculated using the same techniques we discovered when we calculated the range of each data types in C. Ultimately, the range of a data type begs one question, "how many bits a data type allows"? It doesn't matter whether you are calculating the range in C or Rust.
 
 Number Separator: In Rust, you are allowed to use an underscore character (`_`) as a separator while assigning numeric values to variables for better readability, such as `98_222`, which means `98222`. `5_000` equals `5000` in Rust. Thus, `let mut var: i32 = 5_000;` is essentially the same as `let mut var: i32 = 5000;`.
 
