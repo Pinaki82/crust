@@ -22,6 +22,8 @@ To keep things simple and make the journey a hands-on experience, do not use the
 
 The more you will type the code yourself, the less you'll forget what you've learned. If you are on MS Windows, try [Geany](https://www.geany.org/download/releases/) or [Notepad++](https://notepad-plus-plus.org/downloads/). On Linux systems with GTK-dependent Desktop Environments, such as GNOME, XFCE, MATE, Cinamon etc., you can use Geany. If you are using a Linux distribution that ships a QT-based Desktop Environment, for example, KDE, LXQT etc., try [Kate](https://kate-editor.org/en-gb/get-it/). Like [Geany](https://www.geany.org/download/releases/), [Kate](https://kate-editor.org/en-gb/get-it/) can be installed on MS Windows.
 
+[Kate](https://kate-editor.org/en-gb/get-it/) comes with built-in LSP support. Thus, if [Kate](https://kate-editor.org/en-gb/get-it/) finds the two files `.ccls` and `compile_flags.txt`, you'll see autocompletion hints. So, beware and don't use autocompletion. Autocompletion is useful when you have some familiarity with the language, not at the time of learning. Nevertheless, [Kate](https://kate-editor.org/en-gb/get-it/) is also a text editor of choice among professionals and serious hobbyists for code editing.
+
 # Build & Run
 
 Download the entire repository in a Zip archive. Extract the zipped file somewhere on your hard drive. Remember that the location (path to the directory where you want to extract the archive) must not contain any space or special character other than underscores (i.e., `_`). Examples: `G:\test_n_practice\crust`, `/home/YOUR_USERNAME/crust/`.
