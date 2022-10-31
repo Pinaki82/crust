@@ -1528,7 +1528,8 @@ let variable_name = value;            // DataType not specified
 let variable_name:data_type = value;   // DataType specified
 ```
 
-Rust doesn't strictly enforce type declaration while creating a variable. The compiler infers the data type from the value assigned to the variable. However, you should specify the type for accessing the variables later with relative ease. Also, some errors can be avoided, and the compiler will produce better optimised compiled code if you specify the type beforehand. The following are some examples of declaring fractional (`float`) numbers.
+Rust doesn't strictly enforce type declaration while creating a variable. The compiler infers the data type from the value assigned to the variable. However, you should specify the type for accessing the variables later with relative ease. Also, some errors can be avoided, and the compiler will produce better-optimised compiled code if you specify the type beforehand. The following are some examples of declaring fractional (`float`) numbers. Note that Rust is a *statically typed* language, which means that it
+must know the types of all variables at compile time. Either the compiler will do that, or the onus of doing so is left upon the person who writes the program.
 
 ```rust
 let temperature: f64 = 27.092;
@@ -1538,16 +1539,128 @@ let temperature: f64 = 27.092;
 let mut radius: f32 = 0.0;
 ```
 
+Primarily, Rust has two **Data Types**, 1) **Scalar**, and, 2) **Compound**. _(Citation needed.)_
+
+Scalar Data Types:
+
+1. Integers
+
+2. Floating-point numbers
+
+3. Booleans
+
+4. Characters
+
+Rust has two primary Compound Data Types:
+
+1. Tuples
+
+2. Arrays
+
 Integer Types in Rust:
 
-| Length                              | Signed (+/-) | Unsigned (+) |
-| ----------------------------------- | ------------ | ------------ |
-| `8`-bit                             | `i8`         | `u8`         |
-| `16`-bit                            | `i16`        | `u16`        |
-| `32`-bit                            | `i32`        | `u32`        |
-| `64`-bit                            | `i64`        | `u64`        |
-| `128`-bit                           | `i128`       | `u128`       |
-| arch (architecture, 64/32/16/8-bit) | `isize`      | `usize`      |
+| Length                              | Signed (+/-) | Unsigned (+) | How to declare                                                 |
+| ----------------------------------- | ------------ | ------------ | -------------------------------------------------------------- |
+| `8`-bit                             | `i8`         | `u8`         | `let mut int_var: i8 = 0;` or, `let mut uint_var: u8 = 0;`     |
+| `16`-bit                            | `i16`        | `u16`        | `let mut int_var: i16 = 0;` or, `let mut uint_var: u16 = 0;`   |
+| `32`-bit                            | `i32`        | `u32`        | `let mut int_var: i32 = 0;` or, `let mut uint_var: u32 = 0;`   |
+| `64`-bit                            | `i64`        | `u64`        | `let mut int_var: i64 = 0;` or, `let mut uint_var: u64 = 0;`   |
+| `128`-bit                           | `i128`       | `u128`       | `let mut int_var: i128 = 0;` or, `let mut uint_var: u128 = 0;` |
+| arch (architecture, 64/32/16/8-bit) | `isize`      | `usize`      |                                                                |
+
+What about the range? According to Rust's official documentation,
+
+> Each signed variant can store numbers from `-(2n - 1)` to `2n -
+> 1 - 1` inclusive, where `n` is the number of bits that variant uses. So an `i8` can store numbers from `-(27)` to `27 - 1`, which equals
+> `-128` to `127`. Unsigned variants can store numbers from `0` to `2n - 1`,
+> so a `u8` can store numbers from `0` to `28 - 1`, which equals `0` to `255`.
+
+Data Types and Ranges in Rust calculated using the same techniques we discovered when we calculated the range of each data types in C.
+
+Number Separator: In Rust, you are allowed use an underscore as a separator in numeric values for better readability, such as `98_222`, which means `98222`. `5_000` equals `5000` in Rust.
+
+Literals:
+
+```rust
+fn main() {
+    // Suffixed literals, their types are known at initialization
+    let value = -257i64; // i64 (Length: 64 bit, signed.)
+
+    /*
+       Unsuffixed literals, their types are determined by
+       the Rust compiler and depending on how they are used
+    */
+    // let i = 13;
+    // let f = 1.6;
+
+    let x = value.abs(); // The function abs() returns the absolute value
+    println!("value is {}", value);
+    println!("The absolute value of x is {}", x);
+
+    // `size_of_val` returns the size of a variable in bytes (1 byte = 8 bits)
+    println!("size of `x` in bytes: {}", std::mem::size_of_val(&x));
+    println!("size of `x` in bits: {}", (8 * std::mem::size_of_val(&x)));
+}
+```
+
+Here's a brief explanation from the Rust documentation:
+
+> `std::mem::size_of_val` is a function, but called with its _full path_. Code can be split in logical units called **modules**. In this case, the `size_of_val` function is defined in the `mem` **module**, and the `mem` **module** is defined in the `std` **crate**.
+
+**Modules** and **Crates** will be discussed later.
+
+```
+value is -257
+The absolute value of x is 257
+size of `x` in bytes: 8
+size of `x` in bits: 64
+```
+
+Numeric literals (e.g., `-52`) can be type-annotated (e.g., `i32`) by adding the type (`i32`) as a suffix (`-52i32`). For example, to specify that the literal (integer number) `43` should have the type `i64`, write `43i64`. For mutable variables, specify the type as `let mut temperature: f64 = 0.0;`. For the immutable (fixed) ones, there's also the option to specify the type as `let temperature: f64 = 27.092;`, as well as `let temperature = 27.092f64;`. What if you initialise a variable like `let mut value = 0i64;`? No problem. But, you'll have to use the old assigned value `0` before assigning a new value to the variable `value`.
+
+```rust
+fn main() {
+    let mut value = 0i64;
+    value = -257;
+    println!("value is {}", value);
+}
+```
+
+Compiler warning:
+
+```
+warning: value assigned to `value` is never read
+ --> testrst.rs:2:13
+  |
+2 |     let mut value = 0i64;
+  |             ^^^^^
+  |
+  = note: `#[warn(unused_assignments)]` on by default
+  = help: maybe it is overwritten before being read?
+
+warning: 1 warning emitted
+```
+
+```
+value is -257
+```
+
+However, the following code will compile as usual.
+
+```rust
+fn main() {
+    let mut value = 0i64;
+    println!("value is {}", value);
+    value = -257;
+    println!("value is {}", value);
+}
+```
+
+```
+value is -257
+```
+
+The type of "unsuffixed" numeric literals will depend on how they are used. If no constraint exists, the compiler will use `i32` for integers, and `f64` for floating-point numbers.
 
 Floating-Point Types in Rust:
 
