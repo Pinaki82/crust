@@ -1576,6 +1576,9 @@ Integer Types in Rust:
 | `128`-bit                           | `i128`       | `u128`       | `let mut int_var: i128 = 0;` or, `let mut uint_var: u128 = 0;` |
 | arch (architecture, 64/32/16/8-bit) | `isize`      | `usize`      |                                                                |
 
+The `isize` and `usize` types depend on the architecture of the
+computer the Rust program is running on. The datatypes `isize` and `usize` are primarily used for indexing some sort of collection.
+
 What about the range? According to Rust's official documentation,
 
 > Each signed variant can store numbers from $-\left( 2^{\left (n-1\right)} \right)$ to $+\left( \left( 2^{\left (n-1\right)} \right) -1 \right)$ inclusive, where $n$ is the number of bits that variant uses. So an `i8` can store numbers from $-2^{8-1} = -2^{7} = -128$ to $2^{8-1} - 1 = 2^{7} - 1 = 128 - 1 = 127$, which equals
@@ -1669,6 +1672,16 @@ value is -257
 
 The type of "unsuffixed" numeric literals will depend on how they are used. If no constraint exists, the compiler will use `i32` for integers, and `f64` for floating-point numbers.
 
+Integer/Number Literals:
+
+| Integer/Number Literals | Can be expressed as: |
+| ----------------------- | -------------------- |
+| Decimal                 | `90_000`             |
+| Hexadecimal             | `0xff`               |
+| Octal                   | `0o77`               |
+| Binary                  | `0b1111_0000`        |
+| Byte (`u8` only)        | `b'A'`               |
+
 Floating-Point Types in Rust:
 
 Floating-point numbers are represented according to the IEEE-754 standard. The `f32` type is a single-precision float, and `f64` has double precision. The default type is `f64`.
@@ -1677,6 +1690,104 @@ Floating-point numbers are represented according to the IEEE-754 standard. The `
 | -------- | ------------------- |
 | `32`-bit | `f32`               |
 | `64`-bit | `f64`               |
+
+If unspecified, all fractional (`float`) numbers default to `f64`.
+
+Basic Mathematical Operations:
+
+1. Addition
+
+2. Subtraction
+
+3. Multiplication
+
+4. Division
+
+5. Remainder
+
+Integer division rounds down to the nearest integer.
+
+```rust
+fn main() {
+    // addition // sum
+    let operation_addition = 15 + 3;
+    println!("operation_addition: {}", operation_addition);
+
+    // subtraction // difference
+    let operation_subtraction = 36.5 - 2.3;
+    println!("operation_subtraction: {}", operation_subtraction);
+
+    // multiplication // product
+    let operation_multiplication = 6 * 50;
+    println!("operation_multiplication: {}", operation_multiplication);
+
+    // division
+    let quotient = 87.4 / 49.3;
+    println!("quotient: {}", quotient);
+    let floored = 6 / 10; // Results in 0
+    println!("floored: {}", floored);
+
+    // remainder
+    let remainder = 27 % 5;
+    println!("remainder: {}", remainder);
+}
+
+/*
+operation_addition: 18
+operation_subtraction: 34.2
+operation_multiplication: 300
+quotient: 1.772819472616633
+floored: 0
+remainder: 2
+*/
+```
+
+**The Boolean Type**:
+
+The Boolean type in Rust has two possible values, either `true` or `false`. Booleans occupy one byte in size. A Boolean is expressed by the **keyword** `bool`.
+
+```rust
+fn main() {
+    let yeah = true;
+    println!("yeah: {}", yeah);
+
+    let nope: bool = false; // with explicit type annotation
+    println!("nope: {}", nope);
+}
+
+/*
+yeah: true
+nope: false
+*/
+```
+
+Boolean values are primarily used in Flow Control (which will be covered later) e.g., `if`, `else`, `else if`, `loop`, `while`, `for` to break or take another direction after meeting certain given conditions.
+
+**The Character DataType**: The _keyword_ `char` is used to deal with Character Data Types.
+
+```rust
+fn main() {
+    let c = 'z';
+    println!("c: {}", c);
+
+    let z: char = 'ℤ'; // with explicit type annotation
+    println!("z: {}", z);
+
+    let thumbs_up = '👍';
+    println!("thumbs_up: {}", thumbs_up);
+}
+
+/*
+c: z
+z: ℤ
+thumbs_up: 👍
+*/
+```
+
+`char` literals are specified with single quotes `let c = 'z';`, as opposed to string
+literals `let name = "Pinaki";`, which are specified with double quotes. Rust’s `char` type is four bytes in size and represents a Unicode Scalar Value, which means it can represent a lot more than conventional ASCII characters. Unicode Scalar Values range from `U+0000` to `U+D7FF` and `U+E000` to `U+10FFFF`. See: [Storing UTF-8 Encoded Text with Strings - The Rust Programming Language](https://doc.rust-lang.org/book/ch08-02-strings.html#storing-utf-8-encoded-text-with-strings).
+
+**Compound DataTypes**:
 
 Let's break down the third skeleton before we move on to the actual chapters.
 
