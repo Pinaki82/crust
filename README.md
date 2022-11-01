@@ -18,6 +18,10 @@ Don't expect any long introduction, since I don't have time for that. I have to 
 
 Please have a look at [Tulu-C-IDE](https://github.com/Pinaki82/Tulu-C-IDE).
 
+You will find instructions to set up the [MSYS2](https://www.msys2.org/) Build Environment in detail. Leave the Installation directory up to the [MSYS2](https://www.msys2.org/) installer (The default location is: `C:\msys64`).  For consistency, we won't be using the "Microsoft Visual Studio Build Tools" (a.k.a., [Windows SDK](https://developer.microsoft.com/en-us/windows/downloads/windows-sdk/) or the IDE version of the MSVC (a.k.a., [Visual Studio](https://visualstudio.microsoft.com/)). If you want to install MSVC, go ahead and do so. Examples provided here will compile either with MinGW (a variant of GCC that you can find in the MSYS2 repository) or MSVC. However, you're on your own if you choose MSVC; make sure you set up the Microsoft build environment properly through the Microsoft-provided `vcvarsall.bat`.
+
+I do not recommend a full-blown IDE like Visual Studio, QT Creator, KDevelop, Code::Blocks IDE, CodeLite IDE, or Eclipse CDT unless you have very specific requirements to run a particular IDE. You won't need any of them, at least for now.
+
 To keep things simple and make the journey a hands-on experience, do not use the autocompletion feature in any of the editors mentioned. However, you are allowed to use those editors mentioned with their configurations ([Tulu-C-IDE](https://github.com/Pinaki82/Tulu-C-IDE) and [Tulu-C-IDE Helix Edition](https://github.com/Pinaki82/Tulu-C-IDE/tree/main/_helix_edition)). You can look at the autocompletion hints, but type the code yourself. In my opinion [Tulu-C-IDE Helix Edition](https://github.com/Pinaki82/Tulu-C-IDE/tree/main/_helix_edition) will be a better choice for learning. Type the codes yourself. Or else, you'll learn nothing. I mean, be a little honest with yourself. Don't cheat yourself.
 
 The more you will type the code yourself, the less you'll forget what you've learned. If you are on MS Windows, try [Geany](https://www.geany.org/download/releases/) or [Notepad++](https://notepad-plus-plus.org/downloads/). On Linux systems with GTK-dependent Desktop Environments, such as GNOME, XFCE, MATE, Cinamon etc., you can use Geany. If you are using a Linux distribution that ships a QT-based Desktop Environment, for example, KDE, LXQT etc., try [Kate](https://kate-editor.org/en-gb/get-it/). Like [Geany](https://www.geany.org/download/releases/), [Kate](https://kate-editor.org/en-gb/get-it/) can be installed on MS Windows.
@@ -30,7 +34,7 @@ Download the entire repository in a Zip archive. Extract the zipped file somewhe
 
 # Our Strategy
 
-Enter `crust/` from the graphical file manager. R-Click inside the folder and find the option to open a terminal emulator there. Open two terminal emulators if you are on Linux, one for editing the source file with Helix and the other for compiling/executing the code. Type `ls` (Linux) or `dir` (Windows) to see the contents of the folder. You'll find `runc.sh` that you can use on most Linux systems to build/run the code. Use `runc.BAT` on MS Windows machines. You don't have to open a separate console. Double-click on the DOSBATCH script and it will take care of the build process.
+Enter `crust/` from the graphical file manager. R-Click inside the folder and find the option to open a terminal emulator there. Open two terminal emulators if you are on Linux, one for editing the source file with Helix and the other for compiling/executing the code. Type `ls` (Linux) or `dir` (Windows) to see the contents of the folder. You'll find `runc.sh` that you can use on most Linux systems to build/run the code. Use `runc.BAT` or `runc-msys2x64.sh` on MS Windows machines. You don't have to open a separate console. Double-click on the DOSBATCH script and it will take care of the build process. Or, use the script `runc-msys2x64.sh` with the "MSYS2 MinGW 64-bit" Bash Shell.
 
 ```shell
 # Change the execution permission parameter of the script.
@@ -42,6 +46,8 @@ chmod +x runc.sh
 **Modify the files `main.c` and `main.rs` in `crust/code/testbed/src/` along the way**. You'll keep backups in a plain text file.
 
 Find a file `exercises.txt`. After learning a particular topic, write the code and notes to `exercises.txt` on the topic you covered.
+
+**FAQ**: Can I use the Power Shell? Yes, but it doesn't have any purpose here. Build chains are largely driven by makefile generators (CMake, Bakefile), make utilities (make, nmake, mingw32-make), and build environments (Cargo), regardless of the complexity of the project. Both theoretically and technically, any console interface can be used. Although, using the PS might involve unnecessary work sometimes. Look at [this](https://stackoverflow.com/questions/69305821/compile-c-programs-from-windows-powershell-with-msvc) Stack Overflow thread. Instead, use an emulator like WezTerm and switch to the PS from there when required. For compiling C/C++/Rust projects, the more feature-rich, objected-oriented Power Shell language is not a requirement. The right tool for the right job matters the most without drifting away from the task at hand.
 
 ## Table of Contents
 
