@@ -1877,7 +1877,7 @@ index 4: 5
 */
 ```
 
-We could also declare the array of the above program as follows:
+We could also declare the array in the above program as follows:
 
 ```rust
 let a: [i32; 5] = [1, 2, 3, 4, 5];
