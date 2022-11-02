@@ -1787,7 +1787,95 @@ thumbs_up: 👍
 `char` literals are specified with single quotes `let c = 'z';`, as opposed to string
 literals `let name = "Pinaki";`, which are specified with double quotes. Rust’s `char` type is four bytes in size and represents a Unicode Scalar Value, which means it can represent a lot more than conventional ASCII characters. Unicode Scalar Values range from `U+0000` to `U+D7FF` and `U+E000` to `U+10FFFF`. See: [Storing UTF-8 Encoded Text with Strings - The Rust Programming Language](https://doc.rust-lang.org/book/ch08-02-strings.html#storing-utf-8-encoded-text-with-strings).
 
-**Compound DataTypes**:
+**Compound DataTypes**: *Compound types* can group multiple values into one type.
+
+There are two kinds of _Compound DataTypes_ in Rust,
+
+1. Tuple
+
+2. Array
+
+**The Tuple Type**: Tuple is used to store values of multiple data types into one type, grouping them all together. It is created by writing a comma-separated list of values inside parentheses. Each position in the tuple has a _type_.
+
+Demo: In the following program, we first create a **tuple** (a variable. Here, `tup`) of values `(237, 9.325, 7)`. We also specify the data types as `(i32, f64, u8)`. Then we group three variables `x`, `y`, and `z` using the keyword `let`, and treat the group as the variable `tup` itself, `let (x, y, z) = tup`. Each variable inside the tuple-variable `tup` is separated internally as `x`, `y`, and `z`. The process is known as _destructuring_. It breaks the single tuple into three (equal to the number of values grouped together: 3) parts.
+
+```rust
+fn main() {
+    let tup: (i32, f64, u8) = (237, 9.325, 7);
+    let (x, y, z) = tup;
+    println!("The value of z is: {z}");
+    println!("The value of x is: {x}");
+    println!("The value of y is: {y}");
+}
+
+/*
+The value of z is: 7
+The value of x is: 237
+The value of y is: 9.325
+*/
+```
+
+We can also access a single _element_ of a tuple directly by putting a dot/full stop (`.`) after writing the index of the value we want to access. Note that the index starts from ZERO (`0`), not ONE (`1`). The first index in a tuple is `0`. Both in C and Rust, the counting of array elements starts from ZERO (`0`). We will come to it in the chapter **Array**.
+
+```rust
+fn main() {
+    let tup: (i32, f64, u8) = (237, 9.325, 7);
+
+    let element_one = tup.0;
+    let element_two = tup.1;
+    let element_three = tup.2;
+
+    println!("element_one is: {element_one}");
+    println!("or, element_one is: {}", element_one);
+    println!("or, element_one is: {}", tup.0);
+    println!();
+    //
+    println!("element_two is: {element_two}");
+    println!("or, element_two is: {}", element_two);
+    println!("or, element_two is: {}", tup.1);
+    println!();
+    //
+    println!("element_three is: {element_three}");
+    println!("or, element_three is: {}", element_three);
+    println!("or, element_three is: {}", tup.2);
+    println!();
+}
+
+/*
+element_one is: 237
+or, element_one is: 237
+or, element_one is: 237
+
+element_two is: 9.325
+or, element_two is: 9.325
+or, element_two is: 9.325
+
+element_three is: 7
+or, element_three is: 7
+or, element_three is: 7
+*/
+```
+
+**The Array Type**: Array will also create a collection of multiple values. One notable exception, though: You cannot group values of a myriad of data types. Every element in an array must have the same data type. Also, arrays in Rust have a fixed length. In C, you can declare an empty array of unspecified length, and then change its length during the execution of the program using memory allocation techniques. We will see it in the chapter "Array".
+
+The values in an array are grouped together by a comma-separated list inside square brackets.
+
+```rust
+fn main() {
+    let a = [1, 2, 3, 4, 5];
+    for i in 0..5 { // 0 to 4, plus one (extra)
+        println!("index {}: {}", i, a[i]);
+    }
+}
+
+/*
+index 0: 1
+index 1: 2
+index 2: 3
+index 3: 4
+index 4: 5
+*/
+```
 
 Let's break down the third skeleton before we move on to the actual chapters.
 
