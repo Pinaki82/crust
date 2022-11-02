@@ -1877,6 +1877,13 @@ index 4: 5
 */
 ```
 
+We could also declare the array of the above program as follows:
+
+```rust
+let a: [i32; 5] = [1, 2, 3, 4, 5];
+// let arr: [datatype; no_of_elements] = [A, comma_separated, list, of, elements];
+```
+
 Let's break down the third skeleton before we move on to the actual chapters.
 
 ```rust
