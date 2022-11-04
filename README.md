@@ -1904,7 +1904,7 @@ has the same initial value of 5.
 ```
 
 ```rust
-let var = [initial_val; length];
+let arr = [initial_val; length];
 ```
 
 So, `let a = [5; 8];` is essentially the same as `let a = [5, 5, 5, 5, 5, 5, 5, 5];`. We can initialise an array of `27` elements each of which will be of initial value `0` as `let mut arr = [0; 27];`.
