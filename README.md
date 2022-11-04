@@ -1884,6 +1884,64 @@ let a: [i32; 5] = [1, 2, 3, 4, 5];
 // let arr: [datatype; no_of_elements] = [A, comma_separated, list, of, elements];
 ```
 
+Arrays are useful when the number of elements does not change, for example, the days of the week.
+
+```rust
+let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+```
+
+For collections of changeable length, there is another Rust data type called **Vector.** A Vector is allowed to grow or shrink in size. Vectors will be discussed later.
+
+Arrays can be initialised with the same values for all elements by specifying the initial value at the time of declaration.
+
+```rust
+let a = [5; 8];
+```
+
+```rust
+let var = [initial_val; length];
+```
+
+So, `let a = [5; 8];` is essentially the same as `let a = [5, 5, 5, 5, 5, 5, 5, 5];`. We can initialise an array of `27` elements each of which will be of initial value `0` as `let mut arr = [0; 27];`.
+
+**Accessing Array Elements**: As we've seen before,
+
+```rust
+fn main() {
+    let a = [1, 2, 3, 4, 5];
+    for i in 0..5 { // 0 to 4, plus one (extra)
+        println!("index {}: {}", i, a[i]);
+    }
+}
+
+/*
+index 0: 1
+index 1: 2
+index 2: 3
+index 3: 4
+index 4: 5
+*/
+```
+
+Array elements can be accessed as `a[i]`, `i` being the $i^{th}$ element in the array.
+
+```rust
+fn main() {
+    let a = [1, 2, 3, 4, 5];
+
+    let zeroth = a[0]; // assigning each element to a separate var
+    let first = a[1];
+
+    println!("index {}: {}", 0, zeroth); // accessing the var
+    println!("index {}: {}", 1, first);
+}
+
+/*
+index 0: 1
+index 1: 2
+*/
+```
+
 Let's break down the third skeleton before we move on to the actual chapters.
 
 ```rust
