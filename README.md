@@ -1895,7 +1895,12 @@ For collections of changeable length, there is another Rust data type called **
 Arrays can be initialised with the same values for all elements by specifying the initial value at the time of declaration.
 
 ```rust
-let a = [5; 8];
+let a = [5; 8]; // initial_value; length
+/*
+An array of 8 elements,
+each of which
+has the same initial value of 5.
+*/
 ```
 
 ```rust
@@ -1924,6 +1929,8 @@ index 4: 5
 ```
 
 Array elements can be accessed as `a[i]`, `i` being the $i^{th}$ element in the array.
+
+Or, Array elements can be accessed by assigning each element to a separate variable, and then, accessing the variable indirectly.
 
 ```rust
 fn main() {
