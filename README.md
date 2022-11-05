@@ -1953,6 +1953,10 @@ index 1: 2
 
 Runtime *panic* at "Out of Bound Array Index". The "Index Out Of Bounds" error.
 
+When a program tries to access an element of an array that is past the end of the array, an error will be generated during the execution of the program. The example shown below has an array variable `a`, which contains 5 elements. Usually, the Rust compiler will flag an error message if your try to access the element that doesn't exist, for example, the 6th element. You can write a tricky program that fails to detect such a possibility at the compile time. Nevertheless, the error will be generated during the program's run, provided the program encounters such an invalid attempt to access a non-existent element. You don't have to understand every line of code in the following program at the moment. Compile and run it. Type `0 1 2 3 4 5 6 7`, that means you're telling the program to show the 0th, 1st, 2nd, 3rd, 4th, ..., and 7th elements consecutively.
+
+See what happens when you run past the last index of an array. See it in action.
+
 ```rust
 use std::io;
 
@@ -2001,6 +2005,10 @@ thread 'main' panicked at 'index out of bounds: the len is 5 but the index is 5'
 note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 */
 ```
+
+**Constants**:
+
+**Shadowing**:
 
 Let's break down the third skeleton before we move on to the actual chapters.
 
