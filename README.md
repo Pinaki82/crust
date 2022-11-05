@@ -1953,7 +1953,9 @@ index 1: 2
 
 Runtime *panic* at "Out of Bound Array Index". The "Index Out Of Bounds" error.
 
-When a program tries to access an element of an array that is past the end of the array, an error will be generated during the execution of the program. The example shown below has an array variable `a`, which contains 5 elements. Usually, the Rust compiler will flag an error message if your try to access the element that doesn't exist, for example, the 6th element. You can write a tricky program that fools the Rust compiler so the compiler fails to detect such a possibility at the compile time. Nevertheless, the error will be generated during the program's run, provided the program encounters such an invalid attempt to access a non-existent element. You don't have to understand every line of code in the following program at the moment. Compile and run it. Type `0 1 2 3 4 5 6 7`, that means you're telling the program to show the 0th, 1st, 2nd, 3rd, 4th, ..., and 7th elements consecutively.
+When a program tries to access an element of an array that is past the end of the array, an error will be generated during the execution of the program. The example shown below has an array variable `a`, which contains 5 elements. Usually, the Rust compiler will flag an error message if your try to access the element that doesn't exist, for example, the 6th element. You can write a tricky program that fools the Rust compiler so the compiler fails to detect such a possibility at the compile time. Nevertheless, the error will be generated during the program's run, provided the program encounters such an invalid attempt to access a non-existent element. You cannot break the Laws of Physics. Thus, you cannot move beyond a computer's limitations.
+
+You don't have to understand every line of code in the following program at the moment. Compile and run it. Type `0 1 2 3 4 5 6 7`, that means you're telling the program to show the 0th, 1st, 2nd, 3rd, 4th, ..., and 7th elements consecutively.
 
 See what happens when you run past the last index of an array. See it in action.
 
