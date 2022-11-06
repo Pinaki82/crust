@@ -2036,7 +2036,7 @@ fn main() {
     let mut result: u32 = 0;
     /* some calculation; */
     result = var + var2;
-    const A_CONST: u32 = 25 * var + result;
+    const A_CONST: u32 = 25 * var + result; // an expression containing changeable values
 
     println!("A_CONST = {}", A_CONST);
 }
