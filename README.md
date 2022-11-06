@@ -2008,7 +2008,75 @@ note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 */
 ```
 
-**Constants**:
+**Constants**: We've already seen that variables in Rust are _immutable_ (unchangeable) by default unless we use the _keyword_ `mut` to make them _mutable_. Values stored in immutable variables are not intended to change during execution. Like immutable variables, *constants* are values that are bound to names (like variable names) and are not allowed to change, although there are a few differences between constants and variables. The keyword `mut` cannot be used with _constants_. **Constants** are not allowed to change under any circumstances.
+
+**Constants** are declared using the _keyword_ `const`, unlike variables that are declared using the _keyword_ `let`. The type of the value must be annotated while declaring **constants**.  The last difference is that expressions set to constants must be fixed values, which implies, constants cannot take values that are obtained after performing a calculation during the execution. `5 * 9` is allowed. However, `let mut var: u32 = 2;` `let mut var2: u32 = 3;` `let mut result: u32 = 0;` `some calculation;` `result = var + var2;` `const A_CONST: u32 = 25 * var + result;` won't be allowed.
+
+```rust
+fn main() {
+    const WEEKS_IN_A_YEAR: u32 = 365 / 7;
+    /* One calendar common year has 365 days */
+    /* 7 days per week */
+
+    println!("One year = {} weeks.", WEEKS_IN_A_YEAR);
+}
+
+/*
+One year = 52 weeks.
+*/
+```
+
+A Constant is not allowed to take any changeable value in its expression.
+
+```rust
+fn main() {
+    let mut var: u32 = 2;
+    let mut var2: u32 = 3;
+    let mut result: u32 = 0;
+    /* some calculation; */
+    result = var + var2;
+    const A_CONST: u32 = 25 * var + result;
+
+    println!("A_CONST = {}", A_CONST);
+}
+/*
+Compiler error:
+ --> testrst.rs:7:31
+  |
+7 |     const A_CONST: u32 = 25 * var + result;
+  |     -------------             ^^^ non-constant value
+  |     |
+  |     help: consider using `let` instead of `const`: `let A_CONST`
+ --> testrst.rs:7:37
+  |
+7 |     const A_CONST: u32 = 25 * var + result;
+  |     -------------                   ^^^^^^ non-constant value
+error: aborting due to 2 previous errors
+*/
+```
+
+However, constants can be brought into expressions/calculations normally. You can use constants without trying to alter their values; that is the purpose of constants.
+
+```rust
+fn main() {
+    /* 2 * pi * radius is the circumference of a circle */
+    const TWO: f32 = 2.0; // a constant
+
+    const PI: f32 = 3.142857143; // also a constant
+    let mut radius: f32 = 0.0; // a mutable var
+    let mut circumference: f32 = 0.0; // another mutable var
+
+    radius = 4.5; // assigning a value
+
+    circumference = TWO * PI * radius; // performing a calc
+
+    println!("Circumference = {}", circumference); // printing/using the result
+}
+
+/*
+Circumference = 28.285713
+*/
+```
 
 **Shadowing**:
 
