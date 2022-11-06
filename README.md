@@ -2013,6 +2013,7 @@ note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 **Constants** are declared using the _keyword_ `const`, unlike variables that are declared using the _keyword_ `let`. The type of the value must be annotated while declaring **constants**.  The last difference is that expressions set to constants must consist of fixed values, which implies, constants cannot take values that are obtained after performing a calculation during the execution. `5 * 9` is allowed. However, `let mut var: u32 = 2;` `let mut var2: u32 = 3;` `let mut result: u32 = 0;` `some calculation;` `result = var + var2;` `const A_CONST: u32 = 25 * var + result;` won't be allowed.
 
 ```rust
+/* An example of a constant declaration: */
 fn main() {
     const WEEKS_IN_A_YEAR: u32 = 365 / 7;
     /* One calendar common year has 365 days */
