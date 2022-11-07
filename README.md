@@ -2316,6 +2316,16 @@ The `Result` _Type_ and handling failure:
 
 Rust allows us to split codes across multiple lines as long we maintain proper Rust syntax, and so does C. Now we come to the third line of the same statement, which could also be written as: `io::stdin().read_line(&mut user_submitted_radius).ok().expect("Couldn't read user input!");` in a single line.
 
+Next:
+
+```rust
+radius = user_submitted_radius.trim().parse().expect("Invalid user input!n");
+```
+
+We discussed `trim()` before.
+
+`trim()`: The function `trim()` removes leading and trailing whitespace characters. NOTE: This function will not remove the inline spaces (whitespace characters found inside the string text). Only the whitespace chars found at the beginning and end will be trimmed.
+
 Let's break down the third skeleton before we move on to the actual chapters.
 
 ```rust
