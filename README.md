@@ -2326,6 +2326,8 @@ We discussed `trim()` before.
 
 `trim()`: The function `trim()` removes leading and trailing whitespace characters. NOTE: This function will not remove the inline spaces (whitespace characters found inside the string text). Only the whitespace chars found at the beginning and end will be trimmed.
 
+[parse()](https://doc.rust-lang.org/std/primitive.str.html#method.parse):
+
 Let's break down the third skeleton before we move on to the actual chapters.
 
 ```rust
