@@ -2253,6 +2253,69 @@ io::stdin().read_line(&mut user_submitted_radius)
              .expect("Couldn't read user input!");
 ```
 
+If we go back to the beginning of the program, we will see that we created an empty string object by `let mut user_submitted_radius = String::new();`. We learned that the double colon `::` is used to access individual elements (functions etc.) in a grouped module, similar to the serial assembly of individual links in a chain. We know that `new()` is a function. We discussed most of the String Object calling Methods (Functions). The line `let mut user_submitted_radius = String::new();` has created a mutable variable (`user_submitted_radius`) that is currently bound to a new empty instance of a `String`.
+
+To take user input and perform calculations before printing the result as output, we brought the `io` input/output **library** into the *scope*. The `io` library is contained in the **Standard Library**, known as `std:`.
+
+The `use` keyword -> Bring symbols into **scope**:
+
+```rust
+use std::io;
+```
+
+Here,
+
+```rust
+io::stdin().read_line(&mut user_submitted_radius)
+             .ok()
+             .expect("Couldn't read user input!");
+```
+
+We are calling the `stdin` function from the `io` module, which will allow us to handle user input:
+
+```rust
+read_line(&mut user_submitted_radius)
+```
+
+Had we not imported the library `std::io` into the scope, we could still access the function (method) `read_line()` by writing `std::io::stdin().read_line()`. Notice the chain links.
+
+According to Rust's documentation:
+
+> The `stdin` function returns an instance of [`std::io::Stdin`](https://doc.rust-lang.org/std/io/struct.Stdin.html), which is a type that represents a handle to the standard input for your terminal.
+
+The function `.read_line(&mut user_submitted_radius)` calls the [`read_line`](https://doc.rust-lang.org/std/io/struct.Stdin.html#method.read_line) method/function on the standard input handle to get input from the user.
+
+**BTW, what does that DOT sign (`.`) do?**
+
+![dot-operator-circle](assets/dot-operator-circle.svg)
+
+Look at the [B - Operators and Symbols - The Rust Programming Language](https://doc.rust-lang.org/book/appendix-02-operators.html). One of the many uses of the [The Dot Operator](https://doc.rust-lang.org/stable/nomicon/dot-operator.html) is that it can act like a dereferencing operator used to dig the method (fn) down from the dereference "tree", which happens at the compile time. There is no runtime performance penalty for finding methods (functions) and fields using the dereferencing techniques. DOT will perform auto-referencing, auto-dereferencing, and coercion until types match.
+
+To be precise,
+
+> The `.` operator is used in accessing fields and methods of a reference. The
+>  `.` operator automatically digs down deeper and dereferences a sequence of references.
+
+Think of it as another way of pulling an individual link in a chain.
+
+We’re also passing `&mut user_submitted_radius` as the argument to `read_line()`. The full job of `read_line()` is to take whatever the user types into the standard input stream and **append** that input into a string (**without overwriting** its contents). We pass the string `user_submitted_radius` as an argument. Look back. We declared that variable as `let mut user_submitted_radius = String::new();`. Since the string was empty, only the user submitted value will be the final after appending the input to the empty string.
+
+The string argument needs to be mutable so the method can append the user input to the string’s content.
+
+The `&` operator indicates that this argument is a _reference_ to a _mutable_ variable.
+
+It gives you a way to let multiple parts of your code access one piece of data without needing to copy that data into memory multiple times. It's a complex topic. For now, all you need to know is that like variables, references are immutable by default. Hence, you need to write `&mut user_submitted_radius` rather than `&user_submitted_radius` to make it mutable.
+
+The `Result` _Type_ and handling failure:
+
+[The ok() method](https://doc.rust-lang.org/std/result/enum.Result.html#method.ok) and [The expect() method](https://doc.rust-lang.org/std/result/enum.Result.html#method.expect): `read_line()` returns a value `Result` after accomplishing the designated task, either an `Ok` if nothing goes wrong, or an `Err`. The `Result`'s variants are `Ok` and `Err`. Can this even happen? Imagine a situation where there's no console and no user to submit input. The method/function `ok()` converts the value _Result_ into a value _Option_ (indicating how many bytes have been read), and the function `expect()` gives either that `Ok` value or shows an `Err` message when it encounters an error. Panic in Rust is a circumstance when an irrecoverable error occurs. The function `expect()` lets us detect where it occurs, in case of a panic. You must call this `expect()` function. If you do not use the `Result` value returned from `read_line()`, the program will compile with serious warnings, and you will never know what happened in case of a bad event. Keep in mind that the function `read_line()` eats whatever the user throws into the string passed out of the standard input (here, `stdin()`), but it also returns a `Result` value for you to deal with panics.
+
+```rust
+        .expect("Couldn't read user input!");
+```
+
+Rust allows us to split codes across multiple lines as long we maintain proper Rust syntax, and so does C. Now we come to the third line of the same statement, which could also be written as: `io::stdin().read_line(&mut user_submitted_radius).ok().expect("Couldn't read user input!");` in a single line.
+
 Let's break down the third skeleton before we move on to the actual chapters.
 
 ```rust
