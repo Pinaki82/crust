@@ -2079,7 +2079,177 @@ Circumference = 28.285713
 */
 ```
 
-**Shadowing**:
+**Shadowing**: Shadowing is when you declare a new variable with the same name as a previously declared variable. Shadowing == Redeclaring. Think of it like `x` is re-declared twice or more. It is defined as "The first variable being _shadowed_ by the second". What does that mean? The second variable is what the compiler will see when you use the same name as the previously declared variable. The last declared one will be taken into consideration by the compiler. In effect, the second variable overshadows the first. When some other variable with the same name overpowers the previous one giving it the same treatment, the last one will be taken into account.
+
+We can shadow a variable by using the same variable’s name by declaring it over and again, repeating the `let` keyword as follows:
+
+```rust
+fn main() {
+    println!("The value of x...");
+
+    let x: u32 = 7; // The 1st scope.
+                    // This program first binds x to a value of 7.
+    println!("...in the 1st scope is: {x}");
+
+    let x: u32 = x + 3; // The 2nd scope.
+                        // Then it creates a new variable x again
+                        // (notice the use of the keyword let).
+                        // It takes the original value of x (7) and adds
+                        // 3, so the value of x is 10.
+    println!("...in the 2nd scope is: {}", x);
+
+    {
+        // INNER SHADOWING with second brackets:
+        // { let repeat_var: datatype = new_value;}.
+
+        let x: u32 = x * 5; // The 3rd (inner) scope.
+                            // The third let statement also shadows x and
+                            // creates a new variable, multiplying
+                            // the previous value by 5 to give x
+                            // a value of 50.
+
+        println!("...in the 3rd (inner) scope is: {x}");
+    } // INNER SHADOWING {the second bracket} ends here.
+
+    // When that inner scope is over,
+    // the inner shadowing ends
+    // and x returns to being 10.
+
+    println!("...in the end is: {x}");
+}
+
+/*
+The value of x...
+...in the 1st scope is: 7
+...in the 2nd scope is: 10
+...in the 3rd (inner) scope is: 50
+...in the end is: 10
+*/
+```
+
+Shadowing is different from marking a variable `mut`. One notable difference between *shadowed* variables and mutable variables is that we are not allowed to re-declare a _mutable_ variable twice. See what happens if we decide to do so:
+
+```rust
+fn main() {
+    println!("The value of x...");
+
+    let mut x: u32 = 7; // The 1st scope.
+                        // This program first binds x to a value of 7.
+    println!("...in the 1st scope is: {x}");
+
+    let mut x: u32 = x + 3; // The 2nd scope.
+                            // Then it creates a new variable x again
+                            // (notice the use of the keyword let).
+                            // It takes the original value of x (7) and adds
+                            // 3, so the value of x is 10.
+    println!("...in the 2nd scope is: {}", x);
+
+    {
+        // INNER SHADOWING with second brackets:
+        // { let repeat_var: datatype = new_value;}.
+
+        let mut x: u32 = x * 5; // The 3rd (inner) scope.
+                                // The third let statement also shadows x and
+                                // creates a new variable, multiplying
+                                // the previous value by 5 to give x
+                                // a value of 50.
+
+        println!("...in the 3rd (inner) scope is: {x}");
+    } // INNER SHADOWING {the second bracket} ends here.
+
+    // When that inner scope is over,
+    // the inner shadowing ends
+    // and x returns to being 10.
+
+    println!("...in the end is: {x}");
+}
+
+/*
+warning: variable does not need to be mutable
+ --> testrst.rs:4:9
+  |
+4 |     let mut x: u32 = 7; // The 1st scope.
+  |         ----^
+  |         |
+  |         help: remove this `mut`
+  * * *
+  * 
+  *
+  ...
+  ... So many warnings here.
+  ...
+  * 
+  * 
+  warning: 3 warnings emitted
+*/
+```
+
+The other difference between `mut` and shadowing is that a shadowed variable may have different data types at different points. In the following program, the variable `spaces` takes the number of whitespace characters, and then we want to store that input as a number (how many `spaces`) by shadowing the same variable:
+
+```rust
+fn main() {
+    let spaces = "   "; // The first `spaces` variable is a string type.
+    print!("The str is: {},", spaces);
+
+    let spaces = spaces.len(); // The re-declared one is of a number type.
+    println!(" and the num is: {}", spaces);
+}
+
+/*
+The str is:    , and the num is: 3
+*/
+```
+
+What is the advantage? Here, we can re-declare `spaces` without having to come up with different names, such as `spaces_str` and `spaces_num`, which makes the job easier sometimes. Remember that shadowed variables cannot be mutable (`mut`).
+
+```rust
+fn main() {
+    let mut spaces = "   "; // The first `spaces` variable is a string type.
+    print!("The str is: {},", spaces);
+
+    let spaces = spaces.len(); // The second one is of a number type.
+    println!(" and the num is: {}", spaces);
+}
+
+/*
+warning: variable does not need to be mutable
+ --> testrst.rs:2:9
+  |
+2 |     let mut spaces = "   "; // The first `spaces` variable is a string type.
+  |         ----^^^^^^
+  |         |
+  |         help: remove this `mut`
+  * ... warnings go on...
+*/
+```
+
+By now, we know the meaning of the line:
+
+```rust
+let mut radius: f32 = 0.0;
+```
+
+In our Area of a Circle program. We haven't left our "Area of a Circle" program yet.
+
+Move on to the next lines.
+
+```rust
+let mut squired: f32 = 0.0;
+```
+
+```rust
+let mut area: f32 = 0.0;
+```
+
+**Variables and Data Types in a Nutshell**: (An image file will be added after a while.)
+
+Do we need more explanation? You already know that. Let's look at this section of our Area of a Circle calculation program.
+
+```rust
+io::stdin().read_line(&mut user_submitted_radius)
+             .ok()
+             .expect("Couldn't read user input!");
+```
 
 Let's break down the third skeleton before we move on to the actual chapters.
 
