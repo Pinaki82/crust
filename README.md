@@ -2241,7 +2241,9 @@ let mut squired: f32 = 0.0;
 let mut area: f32 = 0.0;
 ```
 
-**Variables and Data Types in a Nutshell**: (An image file will be added after a while.)
+**Rust Variables and Data Types in a Nutshell**:
+
+![rust-variables-n-data-types](assets/rust-variables-n-data-types.svg)
 
 Do we need more explanation? You already know that. Let's look at this section of our Area of a Circle calculation program.
 
