@@ -2229,7 +2229,9 @@ By now, we know the meaning of the line:
 let mut radius: f32 = 0.0;
 ```
 
-In our Area of a Circle program. We haven't left our "Area of a Circle" program yet.
+In our Area of a Circle program.
+
+We haven't left our "Area of a Circle" program yet.
 
 Move on to the next lines.
 
