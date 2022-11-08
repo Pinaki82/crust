@@ -2275,7 +2275,7 @@ io::stdin().read_line(&mut user_submitted_radius)
              .expect("Couldn't read user input!");
 ```
 
-We are calling the `stdin` function from the `io` module, which will allow us to handle user input:
+We are calling the `stdin()` function from the `io` module, which will allow us to handle user input:
 
 ```rust
 read_line(&mut user_submitted_radius)
@@ -2285,9 +2285,9 @@ Had we not imported the library `std::io` into the scope, we could still access 
 
 According to Rust's documentation:
 
-> The `stdin` function returns an instance of [`std::io::Stdin`](https://doc.rust-lang.org/std/io/struct.Stdin.html), which is a type that represents a handle to the standard input for your terminal.
+> The `stdin()` function returns an instance of [`std::io::Stdin`](https://doc.rust-lang.org/std/io/struct.Stdin.html), which is a type that represents a handle to the standard input for your terminal.
 
-The function `.read_line(&mut user_submitted_radius)` calls the [`read_line`](https://doc.rust-lang.org/std/io/struct.Stdin.html#method.read_line) method/function on the standard input handle to get input from the user.
+The function `read_line(&mut user_submitted_radius)` calls the [`read_line`](https://doc.rust-lang.org/std/io/struct.Stdin.html#method.read_line) method/function on the standard input handle to get input from the user.
 
 **BTW, what does that DOT sign (`.`) do?**
 
