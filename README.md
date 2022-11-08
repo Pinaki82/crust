@@ -2362,7 +2362,7 @@ Move forward. Look at the next line.
 squired =  radius * radius;
 ```
 
-Nothing's special. We're multiplying `radius` with `radius`, $r^2$. The `*` is an arithmetic operator, called the **Multiplication Operator**.
+Nothing's special. We're multiplying `radius` with `radius`, $r \times r = r^2$. The `*` is an arithmetic operator, called the **Multiplication Operator**.
 
 ```rust
 area = 3.14 * squired; // The formula: area = pi * r^2
