@@ -2324,7 +2324,7 @@ The `Result` _Type_ and handling failure:
 
 Rust allows us to split codes across multiple lines as long we maintain proper Rust syntax, and so does C. Now we come to the third line of the same statement, which could also be written as: `io::stdin().read_line(&mut user_submitted_radius).ok().expect("Couldn't read user input!");` in a single line.
 
-There's no C-like short form of `scanf()`. So, your programs are more memory safe from the ground up. Although, C programs can be equally or more memory safe when extra steps are not reluctantly avoided. Rust enforce safety from the start. After all, C is all about ultimate flexibility which is the power of C, not a drawback.
+There's no C-like short form of `scanf()`. So, your programs are more memory safe from the ground up. Although, C programs can be equally or more memory safe when extra steps are not reluctantly avoided. Rust enforces safety from the start. After all, C is all about ultimate flexibility which is the power of C, not a drawback.
 
 Next:
 
