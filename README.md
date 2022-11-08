@@ -2261,6 +2261,8 @@ To take user input and perform calculations before printing the result as output
 
 The `use` keyword -> Bring symbols into **scope**:
 
+![std-io](assets/std-io.svg)
+
 ```rust
 use std::io;
 ```
