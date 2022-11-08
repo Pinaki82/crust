@@ -2439,7 +2439,7 @@ fn main() {
 
 Let's break down the third skeleton before we move on to the actual chapters.
 
-This time, we will start with Rust to make our job easier.
+This time, we will start with Rust to make our job easier. Only the unexplained parts will be discussed.
 
 **The simple file input/output and user input/output program in Rust:**
 
