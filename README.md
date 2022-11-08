@@ -2406,7 +2406,7 @@ var01 = 125, and var02 = Rust
 */
 ```
 
-By now, we've successfully taken apart our second skeleton, "the Area of a Circle". Look at our second skeleton for the final term. Check out what you've learned and how much of it retains after that. Revisit the necessary sections if needed.
+By now, we've successfully taken apart our second skeleton, "the Area of a Circle". Look at our second skeleton for the final term. Put all components together. Check out what you've learned and how much of it retains after that. Revisit the necessary sections if needed.
 
 ```rust
 /*
