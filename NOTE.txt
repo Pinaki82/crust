@@ -14,6 +14,7 @@ rough
 https://github.com/Pinaki82/crust/tree/rough
 
 
+https://latex-programming.fandom.com/wiki/List_of_LaTeX_symbols
 
 
 

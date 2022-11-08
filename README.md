@@ -2304,7 +2304,11 @@ The string argument needs to be mutable so the method can append the user input 
 
 The `&` operator indicates that this argument is a _reference_ to a _mutable_ variable.
 
-It gives you a way to let multiple parts of your code access one piece of data without needing to copy that data into memory multiple times. It's a complex topic. For now, all you need to know is that like variables, references are immutable by default. Hence, you need to write `&mut user_submitted_radius` rather than `&user_submitted_radius` to make it mutable.
+From Rust doc:
+
+> It gives you a way to let multiple parts of your code access one piece of data without needing to copy that data into memory multiple times.
+
+The `&` operator is very similar to the "_address of_" operator (`&`) in C. Sort of Pointers? Sort of! _References_ are a complex topic. For now, all you need to know is that like variables, references are immutable by default. Hence, you need to write `&mut user_submitted_radius` rather than `&user_submitted_radius` to make it mutable.
 
 The `Result` _Type_ and handling failure:
 
@@ -2316,6 +2320,8 @@ The `Result` _Type_ and handling failure:
 
 Rust allows us to split codes across multiple lines as long we maintain proper Rust syntax, and so does C. Now we come to the third line of the same statement, which could also be written as: `io::stdin().read_line(&mut user_submitted_radius).ok().expect("Couldn't read user input!");` in a single line.
 
+There's no C-like short form of `scanf()`. So, your programs are more memory safe from the ground up. Although, C programs can be equally or more memory safe when extra steps are not reluctantly avoided. Rust enforce safety from the start. After all, C is all about ultimate flexibility which is the power of C, not a drawback.
+
 Next:
 
 ```rust
@@ -2326,9 +2332,112 @@ We discussed `trim()` before.
 
 `trim()`: The function `trim()` removes leading and trailing whitespace characters. NOTE: This function will not remove the inline spaces (whitespace characters found inside the string text). Only the whitespace chars found at the beginning and end will be trimmed.
 
-[parse()](https://doc.rust-lang.org/std/primitive.str.html#method.parse):
+The `trim()` function is required here because you'll hit **Enter** after typing the input. Enter throws in a newline character `\n`. That newline character has to be trimmed since the variable `result` can only take  32-bit fractional (`float`) numbers (`f32`), not anything else.
+
+[parse()](https://doc.rust-lang.org/std/primitive.str.html#method.parse): The [`parse` method on strings](https://doc.rust-lang.org/std/primitive.str.html#method.parse) converts a string to another type. It is here for converting a string to a number. We need to specify the data type we want to convert using the function `parse()`. We declared the variable `radius` as `let mut radius: f32 = 0.0;`. Also, our user input is a string, `let mut user_submitted_radius = String::new();`. Essentially the conversion goes from a string (input) to a floating point variable (`radius`). To cut the long story short, `parse()` is used in data type conversion.
+
+The `parse()` method will only work on characters that can logically be converted into numbers. What if the user input string contains `A👍%`? So, some error checking must be performed.
+
+`expect()`: Have we not discussed [The ok() method](https://doc.rust-lang.org/std/result/enum.Result.html#method.ok) and [The expect() method](https://doc.rust-lang.org/std/result/enum.Result.html#method.expect)? Recap: The function `expect()` gives either an `Ok` value or shows an `Err` message when it encounters an error. It lets us detect where an error has occurred, in case of a panic. You must call this `expect()` function to identify unforeseen errors. Rust will also deduct whether the converted value assigned to the variable `radius` is a 32-bit `float` (i.e., `f32`) or not. If `parse()` fails, it will return the `Err` variant of `Result` which is a number to the computer, not exactly `Ok` or `Err`. The `Err`will be collected by `expect()`. If everything goes as expected, `parse()` will return the `Ok` variant of `Result`, and from there on, `expect()` will allow the rest of the program to carry on execution. Read the following line forwards:
+
+1. `user_submitted_radius` will be filtered by `trim()`.
+
+2. `parse()` will convert the input string to a `float`.
+
+3. If any error occurs, `expect()` will show us where it took place.
+
+```rust
+radius = user_submitted_radius.trim().parse().expect("Invalid user input!n");
+```
+
+Chain links? Don't you think so? Now you know what it looks like.
+
+Move forward. Look at the next line.
+
+```rust
+squired =  radius * radius;
+```
+
+Nothing's special. We're multiplying `radius` with `radius`, $r^2$. The `*` is an arithmetic operator, called the **Multiplication Operator**.
+
+```rust
+area = 3.14 * squired; // The formula: area = pi * r^2
+```
+
+Now, we're multiplying `squired` by `3.14`. The resulting value will be assigned to the variable `area`.
+
+```rust
+println!("Area = {}", area);
+```
+
+As we've seen, `println!()` is a macro that we use while producing an output to the console.
+
+**`println!()` Placeholders**: In Rust, the `{}` set of second brackets is a placeholder: think of `{}` as a room that reserves the space for a value to be placed.
+
+`println!("");` is the minimum required syntax that you are allowed to write. Within the double quotes (`""`), you can write a string of characters which will be printed to the console: e.g., `println!("A Rust String.");`. To print the results of calculations, you either write the variables directly inside the pair of second brackets like `println!("var01 = {var01}");` or put a placeholder (an empty pair of second brackets, i.e., `{}`), and then write the variable names outside the double quotes (`""`), such as `println!("var01 = {}", var01);`. Note the use of the comma (`,`) after the double quotes. If you put empty placeholders, variables are separated by commas. Unlike C, Rust doesn't need a format specifier to print values. In C, you need something like `printf("var01 = %d", var01);`, and you cannot write the variables directly inside placeholders as you do in Rust, `println!("var01 = {var01}");`.
+
+Look at the program below.
+
+```rust
+fn main() {
+    let var01: u16 = 125;
+    let var02 = "Rust";
+    println!("var01 = {var01}");
+    println!("var01 = {}", var01);
+
+    println!("var02 = {var02}");
+    println!("var02 = {}", var02);
+
+    println!("var01 = {var01}, and var02 = {var02}");
+    println!("var01 = {}, and var02 = {}", var01, var02);
+}
+
+/*
+var01 = 125
+var01 = 125
+var02 = Rust
+var02 = Rust
+var01 = 125, and var02 = Rust
+var01 = 125, and var02 = Rust
+*/
+```
+
+By now, we've successfully taken apart our second skeleton, "the Area of a Circle". Look at our second skeleton for the final term. Check out what you've learned and how much of it retains after that. Revisit the necessary sections if needed.
+
+```rust
+/*
+  A Rust program to calculate the area of a circle.
+*/
+
+use std::io;
+
+fn main() {
+  println!("Type the value for the radius of the circle and hit Enter:");
+  let mut user_submitted_radius = String::new();
+  let mut radius: f32 = 0.0;
+  let mut squired: f32 = 0.0;
+  let mut area: f32 = 0.0;
+
+  io::stdin().read_line(&mut user_submitted_radius)
+             .ok()
+             .expect("Couldn't read user input!");
+
+  radius = user_submitted_radius.trim().parse().expect("Invalid user input!n");
+
+  squired =  radius * radius;
+  area = 3.14 * squired; // The formula: area = pi * r^2
+
+  println!("Area = {}", area);
+}
+```
+
+---
 
 Let's break down the third skeleton before we move on to the actual chapters.
+
+This time, we will start with Rust to make our job easier.
+
+**The simple file input/output and user input/output program in Rust:**
 
 ```rust
 /*
