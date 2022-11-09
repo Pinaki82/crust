@@ -2363,6 +2363,8 @@ int main(void) {
 
 The `scanf()` part is not secure in the program above. If you submit an integer variable greater than ``2147483647`` (namely, any extra beyond a variable that can hold `4` bytes), you'll notice strange output.
 
+Similarly, methods in Rust like `expect()` and `unwrap()` are often avoided in production-grade codes.
+
 Next:
 
 ```rust
