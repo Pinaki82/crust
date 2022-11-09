@@ -2336,6 +2336,33 @@ There's no C-like short form of `scanf()`. So, your programs are more memory saf
 
 [Why should the system() function be avoided in C and C++? - Stack Overflow](https://stackoverflow.com/questions/19913446/why-should-the-system-function-be-avoided-in-c-and-c)
 
+For example, instead of using `system("clear");` we can use regex like:
+
+```c
+/*
+  A program to clear the console by using
+  printf("\033[1;1H\033[2J");
+*/
+
+#include <stdio.h>
+
+int main(void) {
+  int a;
+  printf("Type out a number:\n");
+  fflush(stdin);
+  scanf("%d", &a);
+  printf("\033[1;1H\033[2J"); // clears the screen [regex]
+  /*
+    https://www.geeksforgeeks.org/clear-console-c-language/
+    https://github.com/p-ranav/indicators/issues/62
+  */
+  printf("You typed: %d\n", a);
+  return 0;
+}
+```
+
+The `scanf()` part is not secure in the program above. If you submit an integer variable greater than ``2147483647`` (namely, any extra beyond a variable that can hold `4` bytes), you'll notice strange output.
+
 Next:
 
 ```rust
