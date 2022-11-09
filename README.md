@@ -2324,7 +2324,17 @@ The `Result` _Type_ and handling failure:
 
 Rust allows us to split codes across multiple lines as long we maintain proper Rust syntax, and so does C. Now we come to the third line of the same statement, which could also be written as: `io::stdin().read_line(&mut user_submitted_radius).ok().expect("Couldn't read user input!");` in a single line.
 
-There's no C-like short form of `scanf()`. So, your programs are more memory safe from the ground up. Although, C programs can be equally or more memory safe when extra steps are not reluctantly avoided. Rust enforces safety from the start. After all, C is all about ultimate flexibility which is the power of C, not a drawback.
+There's no C-like short form of `scanf()`. So, your programs are more memory safe from the ground up. Although, C programs can be equally or more memory safe when extra steps are not reluctantly avoided. Rust enforces safety from the start. After all, C is all about ultimate flexibility which is the power of C, not a drawback. However, in production-grade codes, the vast majority of the [C Standard Library](https://en.wikipedia.org/wiki/C_standard_library) functions are avoided and substituted by specific implementations for a specific piece of code. It is quite natural that institutes like The Indian Space Research Organisation (ISRO), The Defence Research and Development Organisation (DRDO), The Bhabha Atomic Research Centre (BARC), GNU, Microsoft, The Linux Kernel Organization, and other influential entities won't accept code strewed with functions like `scanf()`, `strcpy()`, `gets()` and such. Unpredictable behaviour and vulnerability is not an option for any of them. They prefer writing their own for a specific purpose. You'll get a fair idea if you visit the following links:
+
+[c - What can I use for input conversion instead of scanf? - Stack Overflow](https://stackoverflow.com/questions/58403537/what-can-i-use-for-input-conversion-instead-of-scanf#:~:text=using%20fgets%20with%20a%20fixed,only%20reading%20a%20single%20char%20)
+
+[c - Implementing an alternative to scanf - Code Review Stack Exchange](https://codereview.stackexchange.com/questions/198460/implementing-an-alternative-to-scanf)
+
+[Is it bad to use system command in C (code blocks compiler)? - Quora](https://www.quora.com/Is-it-bad-to-use-system-command-in-C-code-blocks-compiler)
+
+[Why system() is evil - C++ Articles](https://cplusplus.com/articles/j3wTURfi/)
+
+[Why should the system() function be avoided in C and C++? - Stack Overflow](https://stackoverflow.com/questions/19913446/why-should-the-system-function-be-avoided-in-c-and-c)
 
 Next:
 
@@ -2595,6 +2605,29 @@ int main(int argc, char *argv[]) {
 ```
 
 Don't get puzzled. I'll explain each line in detail.
+
+We will look at the Rust version now.
+
+Let's start without procrastination.
+
+```rust
+use std::env;
+```
+
+We utilised the keyword `use` to bring symbols `std` ---> `env`into the **scope** of our program. What will it do for us? `std:` is the **Standard Library**. `:env` is a library contained in (grouped inside of) the **Standard Library**. We need it for the line `let path = env::current_dir().unwrap();` which will print the current working directory to the console.
+
+```rust
+use std::io;
+```
+
+We need the `:io` library contained in the `std:` for console input/output, as we've seen before.
+
+```rust
+    io::stdin()
+        .read_line(&mut ur_name)
+        .ok()
+        .expect("Couldn't read user input!");
+```
 
 # The Character Set
 
