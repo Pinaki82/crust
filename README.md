@@ -2666,6 +2666,23 @@ Read the above section in the forward direction (recap):
 
 3. `read_line()` returns a value `Result` after accomplishing the designated task (apart from doing the task), either an `Ok` if nothing goes wrong, or an `Err`. The `Result`'s variants are `Ok` and `Err`. The method/function `ok()` converts the value *Result* into a value *Option* (indicating how many bytes have been read), and the function `expect()` gives either that `Ok` value or shows an `Err` message when it encounters an error. The function `expect()` lets us detect where it occurs, in case of a panic. The use of this `expect()` function is compulsory here. If the function `expect()` gives that `Ok` value, Rust allows the program to proceed further.
 
+NOTE: Instead of calling the method `expect()` in a chained `.ok().expect()` form, you could also call the method `unwrap()` to make the code slightly shorter by omitting the `ok()` function, as: `io::stdin().read_line(&mut ur_name).unwrap();`.
+
+```rust
+io::stdin().read_line(&mut ur_name).unwrap();
+```
+
+There's nothing wrong either if you use `ok()` before `unwrap()` as shown below.
+
+```rust
+io::stdin().read_line(&mut ur_name).ok().unwrap();
+```
+
+The method `unwrap()` unwraps a value `Result`, yielding one of the two variants of the `Result`, a value `Ok` (or a value `Some`, in the case of a value `Option`). If a **panic** occurs, the returned value will be an `Err` (or a `None` for `Option`), along with a panic message according to the `Err`'s value. When the value returned from `unwrap()` is an `Ok`(`T`), the function `unwrap()` can extract the value `T`, in a fashion such as `println!("Unwrap found {}", ur_name.unwrap());`.
+
+You can choose from `ok().expect()` or `ok().unwrap()` to a match statement that
+tests on the `Ok`(`T`) or `Err`(`E`) value outcome of the `Result` _type_ value. You don't have to understand every little bit of the working procedure of the `unwrap()` function immediately. Nevertheless, the function `unwrap()` can be used for quick prototyping. Move to the next line:
+
 ```rust
 let mut file1 = std::fs::File::create("textfile.txt").expect("Failed to create the file!");
 ```
