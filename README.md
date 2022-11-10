@@ -2662,7 +2662,7 @@ Read the above section in the forward direction:
 
 1. `ur_name` is a mutable/changeable variable (to be used as a string variable later). We created/declared an empty string object `ur_name` as `let mut ur_name = String::new();`.
 
-2. The `use` keyword -> Bring symbols into **scope**. Here, the Standard Library `:io` (namely, `std::io`) has been brought into the **scope** of the current program. Again, we're dragging/calling the function/method `stdin()` from the Standard Library's (`std:`) component/module `:io` to handle user input: `read_line(&mut ur_name)`.
+2. The `use` keyword -> Bring symbols into **scope**. Here, the Standard Library module/component `:io` (namely, `std::io`) has been brought into the **scope** of the current program. Again, we're dragging/calling the function/method `stdin()` from the Standard Library's (`std:`) component/module `:io` to handle user input: `read_line(&mut ur_name)`.
 
 3. `read_line()` returns a value `Result` after accomplishing the designated task (apart from doing the task), either an `Ok` if nothing goes wrong, or an `Err`. The `Result`'s variants are `Ok` and `Err`. The method/function `ok()` converts the value *Result* into a value *Option* (indicating how many bytes have been read), and the function `expect()` gives either that `Ok` value or shows an `Err` message when it encounters an error. The function `expect()` lets us detect where it occurs, in case of a panic. The use of this `expect()` function is compulsory here.
 
