@@ -2658,7 +2658,7 @@ We need the `:io` library contained in the `std:` for console input/output, as w
         .expect("Couldn't read user input!");
 ```
 
-Read the above section in the forward direction:
+Read the above section in the forward direction (recap):
 
 1. `ur_name` is a mutable/changeable variable (to be used as a string variable later). We created/declared an empty string object `ur_name` as `let mut ur_name = String::new();`.
 
