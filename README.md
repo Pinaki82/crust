@@ -2666,6 +2666,12 @@ Read the above section in the forward direction (recap):
 
 3. `read_line()` returns a value `Result` after accomplishing the designated task (apart from doing the task), either an `Ok` if nothing goes wrong, or an `Err`. The `Result`'s variants are `Ok` and `Err`. The method/function `ok()` converts the value *Result* into a value *Option* (indicating how many bytes have been read), and the function `expect()` gives either that `Ok` value or shows an `Err` message when it encounters an error. The function `expect()` lets us detect where it occurs, in case of a panic. The use of this `expect()` function is compulsory here. If the function `expect()` gives that `Ok` value, Rust allows the program to proceed further.
 
+```rust
+let mut file1 = std::fs::File::create("textfile.txt").expect("Failed to create the file!");
+```
+
+Before trying to understand the line mentioned above, we will have to discuss Rust's File Struct for a brief moment.
+
 # The Character Set
 
 # Reserved Keywords
