@@ -2689,6 +2689,23 @@ let mut file1 = std::fs::File::create("textfile.txt").expect("Failed to create t
 
 Before trying to understand the line mentioned above, we will have to discuss Rust's File Struct for a brief moment.
 
+The file input/output functionality in Rust is provided by its File Struct, which represents a file. Read-write operations functionality in Rust comes from its File Struct.
+
+All functions/methods in the File Struct return a variant of the `io::Result` enumeration. Enumeration won't be discussed at the moment.
+
+The table below shows the most common functions/methods in use, at a glimpse:
+
+| Sr. No. | Module                 | Function/Method    | Signature                                                    | Description                                                                                                                                             |
+|:------- | ---------------------- | ------------------ | ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1       | `std::fs::File`        | `open()`           | `pub fn open<P: AsRef>(path: P) -> Result`                   | Static Method (fn). Opens a file in read-only mode.                                                                                                     |
+| 2       | `std::fs::File`        | `create()`         | `pub fn create<P: AsRef>(path: P) -> Result`                 | Static Method (fn). Opens a file in write-only mode. Overwrites the file if it already exists. Otherwise, a new file is created only for writing to it. |
+| 3       | `std::fs::remove_file` | `remove_file()`    | `pub fn remove_file<P: AsRef>(path: P) -> Result<()>`        | Deletes (removes) a file from the filesystem. However, immediate deletion is not guaranteed.                                                            |
+| 4       | `std::fs::OpenOptions` | `append()`         | `pub fn append(&mut self, append: bool) -> &mut OpenOptions` | Sets an option to open the file in append mode. That means anything new will be added to the file after its old content.                                |
+| 5       | `std::io::Writes`      | `write_all()`      | `fn write_all(&mut self, buf: &[u8]) -> Result<()>`          | Attempts to write an entire buffer into the current write session.                                                                                      |
+| 6       | `std::io::Read`        | `read_to_string()` | `fn read_to_string(&mut self, buf: &mut String) -> Result`   | Reads all bytes until `EOF`, appending them to `buf`. Copies contents to the buffer.                                                                    |
+
+Writing to a file:
+
 # The Character Set
 
 # Reserved Keywords
