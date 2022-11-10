@@ -2689,7 +2689,7 @@ let mut file1 = std::fs::File::create("textfile.txt").expect("Failed to create t
 
 Before trying to understand the line mentioned above, we will have to discuss Rust's File Struct for a brief moment.
 
-The file input/output functionality in Rust is provided by its File Struct, which represents a file. Read-write operations functionality in Rust comes from its File Struct.
+The file input/output functionality in Rust is provided by its File Struct, which represents a file.
 
 All functions/methods in the File Struct return a variant of the `io::Result` enumeration. Enumeration won't be discussed at the moment.
 
