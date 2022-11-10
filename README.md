@@ -2702,7 +2702,7 @@ The table below shows the most common functions/methods in use, at a glimpse:
 | 3       | `std::fs::remove_file` | `remove_file()`    | `pub fn remove_file<P: AsRef>(path: P) -> Result<()>`        | Deletes (removes) a file from the filesystem. However, immediate deletion is not guaranteed.                                                            |
 | 4       | `std::fs::OpenOptions` | `append()`         | `pub fn append(&mut self, append: bool) -> &mut OpenOptions` | Sets an option to open the file in append mode. That means anything new will be added to the file after its old content.                                |
 | 5       | `std::io::Writes`      | `write_all()`      | `fn write_all(&mut self, buf: &[u8]) -> Result<()>`          | Attempts to write an entire buffer into the current write session.                                                                                      |
-| 6       | `std::io::Read`        | `read_to_string()` | `fn read_to_string(&mut self, buf: &mut String) -> Result`   | Reads all bytes until `EOF`, appending them to `buf`. Copies contents to the buffer.                                                                    |
+| 6       | `std::io::Read`        | `read_to_string()` | `fn read_to_string(&mut self, buf: &mut String) -> Result`   | Reads all bytes until `EOF`, appending them to `buf`. Copies contents to the buffer (memory).                                                           |
 
 Writing to a file:
 
