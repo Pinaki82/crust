@@ -2706,6 +2706,49 @@ The table below shows the most common functions/methods in use, at a glimpse:
 
 Writing to a file:
 
+```rust
+use std::io::Write;
+
+fn main() {
+    let mut filename = std::fs::File::create("data.txt")
+        .ok()
+        .expect("Failed to create the file!");
+
+    filename
+        .write_all("Have a great rest of your day!!".as_bytes())
+        .ok()
+        .expect("Failed to write to the file!");
+
+    filename
+        .write_all("\nWelcome to the world of Rust!!".as_bytes())
+        .ok()
+        .expect("Failed to write to the file!");
+
+    println!("Text data has been written to the file.");
+}
+```
+
+```
+Text data has been written to the file.
+```
+
+On Windows CMD:
+
+```
+type data.txt
+```
+
+On Linux (or MSYS2 on Windows):
+
+```
+cat data.txt
+```
+
+```
+Have a great rest of your day!!
+Welcome to the world of Rust!!
+```
+
 # The Character Set
 
 # Reserved Keywords
