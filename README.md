@@ -2749,6 +2749,10 @@ Have a great rest of your day!!
 Welcome to the world of Rust!!
 ```
 
+With 70% of the conceptual clearances, let us discuss the remaining parts concerned with the File Operations in the sample program. We brought the Write Operation functionality into the scope of our program by writing `use std::io::Read;`. `filename` is a mutable variable which is responsible for creating the file `data.txt`. The name of that variable could be anything else. The `create()` method/function is used to create the file. The functions `ok()` and `expect()` are the there to handle error messages. In the last line, the `write_all()` function writes bytes to the file `data.txt`. As before, the `ok()` and the `expect()` functions/methods take the responsibility for displaying errors if something goes wrong. Open the file with any plain-text-editor and see what's hiding there.
+
+Now you should ask me: Could we not choose the route of the combination of `std::fs::OpenOptions` and `append()` instead of creating a file and then writing to it since the file was supposed to be new and empty? Yes. However, the file was also supposed to be not present on the system. You'll have to create (`create()`) the file for the first time anyway.
+
 # The Character Set
 
 # Reserved Keywords
