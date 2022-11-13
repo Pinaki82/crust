@@ -2316,7 +2316,7 @@ The `&` operator is very similar to the "_address of_" operator (`&`) in C. Sort
 
 The `Result` _Type_ and handling failure:
 
-[The ok() method](https://doc.rust-lang.org/std/result/enum.Result.html#method.ok) and [The expect() method](https://doc.rust-lang.org/std/result/enum.Result.html#method.expect): `read_line()` returns a value `Result` after accomplishing the designated task, either an `Ok` if nothing goes wrong, or an `Err`. The `Result`'s variants are `Ok` and `Err`. Can this even happen? Imagine a situation where there's no console and no user to submit input. The method/function `ok()` converts the value _Result_ into a value _Option_ (indicating how many bytes have been read), and the function `expect()` gives either that `Ok` value or shows an `Err` message when it encounters an error. Panic in Rust is a circumstance when an irrecoverable error occurs. The function `expect()` lets us detect where it occurs, in case of a panic. You must call this `expect()` function. If you do not use the `Result` value returned from `read_line()`, the program will compile with serious warnings, and you will never know what happened in case of a bad event. Keep in mind that the function `read_line()` eats whatever the user throws into the string passed out of the standard input (here, `stdin()`), but it also returns a `Result` value for you to deal with panics.
+[The ok() method](https://doc.rust-lang.org/std/result/enum.Result.html#method.ok) and [The expect() method](https://doc.rust-lang.org/std/result/enum.Result.html#method.expect): `read_line()` returns a value `Result` after accomplishing the designated task, either an `Ok` if nothing goes wrong, or an `Err`. The `Result`'s variants are `Ok` and `Err`. Can this even happen? Imagine a situation where there's no console and no user to submit input. The method/function `ok()` converts the value _Result_ into a value _Option_ (indicating how many bytes have been read), and the function `expect()` gives either that `Ok` value or shows an `Err` message when it encounters an error. Panic in Rust is a circumstance when an irrecoverable error occurs. The function `expect()` lets us detect where it occurs, in case of a panic. You must call this `expect()` function. If you do not use the `Result` value returned from `read_line()`, the program will compile with serious warnings, and you will never know what happened in case of a bad event. Keep in mind that the function `read_line()` eats whatever the user throws into the string passed out of the standard input (here, `stdin()`), but it also returns a `Result` value for you to deal with panics. See [Error Handling in Rust, Module `std::error`](https://doc.rust-lang.org/std/error/index.html#common-message-styles) for details. Thus, the functions `expect()` and `unwrap()` are contained in the Standard Library `std:`. To know more about the `ok()` function, see [Module `std::result`](https://doc.rust-lang.org/std/result/). So, the function `ok()` is found in the Standard Library `std:`.
 
 ```rust
         .expect("Couldn't read user input!");
@@ -2381,7 +2381,9 @@ The `trim()` function is required here because you'll hit **Enter** after typing
 
 The `parse()` method will only work on characters that can logically be converted into numbers. What if the user input string contains `A👍%`? So, some error checking must be performed.
 
-`expect()`: Have we not discussed [The ok() method](https://doc.rust-lang.org/std/result/enum.Result.html#method.ok) and [The expect() method](https://doc.rust-lang.org/std/result/enum.Result.html#method.expect)? Recap: The function `expect()` gives either an `Ok` value or shows an `Err` message when it encounters an error. It lets us detect where an error has occurred, in case of a panic. You must call this `expect()` function to identify unforeseen errors. Rust will also deduct whether the converted value assigned to the variable `radius` is a 32-bit `float` (i.e., `f32`) or not. If `parse()` fails, it will return the `Err` variant of `Result` which is a number to the computer, not exactly `Ok` or `Err`. The `Err` will be collected by `expect()`. If everything goes as expected, `parse()` will return the `Ok` variant of `Result`, and from there on, `expect()` will allow the rest of the program to carry on execution. Read the following line forwards:
+`expect()`: Have we not discussed [The ok() method](https://doc.rust-lang.org/std/result/enum.Result.html#method.ok) and [The expect() method](https://doc.rust-lang.org/std/result/enum.Result.html#method.expect)? Recap: The function `expect()` gives either an `Ok` value or shows an `Err` message when it encounters an error. It lets us detect where an error has occurred, in case of a panic. You must call this `expect()` function to identify unforeseen errors. Rust will also deduct whether the converted value assigned to the variable `radius` is a 32-bit `float` (i.e., `f32`) or not. If `parse()` fails, it will return the `Err` variant of `Result` which is a number to the computer, not exactly `Ok` or `Err`. The `Err` will be collected by `expect()`. If everything goes as expected, `parse()` will return the `Ok` variant of `Result`, and from there on, `expect()` will allow the rest of the program to carry on execution. See [Error Handling in Rust, Module `std::error`](https://doc.rust-lang.org/std/error/index.html#common-message-styles) for details. Thus, the functions `expect()` and `unwrap()` are contained in the Standard Library `std:`. To know more about the `ok()` function, see [Module `std::result`](https://doc.rust-lang.org/std/result/). So, the function `ok()` is found in the Standard Library `std:`.
+
+Read the following line forwards:
 
 1. `user_submitted_radius` will be filtered by `trim()`.
 
@@ -2666,6 +2668,8 @@ Read the above section in the forward direction (recap):
 
 3. `read_line()` returns a value `Result` after accomplishing the designated task (apart from doing the task), either an `Ok` if nothing goes wrong, or an `Err`. The `Result`'s variants are `Ok` and `Err`. The method/function `ok()` converts the value *Result* into a value *Option* (indicating how many bytes have been read), and the function `expect()` gives either that `Ok` value or shows an `Err` message when it encounters an error. The function `expect()` lets us detect where it occurs, in case of a panic. The use of this `expect()` function is compulsory here. If the function `expect()` gives that `Ok` value, Rust allows the program to proceed further.
 
+See [Error Handling in Rust, Module `std::error`](https://doc.rust-lang.org/std/error/index.html#common-message-styles) for details. Thus, the functions `expect()` and `unwrap()` are contained in the Standard Library `std:`. To know more about the `ok()` function, see [Module `std::result`](https://doc.rust-lang.org/std/result/). So, the function `ok()` is found in the Standard Library `std:`.
+
 NOTE: Instead of calling the method `expect()` in a chained `.ok().expect()` form, you could also call the method `unwrap()` to make the code slightly shorter by omitting the `ok()` function, as: `io::stdin().read_line(&mut ur_name).unwrap();`.
 
 ```rust
@@ -2701,7 +2705,7 @@ The table below shows the most common functions/methods in use, at a glimpse:
 | 2       | `std::fs::File`        | `create()`         | `pub fn create<P: AsRef>(path: P) -> Result`                 | Static Method (fn). Opens a file in write-only mode. Overwrites the file if it already exists. Otherwise, a new file is created only for writing to it. |
 | 3       | `std::fs::remove_file` | `remove_file()`    | `pub fn remove_file<P: AsRef>(path: P) -> Result<()>`        | Deletes (removes) a file from the filesystem. However, immediate deletion is not guaranteed.                                                            |
 | 4       | `std::fs::OpenOptions` | `append()`         | `pub fn append(&mut self, append: bool) -> &mut OpenOptions` | Sets an option to open the file in append mode. That means anything new will be added to the file after its old content.                                |
-| 5       | `std::io::Writes`      | `write_all()`      | `fn write_all(&mut self, buf: &[u8]) -> Result<()>`          | Attempts to write an entire buffer into the current write session.                                                                                      |
+| 5       | `std::io::Write`       | `write_all()`      | `fn write_all(&mut self, buf: &[u8]) -> Result<()>`          | Attempts to write an entire buffer into the current write session.                                                                                      |
 | 6       | `std::io::Read`        | `read_to_string()` | `fn read_to_string(&mut self, buf: &mut String) -> Result`   | Reads all bytes until `EOF`, appending them to `buf`. Copies contents to the buffer (memory).                                                           |
 
 Writing to a file:
@@ -2752,6 +2756,71 @@ Welcome to the world of Rust!!
 With 70% of the conceptual clearances, let us discuss the remaining parts concerned with the File Operations in the sample program described above. We brought the "Write Operation functionality" into the scope of our program by writing `use std::io::Write;`. `filename` is a mutable variable which is responsible for creating the file `data.txt`. The name of that variable could be anything else. The `create()` method/function is used to create the file. The functions `ok()` and `expect()` are there to handle error messages. In the last line, the `write_all()` function writes bytes to the file `data.txt`. As before, the `ok()` and the `expect()` functions/methods take the responsibility for displaying errors if something goes wrong. Open the file with any plain-text editor and see what's hiding there.
 
 Now you should ask me: Could we not choose the route of the combination of `std::fs::OpenOptions` and `append()` instead of creating a file and then writing to it since the file was supposed to be new and empty? Yes. However, the file was also supposed to be not present on the system. You'll have to create (`create()`) the file for the first time anyway.
+
+```rust
+// A Rust program to append data to an existing file
+
+use std::fs::OpenOptions;
+use std::io::Write;
+
+fn main() {
+    let mut filename = OpenOptions::new()
+        .append(true)
+        .open("data.txt")
+        .expect("Unable to open file!");
+
+    filename
+        .write_all("\nAppending this string to the file data.txt\n".as_bytes())
+        .expect("Write operations failed!");
+    println!("Data appended successfully.");
+}
+```
+
+If you have not deleted the file `data.txt`, your program will Append the string `Appending this string to the file data.txt` to the file `data.txt` at this stage. What if you don't have the file `data.txt` on your system? You'll see error messages if you run the program. So, create the file first, and then write nothing to the file using the same method, `write_all()`. Here, `write_all("")`. Otherwise, you'll see a compiler warning like `value assigned to 'filename' is never read`. Although you can disable this warning of unused assignments to variables by dropping a line at the beginning of your program `#![allow(unused)]`, know that it is not a good practice.
+
+```
+warning: value assigned to `filename` is never read
+ --> testrst.rs:7:13
+  |
+7 |     let mut filename = std::fs::File::create("data.txt")
+  |             ^^^^^^^^
+  |
+  = note: `#[warn(unused_assignments)]` on by default
+  = help: maybe it is overwritten before being read?
+
+warning: 1 warning emitted
+```
+
+```rust
+// A Rust program to append data to an existing file
+// #![allow(unused)]
+use std::fs::OpenOptions;
+use std::io::Write;
+
+fn main() {
+    let mut filename = std::fs::File::create("data.txt")
+        .ok()
+        .expect("Failed to create the file!");
+
+    filename
+        .write_all("".as_bytes()) /* write nothing*/
+        .expect("Write operations failed!"); 
+
+    filename = OpenOptions::new()
+        .append(true)
+        .open("data.txt")
+        .expect("Unable to open file!");
+
+    filename
+        .write_all("\nAppending this string to the file data.txt\n".as_bytes())
+        .expect("Write operations failed!");
+    println!("Data appended successfully.");
+}
+```
+
+You had to create the file and make it ready for further writing.
+
+Reading from a file: Now, we will discuss how to read file contents.
 
 # The Character Set
 
