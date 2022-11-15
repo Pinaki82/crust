@@ -2336,6 +2336,8 @@ There's no C-like short form of `scanf()`. So, your programs are more memory saf
 
 [Why should the system() function be avoided in C and C++? - Stack Overflow](https://stackoverflow.com/questions/19913446/why-should-the-system-function-be-avoided-in-c-and-c)
 
+[wiki.sei.cmu.edu/confluence|ENV33-C. Do not call system()](https://wiki.sei.cmu.edu/confluence/plugins/servlet/mobile?contentId=87152177#content/view/87152177)
+
 For example, instead of using `system("clear");` we can use regex like:
 
 ```c
